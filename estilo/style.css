@@ -11,17 +11,17 @@
 
 * {
     margin: 0px;
-    padding: 3px;
+    padding: 1px;
     font-size: 1em;
 }
 header {
     background-color: white;
-    border-radius: 20px;   
+    border-radius: 20px;
 }
 
 html, body {
     min-height: 100vh;
-    background-color: rgb(240, 21, 21);
+    background-image: linear-gradient(to left, #65a99b, #981310);
     font-family: var(--fonte1);    
 }
 
@@ -49,10 +49,8 @@ section > p {
     padding:  1em;
 }
 section.normal {
-    background-color: rgb(227, 22, 22);
-    color: black;
-    
-}
+    color: white;
+    }
 section.imagem {
     background-color: rgb(24, 1, 1);
     color: white;
