@@ -1,8 +1,11 @@
 @charset "UTF-8" ;
-@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
-
+@font-face {
+    font-family: 'Android';
+    src: url('/Exercicios/Desafio16/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
 :root {
     --fonte1: Verdana, Geneva, Tahoma, sans-serif;
     --fonte2: 'Passion one', cursive;
@@ -24,6 +27,7 @@ html, body {
     background-image: linear-gradient(to left, #65a99b, #981310);
     font-family: var(--fonte1);    
 }
+
 
 
 header > p {
@@ -49,7 +53,13 @@ section > p {
     padding:  1em;
 }
 section.normal {
-    color: white;
+    color:white;
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 0 px black;
+    
     }
 section.imagem {
     background-color: rgb(24, 1, 1);
