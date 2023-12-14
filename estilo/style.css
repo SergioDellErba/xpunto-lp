@@ -11,27 +11,21 @@
 
 * {
     margin: 0px;
-    padding: 0px;
+    padding: 3px;
     font-size: 1em;
+}
+header {
+    background-color: white;
+    border-radius: 20px;   
 }
 
 html, body {
     min-height: 100vh;
-    background-color: darkgray;
+    background-color: rgb(240, 21, 21);
     font-family: var(--fonte1);    
 }
-header {
-    background-color: black;
-    color: white;
-    text-align: center;
-}
-header > h1 {
-    padding-top: 50px;
-    font-variant: small-caps;
-    font-family: var(--fonte2);
-    font-size: 4vw;
 
-}
+
 header > p {
     padding-bottom: 50px;
 }
@@ -55,7 +49,7 @@ section > p {
     padding:  1em;
 }
 section.normal {
-    background-color: white;
+    background-color: rgb(227, 22, 22);
     color: black;
     
 }
