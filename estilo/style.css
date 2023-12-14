@@ -1,15 +1,12 @@
 @charset "UTF-8" ;
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@font-face {
-    font-family: 'Android';
-    src: url('/Exercicios/Desafio16/fontes/idroid.otf') format('opentype');
-    font-weight: normal;
-}
+
 :root {
     --fonte1: Verdana, Geneva, Tahoma, sans-serif;
     --fonte2: 'Passion one', cursive;
     --fonte3: 'Sriracha', cursive;
+    --fonte-destaque:'Bebas Neue', cursive;
 }
 
 * {
@@ -22,9 +19,17 @@ header {
     border-radius: 20px;
 }
 
+div {
+    font-size: 200%;
+    font-family: var(--fonte-destaque);
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
 html, body {
     min-height: 100vh;
-    background-image: linear-gradient(to left, #65a99b, #981310);
+    background-image: linear-gradient(to right, #65a99b, #981310);
     font-family: var(--fonte1);    
 }
 
