@@ -14,13 +14,20 @@
     padding: 1px;
     font-size: 1em;
 }
+main {
+    width: 600px;
+    text-align: left;
+    padding-left: 300px;
+}
+
 header {
     background-color: white;
     border-radius: 20px;
+    margin-top: 20px;
 }
 
 div {
-    font-size: 200%;
+    font-size: 150%;
     font-family: var(--fonte-destaque);
     text-align: center;
     color: white;
@@ -28,9 +35,12 @@ div {
 }
 
 html, body {
-    min-height: 100vh;
-    background-image: linear-gradient(to right, #65a99b, #981310);
-    font-family: var(--fonte1);    
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #65a99b, #981310);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;    
 }
 
 
@@ -58,7 +68,7 @@ section > p {
     padding:  1em;
 }
 section.normal {
-    color:white;
+    color:rgb(254, 253, 253);
     font-family: var(--font-destaque);
     font-size: 3em;
     font-weight: normal;
@@ -75,23 +85,20 @@ section.imagem {
 }
 
 section.imagem > p {
+    border-radius: 15px;
     display: inline-block;
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.234);
+    padding: 10px;
+    background-color: rgba(237, 233, 233, 0.242);
     text-shadow: 3px 3px 0px black;
+    
 }
 section#img01 {
-    background-image: url('../imagens/background001.jpg');
+    background-image: url('../imagens/Universo.png');
     background-position: right center;
+    border-radius: 20px;
     
 }
 section#img02 {
     background-image: url('../imagens/background002.jpg');
     
-}
-footer {
-    background-color: black;
-    color: white;
-    text-align: center;
-    padding: 10px;
 }
