@@ -33,7 +33,8 @@ img {
 }
 
 main {
-    width: 500px;
+    max-width: 100%;
+    
     text-align: left;
     font-family: var(--fonte-xpunto1);
     margin: 0 auto;
