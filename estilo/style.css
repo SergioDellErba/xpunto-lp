@@ -52,7 +52,10 @@ main {
 body {
       margin: 0;
       height: 100vh;
-      background-color: #65A99B;    
+      background: linear-gradient(to bottom, #65a99b, #183f47);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
 }
 
 
