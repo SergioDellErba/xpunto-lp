@@ -7,6 +7,12 @@
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
     --fonte-xpunto2: 'Gothan', Verdana, Arial;
     --fonte-destaque:'Bebas Neue', Arial;
+    --solirario: #981310;
+    --comercial: #65A99B;
+    --locacao: #E7BE20;
+    --pessoal: #DD5D11;
+    --permuta: #183F47;
+    --profissional: #367687;
 }
 
 header {
@@ -46,10 +52,7 @@ main {
 body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(to bottom, #65a99b, #183f47);
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
-      background-attachment: fixed;    
+      background-color: #65A99B;    
 }
 
 
