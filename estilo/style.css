@@ -26,16 +26,19 @@ h1 {
     font-family: var(--fonte-destaque);
     color: white;
     text-align: center;
-    padding: 1px;
+    margin-bottom: 20px;
     text-shadow: 2px 2px 0px rgb(57, 57, 57);
 }
 
 img { 
-    border-radius: 20px;
+    border-radius: 30px;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
     display: block;
+    margin-bottom: 70px;
+    box-shadow: 1px 1px 1px rgba(10, 10, 10, 0.727);
+    
 }
 
 main {
