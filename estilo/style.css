@@ -45,8 +45,8 @@ img {
     height: auto;
     margin: auto;
     display: block;
-    margin-top: 50Px;
-    margin-bottom: 70px;
+    margin-top: 10px;
+    margin-bottom: 40px;
     box-shadow: 1px 1px 1px rgba(14, 13, 13, 0.447);
 }
 
@@ -112,13 +112,12 @@ nav {
 }
 nav > a {
     color: white;
-    padding: 5px;
+    padding: 2px;
     border-radius: 5px;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 12px;
-    padding-left: 5px;
     transition-duration: .5s;
 }
 
@@ -128,7 +127,7 @@ nav > a:hover {
 }
 
 footer {    
-    min-height: 80px;
+    min-height: 50px;
     border-radius: 10px;
     background-color: white;
 }    
