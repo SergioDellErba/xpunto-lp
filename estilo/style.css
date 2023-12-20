@@ -73,7 +73,7 @@ section.imagem {
 }
 
 section.imagem img {
-    width: 150%;
+    width: 200%;
     border-radius: 15px;
     margin: auto;
     display: block;
@@ -87,20 +87,6 @@ section#img01 {
     border-radius: 20px;
     text-align: left;
     padding: 15px;
-}
-
-.social-buttons {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.social-buttons a {
-    padding: 10px;
 }
 
 nav.main-nav {
@@ -134,7 +120,18 @@ footer {
 }
 
 .social-buttons {
-    margin-top: 1915px;
+    /*margin-top: 1px;*/
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    display: flex;
+    /*align-items: center;*/
+    justify-content: baseline;
+    margin-top: 1px;
 }
 
 .logo-footer {
@@ -144,4 +141,5 @@ footer {
 .social-buttons a {
     margin: 0 10px;
     width: 35px;
+    padding: 10px;
 }
