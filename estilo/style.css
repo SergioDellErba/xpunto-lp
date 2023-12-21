@@ -103,7 +103,11 @@ section.imagens img {
 
 section#img01 {
     background-image: url('../imagens/Aurora.jpg');
+    background-position: center;
+    background-size: cover;
     border-radius: 20px;
+    max-width: 70%;
+    margin: auto;
     text-align: left;
     padding: 15px;
 }
