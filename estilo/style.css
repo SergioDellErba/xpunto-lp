@@ -32,7 +32,7 @@ h1, h2 {
 }
 
 img {
-    border-radius: 20px;
+    border-radius: 2px;
     max-width: 100%;
     height: auto;
     margin: auto;
@@ -72,10 +72,10 @@ body {
     align-items: center;
 }
 
-div-branca {
+/*div-branca {
     border-radius: 30px;
-    background-color: white;
-}
+    background-color:#183f47;
+}*/
 
 .social-buttons a {
     margin: 0 40px;
