@@ -83,7 +83,7 @@ section.imagem img {
 }
 
 section#img01 {
-    background-image: url('../imagens/Aurora.jpg');
+    background-image: url('./imagens/Aurora.jpg');
     border-radius: 20px;
     text-align: left;
     padding: 15px;
