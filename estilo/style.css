@@ -64,7 +64,7 @@ body {
     background-attachment: fixed;
 }
 
-section.imagem {
+section.imagens {
     position: relative;
     color: white;
     background-size: cover;
@@ -72,7 +72,7 @@ section.imagem {
     text-align: center;
 }
 
-section.imagem img {
+section.imagens img {
     width: 200%;
     border-radius: 15px;
     margin: auto;
