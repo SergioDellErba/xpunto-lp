@@ -83,14 +83,14 @@ section.imagens img {
 }
 
 section#img01 {
-    background-image: url('/imagens/Aurora.jpg');
+    background-image: url('../imagens/Aurora.jpg');
     border-radius: 20px;
     text-align: left;
     padding: 15px;
 }
 
 nav.main-nav {
-    border-radius: 10px;
+    border-radius: 0px;
     background-color: #E7BE20;
     padding: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
@@ -112,34 +112,33 @@ nav.main-nav > a:hover {
     color: #ffffff;
 }
 
+/* Adicione estas regras ao seu arquivo style.css */
+
 footer {
+    border-radius: 0px;
     text-align: center;
     margin-top: 20px;
-    background-color: white;
+    background-color:var(--locacao);
     padding: 20px;
-}
-
-.social-buttons {
-    /*margin-top: 1px;*/
-    position: absolute;
-    /*top: 50%;*/
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 1200px; /* Defina a largura máxima desejada */
+    margin: auto; /* Centraliza o footer na página */
     display: flex;
-    justify-content: space-between;
-    width: 50%;
-    display: flex;
-    /*align-items: center;*/
-    justify-content: baseline;
-    margin-top: 1px;
+    flex-direction: column; /* Empilha os elementos verticalmente */
 }
 
 .logo-footer {
-    max-width: 80px;
+    max-width: 200px;
+    margin: 0 auto 10px; /* Adiciona margem na parte inferior e centraliza o logo */
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .social-buttons a {
-    margin: 0 10px;
-    width: 35px;
-    padding: 10px;
+    margin: 0 90px;
+    width: 30px;
+    height: 30px;
 }
