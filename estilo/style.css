@@ -64,6 +64,23 @@ body {
     background-attachment: fixed;
 }
 
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div-branca {
+    border-radius: 30px;
+    background-color: white;
+}
+
+.social-buttons a {
+    margin: 0 40px;
+    width: 30px;
+    height: 49px;
+}
+
 section.imagens {
     position: relative;
     color: white;
@@ -90,8 +107,8 @@ section#img01 {
 }
 
 nav.main-nav {
-    border-radius: 0px;
-    background-color: #E7BE20;
+    border-radius: 20px;
+    background-color:var(--locacao);
     padding: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
 }
@@ -117,28 +134,16 @@ nav.main-nav > a:hover {
 footer {
     border-radius: 0px;
     text-align: center;
-    margin-top: 20px;
-    background-color:var(--locacao);
-    padding: 20px;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
     max-width: 1200px; /* Defina a largura máxima desejada */
     margin: auto; /* Centraliza o footer na página */
     display: flex;
-    flex-direction: column; /* Empilha os elementos verticalmente */
 }
 
 .logo-footer {
     max-width: 200px;
-    margin: 0 auto 10px; /* Adiciona margem na parte inferior e centraliza o logo */
+    margin: 0 auto 1px; /* Adiciona margem na parte inferior e centraliza o logo */
 }
 
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.social-buttons a {
-    margin: 0 90px;
-    width: 30px;
-    height: 30px;
-}
