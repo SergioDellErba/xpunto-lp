@@ -178,7 +178,7 @@ nav.main-nav > a:hover {
 footer {
     border-radius: 0px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5px;
     background-color: white;
     padding: 10px;
     margin: 0 auto; /* Centraliza o footer na página */
@@ -186,7 +186,7 @@ footer {
 }
 
 .logo-footer {
-    max-width: 150px;
+    max-width: 130px;
     margin: 0 auto 1px; /* Adiciona margem na parte inferior e centraliza o logo */
 }
 
