@@ -63,10 +63,10 @@ img {
     width: 93%; /* Use 100% para ocupar a largura total do contêiner pai */
     height: 90px; /* Altura fixa para a div */
     display: flex;
+    margin: auto;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-left: 16px;
 }
 
 .fale img {
