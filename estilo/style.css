@@ -31,7 +31,6 @@ h1, h2 {
     letter-spacing: 2px;
 }
 
-
 img {
     border-radius: 20px;
     max-width: 100%;
@@ -107,7 +106,7 @@ body {
 }
 
 .image-container {
-    margin-top: 0px;
+    margin-top: 10px;
     text-align: center;
     text-decoration: none;
     color: inherit;
@@ -203,12 +202,12 @@ footer {
 .logo-footer {
     max-width: 130px;
     border-radius: 20px;
-    margin: 0 auto 1px; /* Adiciona margem na parte inferior e centraliza o logo */
+    margin: 0 auto; /* Adiciona margem na parte inferior e centraliza o logo */
 }
 
 .facebook-icon,
 .instagram-icon {
-    border-radius: 10px;
+    border-radius: 0px;
     margin: 5px;
 }
 
