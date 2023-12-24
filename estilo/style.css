@@ -60,6 +60,22 @@ img {
     border-radius: 10px;
 }
 
+.fale {
+    width: 93%; /* Use 100% para ocupar a largura total do contêiner pai */
+    height: 90px; /* Altura fixa para a div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.fale img {
+    max-width: 100%; /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
+    max-height: 100%; /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
+    border-radius: 10px;
+}
+
 main {
     /*max-width: 100%;*/
     text-align: center;
