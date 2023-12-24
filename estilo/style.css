@@ -125,10 +125,10 @@ body {
     align-items: center;
 }
 
-/*div-branca {
-    border-radius: 30px;
+div-branca {
+    border-radius: 0px;
     background-color:#183f47;
-}*/
+}
 
 .social-buttons a {
     margin: 0 40px;
