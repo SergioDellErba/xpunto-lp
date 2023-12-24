@@ -96,6 +96,12 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+        
+  /*  padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;*/
 }
 
 .image-group {
@@ -119,10 +125,18 @@ body {
     height: auto; /* Mantenha a proporção original da imagem */
 }
 
-.imagem-reduzida {
-    margin: auto;
-    width: 400px; /* Ajuste a largura conforme necessário */
-    height: auto; /* Mantém a proporção original */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 60%; /* Ajuste conforme necessário */
+    padding-top: 5%; /* Proporção para vídeos 16:9 (altura/largura) */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.imagem-clicavel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .social-buttons {
