@@ -90,6 +90,7 @@ main {
 body {
     margin: 0 auto;
     max-width: 600px;
+    overflow-x: hidden;
     box-sizing: border-box;
     height: auto;
     background: linear-gradient(to bottom, #65a99b, #183f47);
