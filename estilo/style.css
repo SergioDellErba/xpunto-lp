@@ -96,13 +96,13 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-        
-  /*  padding: 0;
+    /*padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;*/
-}
+    min-height: 100vh;
+    flex direction:column;
+}*/
 
 .image-group {
     display: flex;
@@ -184,10 +184,11 @@ section#img01 {
     text-align: left;
     padding: 15px;
 }
+/* ... (seu código existente) ... */
 
 nav.main-nav {
     border-radius: none;
-    background-color:var(--locacao);
+    background-color: var(--locacao);
     padding: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
 }
@@ -207,7 +208,7 @@ nav.main-nav > a:hover {
     color: #ffffff;
 }
 
-/* Adicione estas regras ao seu arquivo style.css */
+/* Adicione as regras ao seu arquivo style.css */
 
 footer {
     border-radius: 0px;
@@ -235,4 +236,3 @@ a:not(.facebook-icon):not(.instagram-icon) {
     /* Estilos para outros ícones que não são do Facebook ou Instagram */
     /* Se necessário, ajuste conforme desejado */
 }
-
