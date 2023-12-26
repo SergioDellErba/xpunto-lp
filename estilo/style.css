@@ -142,8 +142,6 @@ body {
 
 
 
-
-
 .social-buttons {
     display: flex;
     justify-content: center;
@@ -190,29 +188,42 @@ section#img01 {
     font-size: 1.1em;
     padding: 15px;
 }
-/* ... (seu código existente) ... */
 
 nav.main-nav {
     border-radius: none;
     background-color: var(--locacao);
     padding: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
+    display: flex;
+    flex-direction: column; /* Altera a direção do flex container para coluna */
 }
 
-nav.main-nav > a {
+.nav-group {
+    display: flex;
+    justify-content: space-evenly; /* Distribui uniformemente os itens na linha */
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 5px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os links */
+}
+
+.nav-group a {
     color: white;
-    padding: 2px;
+    padding: 6px; /* Ajustei o espaçamento interno para melhorar a aparência */
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 14px;
     transition-duration: .5s;
 }
 
-nav.main-nav > a:hover {
+.nav-group a:hover {
     background-color: #981310;
     color: #ffffff;
 }
+
+
+
+
+
 
 /* Adicione as regras ao seu arquivo style.css */
 
