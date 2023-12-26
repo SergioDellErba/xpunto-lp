@@ -199,7 +199,7 @@ nav.main-nav {
 
 .nav-group {
     display: flex;
-    gap: 32px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
+    gap: 15px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
 .nav-group a {
@@ -216,7 +216,7 @@ nav.main-nav {
 .nav-group a:not(:first-child)::before {
     content: "-";
     position: absolute;
-    left: -19px; /* Ajuste conforme necessário para centralizar o hífen */
+    left: -10px; /* Ajuste conforme necessário para centralizar o hífen */
     color: white; /* Define a cor do hífen como branco */
 }
 
