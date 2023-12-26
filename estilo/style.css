@@ -242,11 +242,11 @@ footer {
     margin: 0 auto; /* Adiciona margem na parte inferior e centraliza o logo */
 }
 
-.facebook-icon,
+/*.facebook-icon,
 .instagram-icon {
     border-radius: 0px;
     margin: 15px;
-}
+}*/
 
 a:not(.facebook-icon):not(.instagram-icon) {
     /* Estilos para outros ícones que não são do Facebook ou Instagram */
