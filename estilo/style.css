@@ -140,8 +140,6 @@ body {
     object-fit: cover;
 }
 
-
-
 .social-buttons {
     display: flex;
     justify-content: center;
@@ -247,7 +245,7 @@ footer {
 .facebook-icon,
 .instagram-icon {
     border-radius: 0px;
-    margin: 5px;
+    margin: 15px;
 }
 
 a:not(.facebook-icon):not(.instagram-icon) {
