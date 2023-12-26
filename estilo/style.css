@@ -241,12 +241,15 @@ footer {
     border-radius: 20px;
     margin: 0 auto; /* Adiciona margem na parte inferior e centraliza o logo */
 }
+/* Adicione essas regras ao seu arquivo style.css */
 
-/*.facebook-icon,
-.instagram-icon {
-    border-radius: 0px;
-    margin: 15px;
-}*/
+.facebook-icon img,
+.instagram-icon img {
+    border-radius: 6px; /* ou o valor desejado para o border-radius */
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção original da imagem */
+}
+
 
 a:not(.facebook-icon):not(.instagram-icon) {
     /* Estilos para outros ícones que não são do Facebook ou Instagram */
