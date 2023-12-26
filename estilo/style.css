@@ -44,7 +44,7 @@ img {
 }
 
 .web {
-    width: 93%; /* Use 100% para ocupar a largura total do contêiner pai */
+    width: 91%; /* Use 100% para ocupar a largura total do contêiner pai */
     height: 140px; /* Altura fixa para a div */
     display: flex;
     justify-content: center;
