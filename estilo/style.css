@@ -232,12 +232,15 @@ footer {
     margin-top: 0px;
     margin-bottom: 0px;
     background-color: white;
-    padding: 10px;
+    padding-left: 0px;
     display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
 }
 
 .logo-footer {
-    max-width: 130px;
+    max-width: 180px;
     border-radius: 20px;
     margin: 0 auto; /* Adiciona margem na parte inferior e centraliza o logo */
 }
@@ -245,7 +248,7 @@ footer {
 
 .facebook-icon img,
 .instagram-icon img {
-    border-radius: 2px; /* ou o valor desejado para o border-radius */
+    border-radius: 1px; /* ou o valor desejado para o border-radius */
     max-width: 100%; /* Garante que a imagem seja responsiva */
     height: auto; /* Mantém a proporção original da imagem */
 }
