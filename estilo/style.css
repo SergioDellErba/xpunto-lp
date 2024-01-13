@@ -186,7 +186,8 @@ section#img01 {
     font-size: 1.1em;
     padding: 15px;
 }
-nav.main-nav {
+
+.main-nav {
     border-radius: none;
     background-color: var(--locacao);
     padding-top: 10px;
@@ -202,7 +203,9 @@ nav.main-nav {
     gap: 45px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
-.nav-group a {
+
+
+.nav-link {
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
@@ -212,15 +215,14 @@ nav.main-nav {
     position: relative;
 }
 
-/* Adiciona hífens entre os links em cada linha */
-.nav-group a:not(:first-child)::before {
+.nav-link:not(:first-child)::before {
     content: "-";
     position: absolute;
-    left: -25px; /* Ajuste conforme necessário para centralizar o hífen */
-    color: white; /* Define a cor do hífen como branco */
+    left: -25px;
+    color: white;
 }
 
-.nav-group a:hover {
+.nav-link.active {
     background-color: #981310;
     border-radius: 5px;
     color: #ffffff;
