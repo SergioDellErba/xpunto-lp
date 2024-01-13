@@ -189,7 +189,9 @@ section#img01 {
 nav.main-nav {
     border-radius: none;
     background-color: var(--locacao);
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-bottom: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
     display: flex;
     align-items: center; /* Centraliza os itens verticalmente */
@@ -197,7 +199,7 @@ nav.main-nav {
 
 .nav-group {
     display: flex;
-    gap: 15px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
+    gap: 45px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
 .nav-group a {
@@ -205,7 +207,7 @@ nav.main-nav {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 15px;
     transition-duration: .5s;
     position: relative;
 }
@@ -214,13 +216,13 @@ nav.main-nav {
 .nav-group a:not(:first-child)::before {
     content: "-";
     position: absolute;
-    left: -10px; /* Ajuste conforme necessário para centralizar o hífen */
+    left: -25px; /* Ajuste conforme necessário para centralizar o hífen */
     color: white; /* Define a cor do hífen como branco */
 }
 
 .nav-group a:hover {
     background-color: #981310;
-    border-radius: 10px;
+    border-radius: 5px;
     color: #ffffff;
 }
 
