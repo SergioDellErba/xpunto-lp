@@ -111,17 +111,21 @@
 
     <script>
         document.querySelector('.nav-group').addEventListener('click', function(event) {
-            if (event.target.classList.contains('nav-link')) {
+            const clickedLink = event.target;
+    
+            if (clickedLink.classList.contains('nav-link')) {
                 // Remove a classe 'active' de todos os links
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
                 });
-
+    
                 // Adiciona a classe 'active' apenas ao link clicado
-                event.target.classList.add('active');
+                clickedLink.classList.add('active');
             }
         });
     </script>
+    
+    
    
 </body>
 </html>

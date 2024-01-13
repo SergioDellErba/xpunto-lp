@@ -200,7 +200,7 @@ section#img01 {
 
 .nav-group {
     display: flex;
-    gap: 45px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
+    gap: 25px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
 
@@ -218,7 +218,7 @@ section#img01 {
 .nav-link:not(:first-child)::before {
     content: "-";
     position: absolute;
-    left: -25px;
+    left: -15px;
     color: white;
 }
 
