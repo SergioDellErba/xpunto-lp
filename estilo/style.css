@@ -129,7 +129,7 @@ body {
 .video-container {
     position: relative;
     overflow: hidden;
-    width: 60%; /* Ajuste conforme necessário */
+    width: 50%; /* Ajuste conforme necessário */
     padding-top: 5%; /* Proporção para vídeos 16:9 (altura/largura) */
     margin: 0 auto; /* Centraliza horizontalmente */
 }
@@ -202,7 +202,6 @@ section#img01 {
     display: flex;
     gap: 25px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
-
 
 
 .nav-link {
