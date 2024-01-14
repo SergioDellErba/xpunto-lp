@@ -63,7 +63,8 @@ img {
     width: 93%; /* Use 100% para ocupar a largura total do contêiner pai */
     height: 90px; /* Altura fixa para a div */
     display: flex;
-    margin: auto;
+    margin-top: 30px;
+    margin-left: 19px;
     justify-content: center;
     align-items: center;
     text-align: center;
