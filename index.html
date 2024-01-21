@@ -57,6 +57,11 @@
             </a>
         </div>
 
+        <video id="myVideo" controls>
+            <source src="https://sergiodellerba.github.io/xpunto-video-lp/" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+
         <h2>Com a palavra: Nossos Usuários</h2>
 
         <div>
@@ -104,19 +109,16 @@
             </a>
         </div>
     </footer>
-
     <script>
-        document.querySelector('.nav-group').addEventListener('click', function (event) {
-            const clickedLink = event.target;
-
-            if (clickedLink.classList.contains('nav-link')) {
-                document.querySelectorAll('.nav-link').forEach(link => {
-                    link.classList.remove('active');
-                });
-
-                clickedLink.classList.add('active');
-            }
+        // Aguarde o carregamento completo do documento
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtenha o elemento de vídeo pelo ID
+            var video = document.getElementById("myVideo");
+    
+            // Inicie automaticamente o vídeo quando a página estiver completamente carregada
+            video.play();
         });
     </script>
+
 </body>
 </html>
