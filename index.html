@@ -6,10 +6,9 @@
     <title>XPUNTO</title>
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilo/style.css">
-      
 </head>
 
-<body>        
+<body>
     <main>
         <div><img src="imagens/logo.png" alt="Logo XPUNTO"></div>
         <h1>Um jeito simples de melhorar a vida</h1>
@@ -18,11 +17,10 @@
             <img src="imagens/Pedestre.gif" alt="Pedestre">
         </section>
 
-        
-
-        <section class="imagens"id="img01">
-            <p> <strong><br><br>É difícil alcançar objetivos sozinho.<br><br><br>Saber com quem conversar sobre o que se quer é essencial para atender a qualquer desejo.<br><br><br> As barreiras de comunicação somem quando existe o mesmo objetivo.<br><br><br>Estudo é importante, mas comunicação eficiente, é a chave para o sucesso<br> em qualquer aspecto da vida.<br><br><br>Conectamos pessoas, para fazerem negócios, trabalhar, compartilhar ideias ou simplesmente desfrutar de lazer juntos.<br>
-            <br><br></strong>
+        <section class="imagens" id="img01">
+            <p>
+                <strong><br><br>É difícil alcançar objetivos sozinho.<br><br><br>Saber com quem conversar sobre o que se quer é essencial para atender a qualquer desejo.<br><br><br> As barreiras de comunicação somem quando existe o mesmo objetivo.<br><br><br>Estudo é importante, mas comunicação eficiente, é a chave para o sucesso<br> em qualquer aspecto da vida.<br><br><br>Conectamos pessoas, para fazerem negócios, trabalhar, compartilhar ideias ou simplesmente desfrutar de lazer juntos.<br>
+                <br><br></strong>
             </p>
         </section>
 
@@ -34,25 +32,23 @@
         </picture>
 
         <div class="web">
-            <a href="#"target="_blank" class="image-container">
+            <a href="#" target="_blank" class="image-container">
                 <img src="imagens/Web.png" alt="web">
             </a>
         </div>
-        
+
         <h2>ou</h2>
-        
+
         <div class="image-group">
             <a href="https://play.google.com/store/search?q=xpunto&c=apps" target="_blank" class="image-container">
                 <img src="imagens/Android.png" alt="Android">
             </a>
-               
+
             <a href="#" target="_blank" class="image-container">
                 <img src="imagens/Apple.png" alt="Imagem 3">
             </a>
         </div>
-        
-        
-        
+
         <section><img src="imagens/APP.png" alt="APP XPUNTO" width="100px"></section>
 
         <div class="video-container">
@@ -63,7 +59,7 @@
 
         <h2>Com a palavra: Nossos Usuários</h2>
 
-        <div>        
+        <div>
             <p>
                 Darla Carvalho - <strong>"Muito bom. Recomendadissimo, só precisa de mais pessoas usando."</strong>
             </p>
@@ -77,14 +73,13 @@
                 Cris Melo - <strong>"Conheci por um amigo, quero parabenizar pela ideia e trabalho."</strong>
             </p>
         </div>
-        
 
         <div class="fale">
-            <a href="#"target="_blank" class="image-container">
+            <a href="#" target="_blank" class="image-container">
                 <img src="imagens/Fale.png" alt="fale">
             </a>
         </div>
-        
+
     </main>
     <nav class="main-nav">
         <div class="nav-group">
@@ -95,41 +90,33 @@
             <a href="https://sergiodellerba.github.io/xpunto-txt-politica-privacidade/" target="_blank" rel="noopener noreferrer" class="nav-link">LGPD</a>
         </div>
     </nav>
-    
-    
-        
+
     <footer>
         <div class="social-buttons">
             <a href="https://www.facebook.com/xpuntoapp" target="_blank" rel="noopener noreferrer" class="facebook-icon">
                 <img src="imagens/Facebook_Logo_Primary.png" alt="Facebook">
             </a>
 
-        <img src="imagens/logo.png" alt="Logo XPUNTO" class="logo-footer">
+            <img src="imagens/logo.png" alt="Logo XPUNTO" class="logo-footer">
 
-        <a href="https://www.instagram.com/xpuntoapp/" target="_blank" rel="noopener noreferrer" class="instagram-icon">
-            <img src="imagens/Instagram_Glyph_Gradient.png" alt="Instagram">
-        </a>            
-    </div>
-
+            <a href="https://www.instagram.com/xpuntoapp/" target="_blank" rel="noopener noreferrer" class="instagram-icon">
+                <img src="imagens/Instagram_Glyph_Gradient.png" alt="Instagram">
+            </a>
+        </div>
     </footer>
 
     <script>
-        document.querySelector('.nav-group').addEventListener('click', function(event) {
+        document.querySelector('.nav-group').addEventListener('click', function (event) {
             const clickedLink = event.target;
-    
+
             if (clickedLink.classList.contains('nav-link')) {
-                // Remove a classe 'active' de todos os links
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
                 });
-    
-                // Adiciona a classe 'active' apenas ao link clicado
+
                 clickedLink.classList.add('active');
             }
         });
     </script>
-    
-    
-   
 </body>
 </html>

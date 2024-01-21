@@ -136,6 +136,7 @@ body {
 }
 
 .imagem-clicavel {
+    cursor: pointer;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -260,4 +261,8 @@ footer {
 a:not(.facebook-icon):not(.instagram-icon) {
     /* Estilos para outros ícones que não são do Facebook ou Instagram */
     /* Se necessário, ajuste conforme desejado */
+}
+
+#myVideo {
+    display: none;
 }
