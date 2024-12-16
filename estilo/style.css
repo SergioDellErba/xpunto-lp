@@ -94,7 +94,7 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
     height: auto;
-    background: linear-gradient(to bottom, #65a99b, #183f47);
+    background: linear-gradient(to bottom, #65a99b, #65A99b);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -265,4 +265,4 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 #myVideo {
     display: none;
-}
+}}

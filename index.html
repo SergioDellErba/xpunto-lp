@@ -11,15 +11,11 @@
 <body>
     <main>
         <div><img src="imagens/logo.png" alt="Logo XPUNTO"></div>
-        <h1>Um jeito simples de melhorar a vida</h1>
-
-        <section class="imagens">
-            <img src="imagens/Pedestre.gif" alt="Pedestre">
-        </section>
+        <h1>Saber com quem falar sobre o que se quer, Resolve Tudo!</h1>
 
         <section class="imagens" id="img01">
             <p>
-                <strong><br><br>É difícil alcançar objetivos sozinho.<br><br><br>Saber com quem conversar sobre o que se quer é essencial para atender a qualquer desejo.<br><br><br> As barreiras de comunicação somem quando existe o mesmo objetivo.<br><br><br>Estudo é importante, mas comunicação eficiente, é a chave para o sucesso<br> em qualquer aspecto da vida.<br><br><br>Conectamos pessoas, para fazerem negócios, trabalhar, compartilhar ideias ou simplesmente desfrutar de lazer juntos.<br>
+                <strong><br> Conectamos você a pessoas através de interesses em comum.<br><br>Facilitamos suas interações, ajudando a realizar seus desejos e alcançar seus objetivos em qualquer aspecto da vida.<br><br>Explore um mundo de oportunidades e transforme suas conexões.<br><br>Baixe o app e comece a melhorar sua vida!<br>
                 <br><br></strong>
             </p>
         </section>
@@ -31,16 +27,8 @@
             <img src="imagens/Atributo1.gif" alt="Atributo1">
         </picture>
 
-        <div class="web">
-            <a href="#" target="_blank" class="image-container">
-                <img src="imagens/Web.png" alt="web">
-            </a>
-        </div>
-
-        <h2>ou</h2>
-
         <div class="image-group">
-            <a href="https://play.google.com/store/search?q=xpunto&c=apps" target="_blank" class="image-container">
+            <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank" class="image-container">
                 <img src="imagens/Android.png" alt="Android">
             </a>
 
@@ -53,14 +41,14 @@
 
         <div class="video-container">
             <a href="https://sergiodellerba.github.io/xpunto-video-lp/" target="_blank" rel="noopener noreferrer">
-                <img src="imagens/video.png" alt="video" class="imagem-clicavel">
+                <img src="imagens/video.png" alt="video" class="imagem-clicavel" id="videoThumbnail">
             </a>
         </div>
 
-        <video id="myVideo" controls>
-            <source src="https://sergiodellerba.github.io/xpunto-video-lp/" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
+        <!-- Substitua a tag <video> por um iframe -->
+        <div id="videoPlayer" style="display:none;">
+            <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
         <h2>Com a palavra: Nossos Usuários</h2>
 
@@ -80,7 +68,7 @@
         </div>
 
         <div class="fale">
-            <a href="#" target="_blank" class="image-container">
+            <a href="mailto:contato@xpunto.com" target="_blank" class="image-container">
                 <img src="imagens/Fale.png" alt="fale">
             </a>
         </div>
@@ -112,11 +100,17 @@
     <script>
         // Aguarde o carregamento completo do documento
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtenha o elemento de vídeo pelo ID
-            var video = document.getElementById("myVideo");
-    
-            // Inicie automaticamente o vídeo quando a página estiver completamente carregada
-            video.play();
+            // Obtenha o elemento de imagem pelo ID
+            var videoThumbnail = document.getElementById("videoThumbnail");
+            var videoPlayer = document.getElementById("videoPlayer");
+            var iframe = videoPlayer.querySelector('iframe');
+
+            // Adicione um evento de clique à imagem
+            videoThumbnail.addEventListener('click', function(event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                iframe.src = "https://www.youtube.com/embed/foTrvaCMy8o?autoplay=1&rel=0"; // Define o src do iframe com autoplay e sem vídeos relacionados
+                videoPlayer.style.display = 'block'; // Exibe o iframe do vídeo
+            });
         });
     </script>
 
