@@ -123,7 +123,7 @@ body {
 .image-container img {
     max-width: 100%; /* Para garantir que a imagem seja responsiva */
     border-radius: 10px;
-    width: 100px; /* Defina o tamanho desejado */
+    width: 200px; /* Defina o tamanho desejado */
     height: auto; /* Mantenha a proporção original da imagem */
 }
 
