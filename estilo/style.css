@@ -38,7 +38,7 @@ img {
     height: auto;
     margin: auto;
     display: block;
-    margin-top: 10px;
+    margin-top: 40px;
     margin-bottom: 40px;
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
 }
@@ -256,6 +256,7 @@ footer {
     border-radius: 1px; /* ou o valor desejado para o border-radius */
     max-width: 150%; /* Garante que a imagem seja responsiva */
     height: auto; /* Mantém a proporção original da imagem */
+    margin-top: 10px;
 }
 
 a:not(.facebook-icon):not(.instagram-icon) {
