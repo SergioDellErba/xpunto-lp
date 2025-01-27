@@ -193,7 +193,7 @@ section#img01 {
     border-radius: none;
     background-color: var(--locacao);
     padding-top: 10px;
-    padding-left: 5px;
+    padding-left: 15px;
     padding-bottom: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
     display: flex;
@@ -202,7 +202,7 @@ section#img01 {
 
 .nav-group {
     display: flex;
-    gap: 25px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
+    gap: 35px; /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
 
@@ -211,7 +211,7 @@ section#img01 {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 25px;
     transition-duration: .1s;
     position: relative;
 }
