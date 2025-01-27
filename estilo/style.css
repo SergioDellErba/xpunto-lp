@@ -61,10 +61,10 @@ img {
 
 .fale {
     width: 93%; /* Use 100% para ocupar a largura total do contêiner pai */
-    height: 90px; /* Altura fixa para a div */
+    height: 200px; /* Altura fixa para a div */
     display: flex;
     margin-top: 30px;
-    margin-left: 15px;
+    margin-left: 36px;
     justify-content: center;
     align-items: center;
     text-align: center;
