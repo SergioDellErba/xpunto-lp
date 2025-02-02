@@ -23,7 +23,7 @@ div img {
 
 h1,
 h2 {
-    font-size: 300%;
+    font-size: 3em;
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -204,7 +204,7 @@ section#img01 {
     max-width: 80%;
     margin: auto;
     text-align: left;
-    font-size: 27px;
+    font-size: 2em;
     padding: 15px;
 }
 
