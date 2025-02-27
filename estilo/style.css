@@ -65,13 +65,11 @@ img {
 }
 
 .fale {
-    width: 93%;
+    width: 100%;
     /* Use 100% para ocupar a largura total do contêiner pai */
     height: 200px;
     /* Altura fixa para a div */
     display: flex;
-    margin-top: 30px;
-    margin-left: 36px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -103,7 +101,8 @@ body {
     max-width: 900px;
     overflow-x: hidden;
     box-sizing: border-box;
-    height: auto;
+    height: 100%;
+    width: 100%;
     background: linear-gradient(to bottom, #65a99b, #65A99b);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -173,7 +172,8 @@ div-branca {
 }
 
 .social-buttons a {
-    margin: 0 40px;
+    margin-left: 40px;
+    margin-right: 40px;
     width: 30px;
     height: 59px;
 }
@@ -212,7 +212,6 @@ section#img01 {
     border-radius: none;
     background-color: var(--locacao);
     padding-top: 10px;
-    padding-left: 15px;
     padding-bottom: 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
     display: flex;
@@ -238,11 +237,11 @@ section#img01 {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 35px;
     transition-duration: .1s;
     position: relative;
     align-items: center;
     justify-content: center;
+    font-size: 3vw;
 }
 
 .nav-link:not(:first-child)::before {
@@ -267,7 +266,6 @@ footer {
     margin-top: 0px;
     margin-bottom: 0px;
     background-color: white;
-    padding-left: 0px;
     display: flex;
     flex-direction: column;
     /* Empilha os elementos verticalmente */
