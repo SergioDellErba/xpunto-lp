@@ -1,10 +1,117 @@
-<html><head>
-    <title>xpunto</title>
-    <meta name="description" content="xpunto">
-    <meta name="keywords" content="xpunto">
-  </head>
-  <frameset rows="100%,*" border="0">
-    <frame src="https://xpunto.netlify.app/" frameborder="0">
-  </frameset>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>XPUNTO</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+
+<body>
+    <main class="main">
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo XPUNTO">
+            <h1>Um Jeito Simples de Melhorar a Vida!</h1>
+        </div>
+
+        <section class="imagens" id="img01">
+            <p>
+                <strong><br><br>Menos papo furado, mais conexões úteis.<br><br>O XPUNTO conecta pessoas com interesses em comum, quebra barreiras de comunicação e gera oportunidades reais.<br><br>Cada contato é um momento de crescimento pessoal e
+                    profissional.<br><br>No XPUNTO, você é único e suas conexões importam.<br><br>Baixe o XPUNTO agora e comece a transformar seus desejos em realidade!<br>
+                    <br><br>
+                    <br><br></strong>
+            </p>
+        </section>
+        <h1><br><br>Atributos</h1>
+
+        <picture>
+            <source media="(max-width: 600px)" srcset="imagens/Atributo2.png" width="350">
+            <img src="imagens/Atributo1.png" alt="Atributo1">
+        </picture>
+
+        <div class="image-group">
+            <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank"
+                class="image-container">
+                <img src="imagens/Android.png" alt="Android">
+            </a>
+
+            <a href="https://apps.apple.com/br/app/xpunto/id6478978511" target="_blank" class="image-container">
+                <img src="imagens/Apple.png" alt="Imagem 3">
+            </a>
+        </div>
+
+        <section><img src="imagens/APP.png" alt="APP XPUNTO" width="350px"></section>
+
+        <div class="video-container">
+            <a href="https://sergiodellerba.github.io/xpunto-video-lp/" target="_blank" rel="noopener noreferrer">
+                <img src="imagens/video.png" alt="video" class="imagem-clicavel" id="videoThumbnail">
+            </a>
+        </div>
+
+        <!-- Substitua a tag <video> por um iframe -->
+        <div id="videoPlayer" style="display:none;">
+            <iframe width=100% height=500 frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+        <div class="fale">
+            <a href="mailto:contato@xpunto.com" target="_blank" class="image-container">
+                <img src="imagens/Fale.png" alt="fale">
+            </a>
+        </div>
+
+        <nav class="main-nav">
+            <div class="nav-group">
+                <a href="https://sergiodellerba.github.io/xpunto-txt-sobre/" target="_blank" rel="noopener noreferrer"
+                    class="nav-link active">Sobre</a>
+                <a href="https://sergiodellerba.github.io/xpunto-txt-faq/" target="_blank" rel="noopener noreferrer"
+                    class="nav-link">FAQ</a>
+                <a href="https://sergiodellerba.github.io/xpunto-dicas-seguranca/" target="_blank"
+                    rel="noopener noreferrer" class="nav-link">Segurança</a>
+                <a href="https://sergiodellerba.github.io/xpunto-txt-termos-uso/" target="_blank"
+                    rel="noopener noreferrer" class="nav-link">Termos Uso</a>
+                <a href="https://sergiodellerba.github.io/xpunto-txt-politica-privacidade/" target="_blank"
+                    rel="noopener noreferrer" class="nav-link">LGPD</a>
+            </div>
+        </nav>
+
+        <footer>
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/xpuntoapp" target="_blank" rel="noopener noreferrer"
+                    class="facebook-icon">
+                    <img src="imagens/Facebook_Logo_Primary.png" alt="Facebook">
+                </a>
+
+                <img src="imagens/logo.png" alt="Logo XPUNTO" class="logo-footer">
+
+                <a href="https://www.instagram.com/xpuntoapp/" target="_blank" rel="noopener noreferrer"
+                    class="instagram-icon">
+                    <img src="imagens/Instagram_Glyph_Gradient.png" alt="Instagram">
+                </a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Aguarde o carregamento completo do documento
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtenha o elemento de imagem pelo ID
+            var videoThumbnail = document.getElementById("videoThumbnail");
+            var videoPlayer = document.getElementById("videoPlayer");
+            var iframe = videoPlayer.querySelector('iframe');
+
+            // Adicione um evento de clique à imagem
+            videoThumbnail.addEventListener('click', function (event) {
+                event.preventDefault(); // Impede o comportamento padrão do link
+                iframe.src = "https://www.youtube.com/embed/foTrvaCMy8o?autoplay=1&rel=0"; // Define o src do iframe com autoplay e sem vídeos relacionados
+                videoPlayer.style.display = 'block'; // Exibe o iframe do vídeo
+            });
+        });
+    </script>
+
+</body>
 
 </html>
