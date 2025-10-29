@@ -319,9 +319,9 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
-    /* 2. Ajustamos o tamanho base de 1rem. Agora, 1rem = 15px */
+    /* AJUSTE AQUI: Aumentamos a base para que 1rem = 16px, igual ao desktop, para telas médias */
     html {
-        font-size: 16px; /* Textos em 'rem' serão 15/16 do tamanho desktop */
+        font-size: 16px; /* Textos em 'rem' serão 16/16 do tamanho desktop (ou seja, não diminuem) */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
         width: 120px;
@@ -341,9 +341,9 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
-    /* 3. Ajustamos o tamanho base de 1rem novamente. Agora, 1rem = 14px */
+    /* AJUSTE AQUI: Aumentamos a base para que 1rem = 15px em smartphones */
     html {
-        font-size: 15px; /* Textos em 'rem' serão 14/16 do tamanho desktop. Garante legibilidade mínima. */
+        font-size: 15px; /* Textos em 'rem' serão 15/16 do tamanho desktop. Garante legibilidade mínima. */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
         width: 100px;
@@ -356,7 +356,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
         gap: 5px;
     }
     .nav-link { /* Ajuste do tamanho do link da navegação para mobile */
-        font-size: 1.1rem; /* ~15.4px em mobile, um bom tamanho para links de navegação */
+        font-size: 1.1rem; /* Aproximadamente 16.5px em mobile, um bom tamanho para links de navegação */
     }
     section#img01 { /* Ajuste para seção de imagem em telas pequenas */
         max-width: 95%;
