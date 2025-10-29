@@ -3,14 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* --- INÍCIO DAS ALTERAÇÕES PARA CONTROLE DE FONTE --- */
+/* --- CONFIGURAÇÃO GLOBAL DE FONT-SIZE COM REM --- */
 
 /* 1. Definimos o tamanho base de 1rem no elemento HTML para desktop */
 html {
-    font-size: 16px; /* 1rem = 16px por padrão (desktop). Todos os tamanhos em 'rem' serão relativos a este. */
+    font-size: 16px; /* Em desktop, 1rem = 16px. Todos os tamanhos em 'rem' serão relativos a este. */
 }
-
-/* --- FIM DAS ALTERAÇÕES PARA CONTROLE DE FONTE --- */
 
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
@@ -24,7 +22,7 @@ html {
     --profissional: #367687;
 }
 
-/* Regra original 'div img' era muito genérica. Ajustei para '.logo img' para ser mais específico */
+/* ESTILOS GERAIS */
 .logo img { 
     width: 200px;
     background-color: white;
@@ -33,7 +31,7 @@ html {
 
 h1,
 h2 {
-    font-size: 1.5rem; /* ~24px em desktop, ~30px em telas médias, ~27px em telas pequenas */
+    font-size: 1.8rem !important; /* Tamanho confortável para títulos */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -43,9 +41,8 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* Regra geral para parágrafos e itens de lista */
 p, li {
-    font-size: 1.25rem; /* ~20px em desktop, ~25px em telas médias, ~22.5px em telas pequenas */
+    font-size: 1.4rem !important; /* Tamanho confortável para parágrafos e listas */
     line-height: 1.6;
 }
 
@@ -122,6 +119,8 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .image-container {
@@ -144,6 +143,8 @@ body {
     width: 75%;
     padding-top: 5%;
     margin: 0 auto;
+    margin-top: 30px; /* Adicionado espaçamento */
+    margin-bottom: 30px; /* Adicionado espaçamento */
 }
 
 .imagem-clicavel {
@@ -169,7 +170,6 @@ body {
     height: auto;
     border-radius: 1px;
 }
-
 
 section.imagens {
     position: relative;
@@ -198,21 +198,21 @@ section#img01 {
     margin: auto;
     text-align: left;
     padding: 15px;
+    margin-top: 30px; /* Adicionado espaçamento para cima */
+    margin-bottom: 30px; /* Adicionado espaçamento para baixo */
 }
 
 /* Regra específica para o texto dentro da seção de imagem */
 section#img01 p { 
-    font-size: 1.25rem; /* Usando 1.25rem aqui, que será ~25px em telas médias e ~22.5px em telas pequenas */
+    font-size: 1.4rem !important; /* Base do texto do artigo */
     line-height: 1.6;
     margin-bottom: 1em;
 }
 
-/* Para garantir a fonte no STRONG dentro da section#img01, que foi nosso ponto problemático */
+/* Para garantir a fonte no STRONG dentro da section#img01 (o texto principal) */
 section#img01 p strong {
-    font-size: 1.4rem; /* Um pouco maior que o parágrafo normal, para o strong. Será ~28px em telas médias e ~25.2px em telas pequenas */
-    /* Removido background-color e color de teste */
+    font-size: 1.6rem !important; /* Deixa o texto principal um pouco maior que o parágrafo normal */
 }
-
 
 .main-nav {
     border-radius: none;
@@ -224,6 +224,7 @@ section#img01 p strong {
     align-items: center;
     justify-content: center;
     justify-items: center;
+    margin-top: 50px; /* Espaçamento antes da navegação */
 }
 
 .nav-group {
@@ -240,7 +241,7 @@ section#img01 p strong {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.125rem; /* ~18px em desktop. ~22.5px em telas médias, ~20.25px em telas pequenas */
+    font-size: 1.2rem !important; /* Tamanho confortável para links de navegação */
     transition-duration: .1s;
     position: relative;
     align-items: center;
@@ -264,13 +265,15 @@ section#img01 p strong {
 footer {
     border-radius: 0px;
     text-align: center;
-    margin-top: 0px;
+    margin-top: 30px; /* Espaçamento antes do footer */
     margin-bottom: 0px;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 20px; /* Padding interno */
+    padding-bottom: 20px; /* Padding interno */
 }
 
 .logo-footer {
@@ -299,7 +302,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
     html {
-        font-size: 40px; /* Base de 1rem = 20px para telas médias */
+        font-size: 22px !important; /* Base de 1rem = 22px para telas médias */
     }
     .image-container img {
         width: 120px;
@@ -319,7 +322,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
     html {
-        font-size: 35px; /* Base de 1rem = 18px para smartphones */
+        font-size: 20px !important; /* Base de 1rem = 20px para smartphones */
     }
     .image-container img {
         width: 100px;
@@ -332,13 +335,13 @@ a:not(.facebook-icon):not(.instagram-icon) {
         gap: 5px;
     }
     .nav-link {
-        font-size: 1.1rem; /* Aproximadamente 19.8px (1.1 * 18px) em mobile */
+        font-size: 1.2rem !important; /* Aproximadamente 24px (1.2 * 20px) em mobile */
     }
     section#img01 {
         max-width: 95%;
         padding: 10px;
     }
-    /* A regra do strong já está mais acima, mais genérica, e agora deve funcionar. */
+    /* A regra para strong já está mais acima, com !important, e herda da nova base rem */
     .social-buttons a {
         margin-left: 10px;
         margin-right: 10px;
