@@ -146,20 +146,15 @@ body {
 .video-container {
     position: relative;
     overflow: hidden;
-    width: 75%;
+    width: 75%; /* Sua div ocupa 75% da largura da página */
     padding-top: 5%;
-    /* REMOVA A LINHA text-align: center; SE ELA ESTIVER AQUI */
+    margin: 0 auto; /* <<< ESTA LINHA CENTRALIZA A DIV '.video-container' NA PÁGINA! */
 }
 
 .video-container a {
-    /* REMOVA QUALQUER display: inline-block; OU display: block; */
-    /* REMOVA QUALQUER max-width; OU margin: 0 auto; QUE TENHAMOS ADICIONADO AQUI */
+    display: block; /* Faz com que o link se comporte como um bloco */
     text-decoration: none; /* Mantém o padrão de link sem sublinhado */
     color: inherit; /* Mantém a cor de texto padrão */
-}
-
-.video-container a {
-    display: block; /* <<< ADICIONE ESTA LINHA PARA O LINK DO VÍDEO */
 }
 
 .imagem-clicavel {
