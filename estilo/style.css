@@ -10,12 +10,6 @@ html {
     font-size: 16px; /* 1rem = 16px por padrão (desktop). Todos os tamanhos em 'rem' serão relativos a este. */
 }
 
-/* TESTE DEFINITIVO: SE ESTE CSS ESTIVER CARREGANDO, O FUNDO DA PÁGINA VAI FICAR AZUL FORTE! */
-body {
-    background-color: #0000FF !important; /* Azulão! */
-}
-/* FIM DO TESTE DEFINITIVO */
-
 /* --- FIM DAS ALTERAÇÕES PARA CONTROLE DE FONTE --- */
 
 :root {
@@ -116,9 +110,26 @@ img {
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
 }
 
-/* A regra body{background: linear-gradient...} no seu CSS original está sendo sobreposta
-   pelo teste de cor azul temporariamente. A cor original será restaurada no próximo passo. */
-/* O max-width: 900px do body pode estar limitando o layout em alguns casos. */
+body {
+    margin: auto;
+    max-width: 900px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    /* Cor de fundo original restaurada */
+    background: linear-gradient(to bottom, #65a99b, #65A99B);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex direction:column;
+    */
+}
 
 .image-group {
     display: flex;
@@ -221,7 +232,7 @@ section#img01 {
 }
 
 section#img01 p { /* Regra específica para o texto dentro da seção de imagem */
-    font-size: 1.25rem; /* Isso será ~20px em desktop, e escalará proporcionalmente em mobile */
+    font-size: 1.25rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     line-height: 1.6; /* Boa prática para legibilidade */
     margin-bottom: 1em; /* Espaçamento entre parágrafos, se houver múltiplos */
 }
@@ -255,7 +266,7 @@ section#img01 p { /* Regra específica para o texto dentro da seção de imagem 
     font-weight: bold;
     /* A principal mudança: substituído o 2.8vw (que ficava minúsculo) por 1.125rem.
        Isso será ~18px em desktop e se adaptará nas telas menores. */
-    font-size: 1.125rem; /* ~18px em desktop. Um bom tamanho para links de navegação. */
+    font-size: 1.125rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     transition-duration: .1s;
     position: relative;
     align-items: center;
@@ -314,9 +325,9 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
-    /* AJUSTE AQUI: Base maior para que 1rem = 18px para telas médias. */
+    /* AJUSTE MAIOR AQUI: Agora 1rem = 18px para telas médias. Isso vai ser bem maior. */
     html {
-        font-size: 18px; /* Texto em 'rem' será 18/16 do tamanho desktop (visivelmente maior) */
+        font-size: 18px !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
         width: 120px;
@@ -335,9 +346,9 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
-    /* AJUSTE AQUI: Base maior para que 1rem = 17px para smartphones. */
+    /* AJUSTE MAIOR AQUI: Agora 1rem = 17px para smartphones. Isso vai ser bem maior. */
     html {
-        font-size: 17px; /* Texto em 'rem' será 17/16 do tamanho desktop. Garante legibilidade mínima. */
+        font-size: 17px !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
         width: 100px;
@@ -350,7 +361,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
         gap: 5px;
     }
     .nav-link { /* Ajuste do tamanho do link da navegação para mobile */
-        font-size: 1.1rem; /* Aproximadamente 18.7px (1.1 * 17px) em mobile, um bom tamanho para links de navegação */
+        font-size: 1.1rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     }
     section#img01 { /* Ajuste para seção de imagem em telas pequenas */
         max-width: 95%;
