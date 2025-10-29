@@ -146,7 +146,7 @@ body {
 .video-container {
     position: relative;
     overflow: hidden;
-    width: 50%;
+    width: 75%;
     /* Ajuste conforme necessário */
     padding-top: 5%;
     /* Proporção para vídeos 16:9 (altura/largura) */
