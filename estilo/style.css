@@ -321,7 +321,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 @media (max-width: 768px) {
     /* 2. Ajustamos o tamanho base de 1rem. Agora, 1rem = 15px */
     html {
-        font-size: 15px; /* Textos em 'rem' serão 15/16 do tamanho desktop */
+        font-size: 16px; /* Textos em 'rem' serão 15/16 do tamanho desktop */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
         width: 120px;
@@ -343,7 +343,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 @media (max-width: 480px) {
     /* 3. Ajustamos o tamanho base de 1rem novamente. Agora, 1rem = 14px */
     html {
-        font-size: 14px; /* Textos em 'rem' serão 14/16 do tamanho desktop. Garante legibilidade mínima. */
+        font-size: 15px; /* Textos em 'rem' serão 14/16 do tamanho desktop. Garante legibilidade mínima. */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
         width: 100px;
