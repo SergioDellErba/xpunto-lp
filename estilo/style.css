@@ -326,7 +326,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 @media (max-width: 768px) {
     /* AJUSTE MAIOR AQUI: Agora 1rem = 20px para telas médias. */
     html {
-        font-size: 20px; /* Texto em 'rem' será 20/16 do tamanho desktop (bem maior) */
+        font-size: 24px; /* Texto em 'rem' será 20/16 do tamanho desktop (bem maior) */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
         width: 120px;
@@ -347,7 +347,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 @media (max-width: 480px) {
     /* AJUSTE MAIOR AQUI: Agora 1rem = 18px para smartphones. */
     html {
-        font-size: 18px; /* Texto em 'rem' será 18/16 do tamanho desktop. Garante legibilidade mínima. */
+        font-size: 22px; /* Texto em 'rem' será 18/16 do tamanho desktop. Garante legibilidade mínima. */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
         width: 100px;
