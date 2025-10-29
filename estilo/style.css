@@ -3,9 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+/* --- INÍCIO DAS ALTERAÇÕES PARA CONTROLE DE FONTE --- */
+
+/* 1. Definimos o tamanho base de 1rem no elemento HTML para desktop */
+html {
+    font-size: 16px; /* 1rem = 16px por padrão (desktop). Todos os tamanhos em 'rem' serão relativos a este. */
+}
+
+/* --- FIM DAS ALTERAÇÕES PARA CONTROLE DE FONTE --- */
+
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
-    --fonte-xpunto2: 'Gothan', Verdana, Arial;
+    --fonte-xpunto2: 'Gothan', Verdana, Arial; /* 'Gothan' é uma fonte comercial, verificar se está disponível ou precisa de fallback adequado */
     --fonte-destaque: 'Bebas Neue', Arial;
     --solirario: #981310;
     --comercial: #65A99B;
@@ -15,7 +24,8 @@
     --profissional: #367687;
 }
 
-div img {
+/* Regra original 'div img' era muito genérica. Ajustei para '.logo img' para ser mais específico */
+.logo img { 
     width: 200px;
     background-color: white;
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
@@ -23,7 +33,9 @@ div img {
 
 h1,
 h2 {
-    font-size: 1.5em;
+    /* Convertido de 1.5em (que era ~24px) para 1.5rem.
+       Agora será 1.5 vezes o font-size do elemento html, mantendo a proporção em diferentes telas. */
+    font-size: 1.5rem;
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -168,17 +180,25 @@ body {
     align-items: center;
 }
 
-div-branca {
+/* A classe 'div-branca' no HTML estava escrita como uma tag (div-branca) e não como uma classe (.div-branca).
+   Se houver um elemento com class="div-branca" no seu HTML, descomente e use o seletor abaixo. */
+/* .div-branca { 
     border-radius: 0px;
     background-color: #183f47;
-}
+} */
 
 .social-buttons a {
     margin-left: 40px;
     margin-right: 40px;
-    width: 30px;
-    height: 59px;
+    /* Remover width e height daqui, pois afetam o link, não a imagem. O tamanho da imagem será definido abaixo. */
 }
+/* Adicionei um seletor específico para as imagens dentro dos links sociais para controlá-las melhor */
+.social-buttons a img {
+    width: 30px; /* Tamanho fixo para ícones sociais */
+    height: auto; /* Mantém a proporção */
+    border-radius: 1px; /* De acordo com a regra mais genérica para imagens */
+}
+
 
 section.imagens {
     position: relative;
@@ -206,7 +226,9 @@ section#img01 {
     max-width: 80%;
     margin: auto;
     text-align: left;
-    font-size: 1.5em;
+    /* Alterado de 1.5em (que era ~24px) para 1.25rem (que será ~20px em desktop).
+       Um bom tamanho para corpo de texto principal, que se ajustará com a base do html. */
+    font-size: 1.25rem;
     padding: 15px;
 }
 
@@ -220,7 +242,6 @@ section#img01 {
     align-items: center;
     justify-content: center;
     justify-items: center;
-    /* Centraliza os itens verticalmente */
 }
 
 .nav-group {
@@ -230,7 +251,6 @@ section#img01 {
     display: flex;
     flex-direction: row;
     gap: 15px;
-    /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
 .nav-link {
@@ -238,12 +258,13 @@ section#img01 {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 30px;
+    /* A principal mudança: substituído o 2.8vw (que ficava minúsculo) por 1.125rem.
+       Isso será ~18px em desktop e se adaptará nas telas menores. */
+    font-size: 1.125rem; /* ~18px em desktop. Um bom tamanho para links de navegação. */
     transition-duration: .1s;
     position: relative;
     align-items: center;
     justify-content: center;
-    font-size: 2.8vw;
 }
 
 .nav-link:not(:first-child)::before {
@@ -260,8 +281,6 @@ section#img01 {
     color: #ffffff;
 }
 
-/* Adicione as regras ao seu arquivo style.css */
-
 footer {
     border-radius: 0px;
     text-align: center;
@@ -270,38 +289,85 @@ footer {
     background-color: white;
     display: flex;
     flex-direction: column;
-    /* Empilha os elementos verticalmente */
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
 .logo-footer {
     max-width: 500px;
     border-radius: 20px;
     margin: 1px;
-    /* Adiciona margem na parte inferior e centraliza o logo */
 }
-
-/* Adicione essas regras ao seu arquivo style.css */
 
 .facebook-icon img,
 .instagram-icon img {
     border-radius: 1px;
-    /* ou o valor desejado para o border-radius */
-    max-width: 150%;
-    /* Garante que a imagem seja responsiva */
+    /* max-width: 150% pode causar problemas. O tamanho dos ícones sociais está agora em .social-buttons a img */
     height: auto;
-    /* Mantém a proporção original da imagem */
     margin-top: 10px;
 }
 
 a:not(.facebook-icon):not(.instagram-icon) {
     /* Estilos para outros ícones que não são do Facebook ou Instagram */
-    /* Se necessário, ajuste conforme desejado */
 }
 
 #myVideo {
     display: none;
 }
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE DE FONTE E AJUSTES DE LAYOUT --- */
+
+/* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
+@media (max-width: 768px) {
+    /* 2. Ajustamos o tamanho base de 1rem. Agora, 1rem = 15px */
+    html {
+        font-size: 15px; /* Textos em 'rem' serão 15/16 do tamanho desktop */
+    }
+    .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
+        width: 120px;
+    }
+    .video-container { /* Ajuste largura do vídeo para telas médias */
+        width: 85%;
+    }
+    .social-buttons a { /* Garante espaçamento em telas menores */
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .logo img { /* Ajusta o tamanho da logo principal em telas médias */
+        width: 180px;
+    }
+    /* h1, h2 e p em section#img01 (e outros elementos com rem) se ajustarão automaticamente */
+}
+
+/* PARA TELAS PEQUENAS (ex: smartphones) */
+@media (max-width: 480px) {
+    /* 3. Ajustamos o tamanho base de 1rem novamente. Agora, 1rem = 14px */
+    html {
+        font-size: 14px; /* Textos em 'rem' serão 14/16 do tamanho desktop. Garante legibilidade mínima. */
+    }
+    .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
+        width: 100px;
+    }
+    .video-container { /* Ajuste largura do vídeo para telas pequenas */
+        width: 95%;
+    }
+    .nav-group { /* Permite quebrar linha para navegação em telas muito pequenas */
+        flex-direction: column;
+        gap: 5px;
+    }
+    .nav-link { /* Ajuste do tamanho do link da navegação para mobile */
+        font-size: 1.1rem; /* ~15.4px em mobile, um bom tamanho para links de navegação */
+    }
+    section#img01 { /* Ajuste para seção de imagem em telas pequenas */
+        max-width: 95%;
+        padding: 10px;
+    }
+    .social-buttons a { /* Espaçamento menor para ícones sociais em telas muito pequenas */
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .logo img { /* Ajusta o tamanho da logo principal em telas pequenas */
+        width: 150px;
+    }
+}
+/* --- FIM DAS MEDIA QUERIES --- */
