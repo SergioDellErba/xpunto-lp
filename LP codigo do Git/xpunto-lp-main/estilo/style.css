@@ -152,6 +152,7 @@ body {
     /* Proporção para vídeos 16:9 (altura/largura) */
     margin: 0 auto;
     /* Centraliza horizontalmente */
+    text-align: center; /* <<< ADICIONE ESTA LINHA AQUI */
 }
 
 .imagem-clicavel {
