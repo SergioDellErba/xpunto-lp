@@ -155,6 +155,10 @@ body {
     text-align: center; /* <<< ADICIONE ESTA LINHA AQUI */
 }
 
+.video-container a { /* <<< ADICIONE ESTE BLOCO TODO AQUI */
+    display: inline-block;
+}
+
 .imagem-clicavel {
     cursor: pointer;
     width: 100%;
