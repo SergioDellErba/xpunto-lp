@@ -33,9 +33,8 @@ html {
 
 h1,
 h2 {
-    /* Convertido de 1.5em (que era ~24px) para 1.5rem.
-       Agora será 1.5 vezes o font-size do elemento html, mantendo a proporção em diferentes telas. */
-    font-size: 1.5rem !important; /* Adicionado !important para este teste */
+    /* FORÇANDO UM TAMANHO ENORME PARA TESTE, APENAS PARA VER SE FUNCIONA */
+    font-size: 3.5rem !important; /* Aproximadamente 56px em desktop, e ainda maior em mobile com nossas regras. */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -47,7 +46,7 @@ h2 {
 
 /* Regra geral para parágrafos e itens de lista, forçando o uso de rem */
 p, li {
-    font-size: 1.25rem !important; /* Usando !important para forçar a aplicação */
+    font-size: 1.75rem !important; /* Usando !important para forçar a aplicação */
     line-height: 1.6;
 }
 
@@ -237,7 +236,7 @@ section#img01 {
 }
 
 section#img01 p { /* Regra específica para o texto dentro da seção de imagem */
-    font-size: 1.25rem !important; /* Mantém esta regra, mas a de PX na media query terá mais prioridade */
+    font-size: 1.75rem !important; /* Mantém esta regra, mas a de PX na media query terá mais prioridade */
     line-height: 1.6; /* Boa prática para legibilidade */
     margin-bottom: 1em; /* Espaçamento entre parágrafos, se houver múltiplos */
 }
@@ -269,8 +268,6 @@ section#img01 p { /* Regra específica para o texto dentro da seção de imagem 
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    /* A principal mudança: substituído o 2.8vw (que ficava minúsculo) por 1.125rem.
-       Isso será ~18px em desktop e se adaptará nas telas menores. */
     font-size: 1.125rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     transition-duration: .1s;
     position: relative;
@@ -370,9 +367,12 @@ a:not(.facebook-icon):not(.instagram-icon) {
         max-width: 95%;
         padding: 10px;
     }
-    section#img01 p { /* TESTE FINAL E DEFINITIVO PARA O PARÁGRAFO PROBLEMA */
-        font-size: 30px !important; /* FORÇA 30px em PIXELS! Se isso não funcionar, o problema não é o CSS. */
-        line-height: 1.6;
+    /* TESTE FINAL ABSOLUTO PARA O TEXTO PRINCIPAL PROBLEMÁTICO */
+    section#img01 p strong { 
+        font-size: 40px !important; /* FORÇA 40px em PIXELS diretamente no strong! */
+        line-height: 1.5 !important;
+        background-color: yellow !important; /* Para garantir que o estilo está sendo aplicado */
+        color: black !important; /* Para ver melhor o texto amarelo */
     }
     .social-buttons a { /* Espaçamento menor para ícones sociais em telas muito pequenas */
         margin-left: 10px;
