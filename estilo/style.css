@@ -3,13 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-/* --- CONFIGURAÇÃO GLOBAL DE FONT-SIZE COM REM --- */
-
-/* 1. Definimos o tamanho base de 1rem no elemento HTML para desktop */
-html {
-    font-size: 16px; /* Em desktop, 1rem = 16px. Todos os tamanhos em 'rem' serão relativos a este. */
-}
-
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
     --fonte-xpunto2: 'Gothan', Verdana, Arial;
@@ -22,17 +15,15 @@ html {
     --profissional: #367687;
 }
 
-/* ESTILOS GERAIS */
-/* A regra 'div img' foi muito genérica. Usaremos '.logo img' para a logo do topo */
-.logo img {
-    width: 200px; /* Largura da logo XPUNTO no topo da página */
+div img {
+    width: 200px;
     background-color: white;
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
 h1,
 h2 {
-    font-size: 2rem !important; /* Tamanho dos títulos "NETWORKING DE QUALIDADE" e "CONEXÕES QUE IMPORTAM!" */
+    font-size: 1.5em;
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -42,12 +33,6 @@ h2 {
     letter-spacing: 1px;
 }
 
-p, li {
-    font-size: 1.5rem !important; /* Tamanho da maioria dos textos do corpo */
-    line-height: 1.6;
-}
-
-/* Regra geral para imagens que pode ser mais específica depois se necessário */
 img {
     border-radius: 20px;
     max-width: 85%;
@@ -61,7 +46,9 @@ img {
 
 .web {
     width: 90.5%;
+    /* Use 100% para ocupar a largura total do contêiner pai */
     height: 140px;
+    /* Altura fixa para a div */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,13 +58,17 @@ img {
 
 .web img {
     max-width: 100%;
+    /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
     max-height: 100%;
+    /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
     border-radius: 10px;
 }
 
 .fale {
     width: 100%;
+    /* Use 100% para ocupar a largura total do contêiner pai */
     height: 200px;
+    /* Altura fixa para a div */
     display: flex;
     margin-top: 30px;
     margin-left: 0px;
@@ -88,14 +79,18 @@ img {
 
 .fale img {
     max-width: 100%;
+    /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
     max-height: 100%;
+    /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
 }
 
 .main {
+    /*max-width: 100%;*/
     text-align: center;
     color: white;
     font-family: var(--fonte-xpunto1);
     min-width: 300px;
+    /*max-width: 600px;*/
     margin: auto;
     padding: auto;
     display: block;
@@ -114,43 +109,50 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex direction:column;
+    */
 }
 
 .image-group {
     display: flex;
     justify-content: space-around;
+    /* Distribui as imagens uniformemente na linha */
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* Permite que as imagens quebrem para a próxima linha se não houver espaço suficiente */
 }
 
-.image-container { /* Este é o link <a> para as lojas de apps */
+.image-container {
+    margin-top: 10px;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    /* CORREÇÕES PARA CLIQUE */
-    display: inline-block; /* Garante que o position e z-index funcionem bem com links */
-    position: relative; /* Essencial para que z-index funcione */
-    z-index: 10 !important; /* Força o elemento a ficar acima de outros */
-    /* FIM CORREÇÕES PARA CLIQUE */
 }
 
 .image-container img {
-    width: 150px; /* Largura das imagens dos botões Android e Apple */
-    max-width: 100%; /* Para garantir que a imagem seja responsiva */
+    max-width: 100%;
+    /* Para garantir que a imagem seja responsiva */
     border-radius: 10px;
+    width: 150px;
+    /* Defina o tamanho desejado */
     height: auto;
+    /* Mantenha a proporção original da imagem */
 }
 
 .video-container {
     position: relative;
     overflow: hidden;
     width: 75%;
+    /* Ajuste conforme necessário */
     padding-top: 5%;
+    /* Proporção para vídeos 16:9 (altura/largura) */
     margin: 0 auto;
-    margin-top: 30px; /* Adicionado espaçamento */
-    margin-bottom: 30px; /* Adicionado espaçamento */
+    /* Centraliza horizontalmente */
 }
 
 .imagem-clicavel {
@@ -166,25 +168,16 @@ body {
     align-items: center;
 }
 
-/* Removemos a definição de 'div-branca' que não está sendo usada no HTML */
-
-.social-buttons a { /* Este é o link <a> para Facebook e Instagram */
-    margin-left: 40px;
-    margin-right: 40px;
-    /* Removido: width: 30px; height: 59px; para o link <a> se ajustar à imagem */
-    /* CORREÇÕES PARA CLIQUE */
-    display: inline-block; /* Garante que o position e z-index funcionem bem com links */
-    position: relative; /* Essencial para que z-index funcione */
-    z-index: 10 !important; /* Força o elemento a ficar acima de outros */
-    /* FIM CORREÇÕES PARA CLIQUE */
+div-branca {
+    border-radius: 0px;
+    background-color: #183f47;
 }
 
-.social-buttons a img {
-    width: 30px; /* Largura dos ícones do Facebook e Instagram no rodapé */
-    height: auto;
-    border-radius: 1px;
-    max-width: 100%; /* Ajuste para evitar que a imagem estoure o <a> */
-    margin-top: 10px;
+.social-buttons a {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 30px;
+    height: 59px;
 }
 
 section.imagens {
@@ -213,21 +206,8 @@ section#img01 {
     max-width: 80%;
     margin: auto;
     text-align: left;
+    font-size: 1.5em;
     padding: 15px;
-    margin-top: 30px; /* Adicionado espaçamento para cima */
-    margin-bottom: 30px; /* Adicionado espaçamento para baixo */
-}
-
-/* Regra específica para o texto dentro da seção de imagem */
-section#img01 p { 
-    font-size: 1.5rem !important; /* Tamanho da maioria do texto do artigo "É inegável: as pessoas de sucesso..." */
-    line-height: 1.6;
-    margin-bottom: 1em;
-}
-
-/* Para garantir a fonte no STRONG dentro da section#img01 (o texto principal em negrito) */
-section#img01 p strong {
-    font-size: 1.8rem !important; /* Tamanho do texto em negrito dentro do artigo "É inegável: as pessoas de sucesso..." */
 }
 
 .main-nav {
@@ -240,7 +220,7 @@ section#img01 p strong {
     align-items: center;
     justify-content: center;
     justify-items: center;
-    margin-top: 50px; /* Espaçamento antes da navegação */
+    /* Centraliza os itens verticalmente */
 }
 
 .nav-group {
@@ -250,18 +230,20 @@ section#img01 p strong {
     display: flex;
     flex-direction: row;
     gap: 15px;
+    /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
 }
 
 .nav-link {
-    font-size: 1.3rem !important; /* Tamanho dos links do menu "Sobre", "FAQ", etc. */
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-size: 30px;
     transition-duration: .1s;
     position: relative;
     align-items: center;
     justify-content: center;
+    font-size: 2.8vw;
 }
 
 .nav-link:not(:first-child)::before {
@@ -278,97 +260,48 @@ section#img01 p strong {
     color: #ffffff;
 }
 
+/* Adicione as regras ao seu arquivo style.css */
+
 footer {
     border-radius: 0px;
     text-align: center;
-    margin-top: 30px; /* Espaçamento antes do footer */
+    margin-top: 0px;
     margin-bottom: 0px;
     background-color: white;
     display: flex;
     flex-direction: column;
+    /* Empilha os elementos verticalmente */
     justify-content: center;
+    /* Centraliza horizontalmente */
     align-items: center;
-    padding-top: 20px; /* Padding interno */
-    padding-bottom: 20px; /* Padding interno */
+    /* Centraliza verticalmente */
 }
 
 .logo-footer {
-    max-width: 500px; /* Largura máxima da logo XPUNTO no rodapé */
+    max-width: 500px;
     border-radius: 20px;
     margin: 1px;
-    /* CORREÇÕES PARA CLIQUE */
-    position: relative; /* Essencial para que z-index funcione */
-    z-index: 1 !important; /* Coloca a logo um pouco abaixo dos ícones sociais, se necessário */
-    /* FIM CORREÇÕES PARA CLIQUE */
+    /* Adiciona margem na parte inferior e centraliza o logo */
 }
 
-/* A regra '.facebook-icon img, .instagram-icon img' deve estar acima de '.social-buttons a img' para ser mais geral */
-/* A regra específica '.social-buttons a img' já está definindo o width */
+/* Adicione essas regras ao seu arquivo style.css */
+
+.facebook-icon img,
+.instagram-icon img {
+    border-radius: 1px;
+    /* ou o valor desejado para o border-radius */
+    max-width: 150%;
+    /* Garante que a imagem seja responsiva */
+    height: auto;
+    /* Mantém a proporção original da imagem */
+    margin-top: 10px;
+}
+
+a:not(.facebook-icon):not(.instagram-icon) {
+    /* Estilos para outros ícones que não são do Facebook ou Instagram */
+    /* Se necessário, ajuste conforme desejado */
+}
 
 #myVideo {
     display: none;
 }
-
-/* --- MEDIA QUERIES PARA RESPONSIVIDADE DE FONTE E AJUSTES DE LAYOUT --- */
-
-/* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
-@media (max-width: 768px) {
-    html {
-        font-size: 24px !important; /* Base de 1rem = 24px em tablets */
-    }
-    .image-container { /* Garantir clique em tablets */
-        z-index: 10 !important;
-    }
-    .image-container img {
-        width: 120px; /* Largura das imagens dos botões Android e Apple em tablets */
-    }
-    .video-container {
-        width: 85%;
-    }
-    .social-buttons a { /* Garantir clique em tablets */
-        z-index: 10 !important;
-    }
-    .social-buttons a img {
-        width: 40px; /* Aumenta um pouco os ícones sociais em tablets para facilitar o clique */
-    }
-    .logo img {
-        width: 180px; /* Largura da logo XPUNTO no topo da página em tablets */
-    }
-}
-
-/* PARA TELAS PEQUENAS (ex: smartphones) */
-@media (max-width: 480px) {
-    html {
-        font-size: 22px !important; /* Base de 1rem = 22px em smartphones */
-    }
-    .image-container { /* Garantir clique em smartphones */
-        z-index: 10 !important;
-    }
-    .image-container img {
-        width: 100px; /* Largura das imagens dos botões Android e Apple em smartphones */
-    }
-    .video-container {
-        width: 95%;
-    }
-    .nav-group {
-        flex-direction: column;
-        gap: 5px;
-    }
-    .nav-link {
-        font-size: 1.3rem !important; /* Tamanho dos links do menu "Sobre", "FAQ", etc. em smartphones */
-    }
-    section#img01 {
-        max-width: 95%;
-        padding: 10px;
-    }
-    .social-buttons a { /* Garantir clique em smartphones */
-        z-index: 10 !important;
-    }
-    .social-buttons a img {
-        width: 35px; /* Aumenta um pouco os ícones sociais em smartphones para facilitar o clique */
-    }
-    .logo img {
-        width: 150px; /* Largura da logo XPUNTO no topo da página em smartphones */
-    }
-}
-/* --- FIM DAS MEDIA QUERIES --- */
