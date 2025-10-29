@@ -35,7 +35,7 @@ h1,
 h2 {
     /* Convertido de 1.5em (que era ~24px) para 1.5rem.
        Agora será 1.5 vezes o font-size do elemento html, mantendo a proporção em diferentes telas. */
-    font-size: 1.5rem;
+    font-size: 1.5rem !important; /* Adicionado !important para este teste */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -43,6 +43,12 @@ h2 {
     margin-bottom: 50px;
     text-shadow: 2px 2px 0px rgb(91, 91, 91);
     letter-spacing: 1px;
+}
+
+/* Regra geral para parágrafos e itens de lista, forçando o uso de rem */
+p, li {
+    font-size: 1.25rem !important; /* Usando !important para forçar a aplicação */
+    line-height: 1.6;
 }
 
 img {
@@ -230,8 +236,9 @@ section#img01 {
     /* Removido font-size direto daqui, será controlado pelo seletor 'section#img01 p' */
 }
 
+/* Com a regra p, li acima, esta já não precisaria de !important, mas vamos manter por segurança no teste */
 section#img01 p { /* Regra específica para o texto dentro da seção de imagem */
-    font-size: 1.25rem; /* Isso será ~20px em desktop, e escalará proporcionalmente em mobile */
+    font-size: 1.25rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     line-height: 1.6; /* Boa prática para legibilidade */
     margin-bottom: 1em; /* Espaçamento entre parágrafos, se houver múltiplos */
 }
@@ -265,7 +272,7 @@ section#img01 p { /* Regra específica para o texto dentro da seção de imagem 
     font-weight: bold;
     /* A principal mudança: substituído o 2.8vw (que ficava minúsculo) por 1.125rem.
        Isso será ~18px em desktop e se adaptará nas telas menores. */
-    font-size: 1.125rem; /* ~18px em desktop. Um bom tamanho para links de navegação. */
+    font-size: 1.125rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
     transition-duration: .1s;
     position: relative;
     align-items: center;
@@ -324,9 +331,9 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
-    /* AJUSTE MAIOR AQUI: Agora 1rem = 20px para telas médias. */
+    /* AJUSTE MAIOR AQUI: Agora 1rem = 24px para telas médias. */
     html {
-        font-size: 60px; /* Texto em 'rem' será 20/16 do tamanho desktop (bem maior) */
+        font-size: 24px !important; /* FORÇANDO base de rem para 24px */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
         width: 120px;
@@ -345,9 +352,9 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
-    /* AJUSTE MAIOR AQUI: Agora 1rem = 18px para smartphones. */
+    /* AJUSTE MAIOR AQUI: Agora 1rem = 22px para smartphones. */
     html {
-        font-size: 40px; /* Texto em 'rem' será 18/16 do tamanho desktop. Garante legibilidade mínima. */
+        font-size: 22px !important; /* FORÇANDO base de rem para 22px */
     }
     .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
         width: 100px;
@@ -360,7 +367,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
         gap: 5px;
     }
     .nav-link { /* Ajuste do tamanho do link da navegação para mobile */
-        font-size: 1.1rem; /* Aproximadamente 19.8px (1.1 * 18px) em mobile, um bom tamanho para links de navegação */
+        font-size: 1.1rem !important; /* Aproximadamente 24.2px (1.1 * 22px) em mobile, um bom tamanho para links de navegação */
     }
     section#img01 { /* Ajuste para seção de imagem em telas pequenas */
         max-width: 95%;
