@@ -158,6 +158,10 @@ body {
     color: inherit; /* Mantém a cor de texto padrão */
 }
 
+.video-container a {
+    display: block; /* <<< ADICIONE ESTA LINHA PARA O LINK DO VÍDEO */
+}
+
 .imagem-clicavel {
     cursor: pointer;
     width: 80%; /* Define que a imagem ocupe 80% da largura do seu PARENT (o link 'a') */
