@@ -12,7 +12,7 @@ html {
 
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
-    --fonte-xpunto2: 'Gothan', Verdana, Arial; /* 'Gothan' é uma fonte comercial, verificar se está disponível ou precisa de fallback adequado */
+    --fonte-xpunto2: 'Gothan', Verdana, Arial;
     --fonte-destaque: 'Bebas Neue', Arial;
     --solirario: #981310;
     --comercial: #65A99B;
@@ -23,7 +23,8 @@ html {
 }
 
 /* ESTILOS GERAIS */
-.logo img { 
+/* A regra 'div img' foi muito genérica. Usaremos '.logo img' para a logo do topo */
+.logo img {
     width: 200px; /* Largura da logo XPUNTO no topo da página */
     background-color: white;
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
@@ -46,6 +47,7 @@ p, li {
     line-height: 1.6;
 }
 
+/* Regra geral para imagens que pode ser mais específica depois se necessário */
 img {
     border-radius: 20px;
     max-width: 85%;
@@ -123,19 +125,20 @@ body {
     margin-bottom: 20px;
 }
 
-.image-container {
-    width: 150px; /* Mantém a largura */
+.image-container { /* Este é o link <a> para as lojas de apps */
     text-align: center;
     text-decoration: none;
     color: inherit;
     /* CORREÇÕES PARA CLIQUE */
+    display: inline-block; /* Garante que o position e z-index funcionem bem com links */
     position: relative; /* Essencial para que z-index funcione */
     z-index: 10 !important; /* Força o elemento a ficar acima de outros */
     /* FIM CORREÇÕES PARA CLIQUE */
 }
 
 .image-container img {
-    max-width: 100%; /* Ajustado para 100% para se adaptar à largura do .image-container */
+    width: 150px; /* Largura das imagens dos botões Android e Apple */
+    max-width: 100%; /* Para garantir que a imagem seja responsiva */
     border-radius: 10px;
     height: auto;
 }
@@ -163,10 +166,14 @@ body {
     align-items: center;
 }
 
-.social-buttons a {
+/* Removemos a definição de 'div-branca' que não está sendo usada no HTML */
+
+.social-buttons a { /* Este é o link <a> para Facebook e Instagram */
     margin-left: 40px;
     margin-right: 40px;
+    /* Removido: width: 30px; height: 59px; para o link <a> se ajustar à imagem */
     /* CORREÇÕES PARA CLIQUE */
+    display: inline-block; /* Garante que o position e z-index funcionem bem com links */
     position: relative; /* Essencial para que z-index funcione */
     z-index: 10 !important; /* Força o elemento a ficar acima de outros */
     /* FIM CORREÇÕES PARA CLIQUE */
@@ -176,6 +183,8 @@ body {
     width: 30px; /* Largura dos ícones do Facebook e Instagram no rodapé */
     height: auto;
     border-radius: 1px;
+    max-width: 100%; /* Ajuste para evitar que a imagem estoure o <a> */
+    margin-top: 10px;
 }
 
 section.imagens {
@@ -293,20 +302,8 @@ footer {
     /* FIM CORREÇÕES PARA CLIQUE */
 }
 
-.facebook-icon img,
-.instagram-icon img {
-    height: auto;
-    margin-top: 10px;
-    border-radius: 1px; /* Esta propriedade é mais global para imagens, mas afeta aqui também */
-}
-
-.social-buttons a img {
-    width: 30px; /* Largura dos ícones do Facebook e Instagram no rodapé (esta é mais específica) */
-}
-
-a:not(.facebook-icon):not(.instagram-icon) {
-    /* Estilos para outros ícones que não são do Facebook ou Instagram */
-}
+/* A regra '.facebook-icon img, .instagram-icon img' deve estar acima de '.social-buttons a img' para ser mais geral */
+/* A regra específica '.social-buttons a img' já está definindo o width */
 
 #myVideo {
     display: none;
@@ -319,7 +316,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
     html {
         font-size: 24px !important; /* Base de 1rem = 24px em tablets */
     }
-    .image-container { /* Adicionado para garantir o clique em tablets */
+    .image-container { /* Garantir clique em tablets */
         z-index: 10 !important;
     }
     .image-container img {
@@ -328,7 +325,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
     .video-container {
         width: 85%;
     }
-    .social-buttons a { /* Adicionado para garantir o clique em tablets */
+    .social-buttons a { /* Garantir clique em tablets */
         z-index: 10 !important;
     }
     .social-buttons a img {
@@ -344,7 +341,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
     html {
         font-size: 22px !important; /* Base de 1rem = 22px em smartphones */
     }
-    .image-container { /* Adicionado para garantir o clique em smartphones */
+    .image-container { /* Garantir clique em smartphones */
         z-index: 10 !important;
     }
     .image-container img {
@@ -364,7 +361,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
         max-width: 95%;
         padding: 10px;
     }
-    .social-buttons a { /* Adicionado para garantir o clique em smartphones */
+    .social-buttons a { /* Garantir clique em smartphones */
         z-index: 10 !important;
     }
     .social-buttons a img {
