@@ -24,14 +24,14 @@ html {
 
 /* ESTILOS GERAIS */
 .logo img { 
-    width: 200px;
+    width: 200px; /* Largura da logo XPUNTO no topo da página */
     background-color: white;
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
 h1,
 h2 {
-    font-size: 2rem !important; /* Aumentado para ~32px em desktop. Em mobile será ainda maior com a base rem ajustada. */
+    font-size: 2rem !important; /* Tamanho dos títulos "NETWORKING DE QUALIDADE" e "CONEXÕES QUE IMPORTAM!" */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -42,7 +42,7 @@ h2 {
 }
 
 p, li {
-    font-size: 1.5rem !important; /* Aumentado para ~24px em desktop. Em mobile será ainda maior com a base rem ajustada. */
+    font-size: 1.5rem !important; /* Tamanho da maioria dos textos do corpo */
     line-height: 1.6;
 }
 
@@ -124,16 +124,19 @@ body {
 }
 
 .image-container {
-    margin-top: 10px;
+    width: 150px; /* Mantém a largura */
     text-align: center;
     text-decoration: none;
     color: inherit;
+    /* CORREÇÕES PARA CLIQUE */
+    position: relative; /* Essencial para que z-index funcione */
+    z-index: 10 !important; /* Força o elemento a ficar acima de outros */
+    /* FIM CORREÇÕES PARA CLIQUE */
 }
 
 .image-container img {
-    max-width: 100%;
+    max-width: 100%; /* Ajustado para 100% para se adaptar à largura do .image-container */
     border-radius: 10px;
-    width: 150px;
     height: auto;
 }
 
@@ -163,10 +166,14 @@ body {
 .social-buttons a {
     margin-left: 40px;
     margin-right: 40px;
+    /* CORREÇÕES PARA CLIQUE */
+    position: relative; /* Essencial para que z-index funcione */
+    z-index: 10 !important; /* Força o elemento a ficar acima de outros */
+    /* FIM CORREÇÕES PARA CLIQUE */
 }
 
 .social-buttons a img {
-    width: 30px;
+    width: 30px; /* Largura dos ícones do Facebook e Instagram no rodapé */
     height: auto;
     border-radius: 1px;
 }
@@ -204,14 +211,14 @@ section#img01 {
 
 /* Regra específica para o texto dentro da seção de imagem */
 section#img01 p { 
-    font-size: 1.5rem !important; /* Base do texto do artigo, ~24px em desktop */
+    font-size: 1.5rem !important; /* Tamanho da maioria do texto do artigo "É inegável: as pessoas de sucesso..." */
     line-height: 1.6;
     margin-bottom: 1em;
 }
 
-/* Para garantir a fonte no STRONG dentro da section#img01 (o texto principal) */
+/* Para garantir a fonte no STRONG dentro da section#img01 (o texto principal em negrito) */
 section#img01 p strong {
-    font-size: 1.8rem !important; /* Deixa o texto principal um pouco maior, ~28.8px em desktop */
+    font-size: 1.8rem !important; /* Tamanho do texto em negrito dentro do artigo "É inegável: as pessoas de sucesso..." */
 }
 
 .main-nav {
@@ -237,11 +244,11 @@ section#img01 p strong {
 }
 
 .nav-link {
+    font-size: 1.3rem !important; /* Tamanho dos links do menu "Sobre", "FAQ", etc. */
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.3rem !important; /* Aumentado para ~20.8px em desktop. Em mobile será ainda maior. */
     transition-duration: .1s;
     position: relative;
     align-items: center;
@@ -277,16 +284,24 @@ footer {
 }
 
 .logo-footer {
-    max-width: 500px;
+    max-width: 500px; /* Largura máxima da logo XPUNTO no rodapé */
     border-radius: 20px;
     margin: 1px;
+    /* CORREÇÕES PARA CLIQUE */
+    position: relative; /* Essencial para que z-index funcione */
+    z-index: 1 !important; /* Coloca a logo um pouco abaixo dos ícones sociais, se necessário */
+    /* FIM CORREÇÕES PARA CLIQUE */
 }
 
 .facebook-icon img,
 .instagram-icon img {
-    border-radius: 1px;
     height: auto;
     margin-top: 10px;
+    border-radius: 1px; /* Esta propriedade é mais global para imagens, mas afeta aqui também */
+}
+
+.social-buttons a img {
+    width: 30px; /* Largura dos ícones do Facebook e Instagram no rodapé (esta é mais específica) */
 }
 
 a:not(.facebook-icon):not(.instagram-icon) {
@@ -302,30 +317,38 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
     html {
-        font-size: 24px !important; /* Base de 1rem = 24px para telas médias (aumentado de 22px) */
+        font-size: 24px !important; /* Base de 1rem = 24px em tablets */
+    }
+    .image-container { /* Adicionado para garantir o clique em tablets */
+        z-index: 10 !important;
     }
     .image-container img {
-        width: 120px;
+        width: 120px; /* Largura das imagens dos botões Android e Apple em tablets */
     }
     .video-container {
         width: 85%;
     }
-    .social-buttons a {
-        margin-left: 20px;
-        margin-right: 20px;
+    .social-buttons a { /* Adicionado para garantir o clique em tablets */
+        z-index: 10 !important;
+    }
+    .social-buttons a img {
+        width: 40px; /* Aumenta um pouco os ícones sociais em tablets para facilitar o clique */
     }
     .logo img {
-        width: 180px;
+        width: 180px; /* Largura da logo XPUNTO no topo da página em tablets */
     }
 }
 
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
     html {
-        font-size: 22px !important; /* Base de 1rem = 22px para smartphones (aumentado de 20px) */
+        font-size: 22px !important; /* Base de 1rem = 22px em smartphones */
+    }
+    .image-container { /* Adicionado para garantir o clique em smartphones */
+        z-index: 10 !important;
     }
     .image-container img {
-        width: 100px;
+        width: 100px; /* Largura das imagens dos botões Android e Apple em smartphones */
     }
     .video-container {
         width: 95%;
@@ -335,19 +358,20 @@ a:not(.facebook-icon):not(.instagram-icon) {
         gap: 5px;
     }
     .nav-link {
-        font-size: 1.3rem !important; /* Agora ~28.6px (1.3 * 22px) em mobile */
+        font-size: 1.3rem !important; /* Tamanho dos links do menu "Sobre", "FAQ", etc. em smartphones */
     }
     section#img01 {
         max-width: 95%;
         padding: 10px;
     }
-    /* As regras para p e strong já estão com !important e herdam da nova base rem de 22px */
-    .social-buttons a {
-        margin-left: 10px;
-        margin-right: 10px;
+    .social-buttons a { /* Adicionado para garantir o clique em smartphones */
+        z-index: 10 !important;
+    }
+    .social-buttons a img {
+        width: 35px; /* Aumenta um pouco os ícones sociais em smartphones para facilitar o clique */
     }
     .logo img {
-        width: 150px;
+        width: 150px; /* Largura da logo XPUNTO no topo da página em smartphones */
     }
 }
 /* --- FIM DAS MEDIA QUERIES --- */
