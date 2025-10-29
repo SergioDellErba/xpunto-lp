@@ -33,8 +33,7 @@ html {
 
 h1,
 h2 {
-    /* FORÇANDO UM TAMANHO ENORME PARA TESTE, APENAS PARA VER SE FUNCIONA */
-    font-size: 3.5rem !important; /* Aproximadamente 56px em desktop, e ainda maior em mobile com nossas regras. */
+    font-size: 1.5rem; /* ~24px em desktop, ~30px em telas médias, ~27px em telas pequenas */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -44,9 +43,9 @@ h2 {
     letter-spacing: 1px;
 }
 
-/* Regra geral para parágrafos e itens de lista, forçando o uso de rem */
+/* Regra geral para parágrafos e itens de lista */
 p, li {
-    font-size: 1.75rem !important; /* Usando !important para forçar a aplicação */
+    font-size: 1.25rem; /* ~20px em desktop, ~25px em telas médias, ~22.5px em telas pequenas */
     line-height: 1.6;
 }
 
@@ -63,9 +62,7 @@ img {
 
 .web {
     width: 90.5%;
-    /* Use 100% para ocupar a largura total do contêiner pai */
     height: 140px;
-    /* Altura fixa para a div */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,17 +72,13 @@ img {
 
 .web img {
     max-width: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
     max-height: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
     border-radius: 10px;
 }
 
 .fale {
     width: 100%;
-    /* Use 100% para ocupar a largura total do contêiner pai */
     height: 200px;
-    /* Altura fixa para a div */
     display: flex;
     margin-top: 30px;
     margin-left: 0px;
@@ -96,18 +89,14 @@ img {
 
 .fale img {
     max-width: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
     max-height: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
 }
 
 .main {
-    /*max-width: 100%;*/
     text-align: center;
     color: white;
     font-family: var(--fonte-xpunto1);
     min-width: 300px;
-    /*max-width: 600px;*/
     margin: auto;
     padding: auto;
     display: block;
@@ -126,22 +115,13 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /*
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    flex direction:column;
-    */
 }
 
 .image-group {
     display: flex;
     justify-content: space-around;
-    /* Distribui as imagens uniformemente na linha */
     align-items: center;
     flex-wrap: wrap;
-    /* Permite que as imagens quebrem para a próxima linha se não houver espaço suficiente */
 }
 
 .image-container {
@@ -153,23 +133,17 @@ body {
 
 .image-container img {
     max-width: 100%;
-    /* Para garantir que a imagem seja responsiva */
     border-radius: 10px;
     width: 150px;
-    /* Defina o tamanho desejado */
     height: auto;
-    /* Mantenha a proporção original da imagem */
 }
 
 .video-container {
     position: relative;
     overflow: hidden;
     width: 75%;
-    /* Ajuste conforme necessário */
     padding-top: 5%;
-    /* Proporção para vídeos 16:9 (altura/largura) */
     margin: 0 auto;
-    /* Centraliza horizontalmente */
 }
 
 .imagem-clicavel {
@@ -185,23 +159,15 @@ body {
     align-items: center;
 }
 
-/* A classe 'div-branca' no HTML estava escrita como uma tag (div-branca) e não como uma classe (.div-branca).
-   Se houver um elemento com class="div-branca" no seu HTML, descomente e use o seletor abaixo. */
-/* .div-branca { 
-    border-radius: 0px;
-    background-color: #183f47;
-} */
-
 .social-buttons a {
     margin-left: 40px;
     margin-right: 40px;
-    /* Remover width e height daqui, pois afetam o link, não a imagem. O tamanho da imagem será definido abaixo. */
 }
-/* Adicionei um seletor específico para as imagens dentro dos links sociais para controlá-las melhor */
+
 .social-buttons a img {
-    width: 30px; /* Tamanho fixo para ícones sociais */
-    height: auto; /* Mantém a proporção */
-    border-radius: 1px; /* De acordo com a regra mais genérica para imagens */
+    width: 30px;
+    height: auto;
+    border-radius: 1px;
 }
 
 
@@ -232,13 +198,19 @@ section#img01 {
     margin: auto;
     text-align: left;
     padding: 15px;
-    /* Removido font-size direto daqui, será controlado pelo seletor 'section#img01 p' */
 }
 
-section#img01 p { /* Regra específica para o texto dentro da seção de imagem */
-    font-size: 1.75rem !important; /* Mantém esta regra, mas a de PX na media query terá mais prioridade */
-    line-height: 1.6; /* Boa prática para legibilidade */
-    margin-bottom: 1em; /* Espaçamento entre parágrafos, se houver múltiplos */
+/* Regra específica para o texto dentro da seção de imagem */
+section#img01 p { 
+    font-size: 1.25rem; /* Usando 1.25rem aqui, que será ~25px em telas médias e ~22.5px em telas pequenas */
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+/* Para garantir a fonte no STRONG dentro da section#img01, que foi nosso ponto problemático */
+section#img01 p strong {
+    font-size: 1.4rem; /* Um pouco maior que o parágrafo normal, para o strong. Será ~28px em telas médias e ~25.2px em telas pequenas */
+    /* Removido background-color e color de teste */
 }
 
 
@@ -268,7 +240,7 @@ section#img01 p { /* Regra específica para o texto dentro da seção de imagem 
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.125rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
+    font-size: 1.125rem; /* ~18px em desktop. ~22.5px em telas médias, ~20.25px em telas pequenas */
     transition-duration: .1s;
     position: relative;
     align-items: center;
@@ -310,7 +282,6 @@ footer {
 .facebook-icon img,
 .instagram-icon img {
     border-radius: 1px;
-    /* max-width: 150% pode causar problemas. O tamanho dos ícones sociais está agora em .social-buttons a img */
     height: auto;
     margin-top: 10px;
 }
@@ -328,19 +299,19 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
     html {
-        font-size: 24px !important; /* FORÇANDO base de rem para 24px */
+        font-size: 20px; /* Base de 1rem = 20px para telas médias */
     }
-    .image-container img { /* Ajuste o tamanho da imagem dos apps para telas médias */
+    .image-container img {
         width: 120px;
     }
-    .video-container { /* Ajuste largura do vídeo para telas médias */
+    .video-container {
         width: 85%;
     }
-    .social-buttons a { /* Garante espaçamento em telas menores */
+    .social-buttons a {
         margin-left: 20px;
         margin-right: 20px;
     }
-    .logo img { /* Ajusta o tamanho da logo principal em telas médias */
+    .logo img {
         width: 180px;
     }
 }
@@ -348,37 +319,31 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
     html {
-        font-size: 22px !important; /* FORÇANDO base de rem para 22px */
+        font-size: 18px; /* Base de 1rem = 18px para smartphones */
     }
-    .image-container img { /* Ajuste o tamanho da imagem dos apps para telas pequenas */
+    .image-container img {
         width: 100px;
     }
-    .video-container { /* Ajuste largura do vídeo para telas pequenas */
+    .video-container {
         width: 95%;
     }
-    .nav-group { /* Permite quebrar linha para navegação em telas muito pequenas */
+    .nav-group {
         flex-direction: column;
         gap: 5px;
     }
-    .nav-link { /* Ajuste do tamanho do link da navegação para mobile */
-        font-size: 1.1rem !important; /* Aproximadamente 24.2px (1.1 * 22px) em mobile, um bom tamanho para links de navegação */
+    .nav-link {
+        font-size: 1.1rem; /* Aproximadamente 19.8px (1.1 * 18px) em mobile */
     }
-    section#img01 { /* Ajuste para seção de imagem em telas pequenas */
+    section#img01 {
         max-width: 95%;
         padding: 10px;
     }
-    /* TESTE FINAL ABSOLUTO PARA O TEXTO PRINCIPAL PROBLEMÁTICO */
-    section#img01 p strong { 
-        font-size: 40px !important; /* FORÇA 40px em PIXELS diretamente no strong! */
-        line-height: 1.5 !important;
-        background-color: yellow !important; /* Para garantir que o estilo está sendo aplicado */
-        color: black !important; /* Para ver melhor o texto amarelo */
-    }
-    .social-buttons a { /* Espaçamento menor para ícones sociais em telas muito pequenas */
+    /* A regra do strong já está mais acima, mais genérica, e agora deve funcionar. */
+    .social-buttons a {
         margin-left: 10px;
         margin-right: 10px;
     }
-    .logo img { /* Ajusta o tamanho da logo principal em telas pequenas */
+    .logo img {
         width: 150px;
     }
 }
