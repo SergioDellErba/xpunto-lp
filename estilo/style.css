@@ -10,6 +10,12 @@ html {
     font-size: 16px; /* 1rem = 16px por padrão (desktop). Todos os tamanhos em 'rem' serão relativos a este. */
 }
 
+/* TESTE DEFINITIVO: SE ESTE CSS ESTIVER CARREGANDO, O FUNDO DA PÁGINA VAI FICAR AZUL FORTE! */
+body {
+    background-color: #0000FF !important; /* Azulão! */
+}
+/* FIM DO TESTE DEFINITIVO */
+
 /* --- FIM DAS ALTERAÇÕES PARA CONTROLE DE FONTE --- */
 
 :root {
@@ -110,25 +116,9 @@ img {
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
 }
 
-body {
-    margin: auto;
-    max-width: 900px;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to bottom, #65a99b, #65A99B);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /*
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    flex direction:column;
-    */
-}
+/* A regra body{background: linear-gradient...} no seu CSS original está sendo sobreposta
+   pelo teste de cor azul temporariamente. A cor original será restaurada no próximo passo. */
+/* O max-width: 900px do body pode estar limitando o layout em alguns casos. */
 
 .image-group {
     display: flex;
@@ -226,11 +216,16 @@ section#img01 {
     max-width: 80%;
     margin: auto;
     text-align: left;
-    /* Alterado de 1.5em (que era ~24px) para 1.25rem (que será ~20px em desktop).
-       Um bom tamanho para corpo de texto principal, que se ajustará com a base do html. */
-    font-size: 1.25rem;
     padding: 15px;
+    /* Removido font-size direto daqui, será controlado pelo seletor 'section#img01 p' */
 }
+
+section#img01 p { /* Regra específica para o texto dentro da seção de imagem */
+    font-size: 1.25rem; /* Isso será ~20px em desktop, e escalará proporcionalmente em mobile */
+    line-height: 1.6; /* Boa prática para legibilidade */
+    margin-bottom: 1em; /* Espaçamento entre parágrafos, se houver múltiplos */
+}
+
 
 .main-nav {
     border-radius: none;
@@ -319,7 +314,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
-    /* AJUSTE MAIOR AQUI: Agora 1rem = 18px para telas médias. Isso vai ser bem maior. */
+    /* AJUSTE AQUI: Base maior para que 1rem = 18px para telas médias. */
     html {
         font-size: 18px; /* Texto em 'rem' será 18/16 do tamanho desktop (visivelmente maior) */
     }
@@ -340,7 +335,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
-    /* AJUSTE MAIOR AQUI: Agora 1rem = 17px para smartphones. Isso vai ser bem maior. */
+    /* AJUSTE AQUI: Base maior para que 1rem = 17px para smartphones. */
     html {
         font-size: 17px; /* Texto em 'rem' será 17/16 do tamanho desktop. Garante legibilidade mínima. */
     }
