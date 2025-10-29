@@ -236,9 +236,8 @@ section#img01 {
     /* Removido font-size direto daqui, será controlado pelo seletor 'section#img01 p' */
 }
 
-/* Com a regra p, li acima, esta já não precisaria de !important, mas vamos manter por segurança no teste */
 section#img01 p { /* Regra específica para o texto dentro da seção de imagem */
-    font-size: 1.25rem !important; /* Adicionado !important para forçar a aplicação DURANTE ESTE TESTE */
+    font-size: 1.25rem !important; /* Mantém esta regra, mas a de PX na media query terá mais prioridade */
     line-height: 1.6; /* Boa prática para legibilidade */
     margin-bottom: 1em; /* Espaçamento entre parágrafos, se houver múltiplos */
 }
@@ -331,7 +330,6 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
-    /* AJUSTE MAIOR AQUI: Agora 1rem = 24px para telas médias. */
     html {
         font-size: 24px !important; /* FORÇANDO base de rem para 24px */
     }
@@ -352,7 +350,6 @@ a:not(.facebook-icon):not(.instagram-icon) {
 
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
-    /* AJUSTE MAIOR AQUI: Agora 1rem = 22px para smartphones. */
     html {
         font-size: 22px !important; /* FORÇANDO base de rem para 22px */
     }
@@ -372,6 +369,10 @@ a:not(.facebook-icon):not(.instagram-icon) {
     section#img01 { /* Ajuste para seção de imagem em telas pequenas */
         max-width: 95%;
         padding: 10px;
+    }
+    section#img01 p { /* TESTE FINAL E DEFINITIVO PARA O PARÁGRAFO PROBLEMA */
+        font-size: 30px !important; /* FORÇA 30px em PIXELS! Se isso não funcionar, o problema não é o CSS. */
+        line-height: 1.6;
     }
     .social-buttons a { /* Espaçamento menor para ícones sociais em telas muito pequenas */
         margin-left: 10px;
