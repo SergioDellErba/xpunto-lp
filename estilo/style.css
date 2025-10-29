@@ -299,7 +299,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS MÉDIAS (ex: tablets em modo retrato e paisagem) */
 @media (max-width: 768px) {
     html {
-        font-size: 20px; /* Base de 1rem = 20px para telas médias */
+        font-size: 40px; /* Base de 1rem = 20px para telas médias */
     }
     .image-container img {
         width: 120px;
@@ -319,7 +319,7 @@ a:not(.facebook-icon):not(.instagram-icon) {
 /* PARA TELAS PEQUENAS (ex: smartphones) */
 @media (max-width: 480px) {
     html {
-        font-size: 18px; /* Base de 1rem = 18px para smartphones */
+        font-size: 35px; /* Base de 1rem = 18px para smartphones */
     }
     .image-container img {
         width: 100px;
