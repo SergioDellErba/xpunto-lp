@@ -179,7 +179,7 @@ body {
 .imagem-clicavel {
     cursor: pointer;
     width: 80%; /* Define que a imagem ocupe 80% da largura do seu PARENT (o link 'a') */
-    border: 3px solid orange !important; /* Borda laranja para a imagem do vídeo */
+    border: 5px solid #981310 !important;
     height: auto;
     /* REMOVA display: block !important; e margin: 0 auto !important; - A regra global img já cuida disso e a especificidade do !important não tem sido eficaz contra o cache */
     object-fit: cover;
