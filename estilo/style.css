@@ -156,7 +156,6 @@ body {
 .video-container a {
     display: block;      /* Garante que o link se comporte como um bloco */
     text-decoration: none;
-    border: 3px solid green !important; /* Borda verde para o link do vídeo */
     color: inherit;
     width: 100%;         /* Faz com que o link ocupe toda a largura disponível de seu pai (.video-container) */
 }
