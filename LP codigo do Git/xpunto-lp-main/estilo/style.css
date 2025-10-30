@@ -148,7 +148,6 @@ body {
     overflow: hidden;
     width: 75%; /* A div ocupa 75% da largura da página */
     padding-top: 5%;
-    margin: 0 auto; /* ESTA LINHA CENTRALIZA A DIV '.video-container' NA PÁGINA */
 }
 
 .video-container a {
