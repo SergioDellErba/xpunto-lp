@@ -88,7 +88,7 @@ img {
     color: white;
     font-family: var(--fonte-xpunto1);
     min-width: 300px;
-    border: 3px solid red !important; /* Borda vermelha para o contêiner principal */
+    border: 5px solid #981310 !important; /* Borda vermelha para o contêiner principal */
     border-radius: 20px; /* <-- Esta aqui! */
     box-shadow: 3px 3px 15px rgb(69, 69, 69); /* <-- Esta aqui! */
     
