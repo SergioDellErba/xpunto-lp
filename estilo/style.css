@@ -120,11 +120,12 @@ body {
 
 .image-group {
     display: flex;
-    justify-content: space-around;
-    /* Distribui as imagens uniformemente na linha */
+    justify-content: center; /* Centraliza os itens no contêiner */
     align-items: center;
     flex-wrap: wrap;
-    /* Permite que as imagens quebrem para a próxima linha se não houver espaço suficiente */
+    gap: 20px; /* Adiciona um espaço de 40 pixels entre os botões */
+    margin-top: 20px; /* Adiciona um pouco de margem acima, se desejar */
+    margin-bottom: 20px; /* Adiciona um pouco de margem abaixo, se desejar */
 }
 
 .image-container {
