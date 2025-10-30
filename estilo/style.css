@@ -123,7 +123,7 @@ body {
     justify-content: center; /* Centraliza os itens no contêiner */
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px; /* Adiciona um espaço de 40 pixels entre os botões */
+    gap: 40px; /* Adiciona um espaço de 40 pixels entre os botões */
     margin-top: 20px; /* Adiciona um pouco de margem acima, se desejar */
     margin-bottom: 20px; /* Adiciona um pouco de margem abaixo, se desejar */
 }
