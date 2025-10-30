@@ -85,17 +85,17 @@ img {
 }
 
 .main {
-    /*max-width: 100%;*/
-    text-align: center;
     color: white;
     font-family: var(--fonte-xpunto1);
     min-width: 300px;
-    /*max-width: 600px;*/
-    margin: auto;
-    padding: auto;
-    display: block;
-    border-radius: 20px;
-    box-shadow: 3px 3px 15px rgb(69, 69, 69);
+    border-radius: 20px; /* <-- Esta aqui! */
+    box-shadow: 3px 3px 15px rgb(69, 69, 69); /* <-- Esta aqui! */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
 }
 
 body {
@@ -152,18 +152,17 @@ body {
 }
 
 .video-container a {
-    display: block; /* Garante que o link se comporte como um bloco */
+    display: block;      /* Garante que o link se comporte como um bloco */
     text-decoration: none;
     color: inherit;
-    width: 100%; /* Faz com que o link ocupe toda a largura disponível de seu pai */
+    width: 100%;         /* Faz com que o link ocupe toda a largura disponível de seu pai (.video-container) */
 }
 
 .imagem-clicavel {
     cursor: pointer;
-    width: 80%; /* Define a largura da imagem */
+    width: 80%; /* Define que a imagem ocupe 80% da largura do seu PARENT (o link 'a') */
     height: auto;
-    display: block !important; /* Força que a imagem seja um elemento de bloco */
-    margin: 0 auto !important; /* FORÇA A CENTRALIZAÇÃO DA IMAGEM DENTRO DO LINK */
+    /* REMOVA display: block !important; e margin: 0 auto !important; - A regra global img já cuida disso e a especificidade do !important não tem sido eficaz contra o cache */
     object-fit: cover;
 }
 
