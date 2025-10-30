@@ -148,9 +148,9 @@ body {
 .video-container {
     position: relative;
     overflow: hidden;
-    border: 3px solid blue !important; /* Borda azul para o contêiner do vídeo */
-    width: 75%; /* A div ocupa 75% da largura da página */
-    padding-top: 56,25%;
+    width: 75%;
+    /* REMOVER: padding-top: 56.25%; */
+    margin: 0 auto; /* <-- ADICIONAR ESTA LINHA para centralizar o contêiner da thumbnail */
 }
 
 .video-container a {
@@ -161,6 +161,22 @@ body {
     width: 100%;         /* Faz com que o link ocupe toda a largura disponível de seu pai (.video-container) */
 }
 
+#videoPlayer {
+    position: relative; /* Essencial para o iframe ser posicionado absolutamente dentro dele */
+    width: 75%; /* Garante que o player tenha a mesma largura da thumbnail, ajuste se necessário */
+    padding-top: 56.25%; /* Isso cria a proporção 16:9 (altura é 56.25% da largura) */
+    overflow: hidden; /* Esconde qualquer parte do iframe que possa vazar */
+    margin: 20px auto; /* Centraliza o player e adiciona um pequeno espaço vertical */
+}
+
+#videoPlayer iframe {
+    position: absolute; /* Para que ele preencha a área definida pelo padding-top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove a borda padrão do iframe */
+}
 .imagem-clicavel {
     cursor: pointer;
     width: 80%; /* Define que a imagem ocupe 80% da largura do seu PARENT (o link 'a') */
