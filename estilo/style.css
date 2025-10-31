@@ -165,7 +165,7 @@ body {
     width: 75%; /* Garante que o player tenha a mesma largura da thumbnail, ajuste se necessário */
     padding-top: 56.25%; /* Isso cria a proporção 16:9 (altura é 56.25% da largura) */
     overflow: hidden; /* Esconde qualquer parte do iframe que possa vazar */
-    margin: 10px auto; /* Centraliza o player e adiciona um pequeno espaço vertical */
+    margin: 1px auto !important; /* Adicionei !important TEMPORARIAMENTE para teste */
 }
 
 #videoPlayer iframe {
