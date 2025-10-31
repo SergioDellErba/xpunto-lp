@@ -21,6 +21,34 @@ div img {
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
+img { /* Regra global, mantenha-a como está */
+    border-radius: 20px;
+    max-width: 85%;
+    height: auto;
+    margin: auto;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
+}
+
+/* Nova regra para a imagem APP.png usando seu ID */
+#img-app-xpunto {
+    margin-bottom: 15px; /* Agora isso DEVE funcionar! */
+}
+
+/* Regra para #videoPlayer (o contêiner do vídeo), já ajustada anteriormente */
+#videoPlayer {
+    position: relative;
+    width: 75%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1,
 h2 {
     font-size: 350%;
@@ -43,9 +71,7 @@ img {
     margin-bottom: 40px;
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
 }
-section img[src="imagens/APP.png"] {
-    margin-bottom: 15px; /* Ajuste este valor para a distância desejada abaixo da imagem */
-}
+
 
 .web {
     width: 90.5%;
