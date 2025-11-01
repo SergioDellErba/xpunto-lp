@@ -389,3 +389,88 @@ a:not(.facebook-icon):not(.instagram-icon) {
 #myVideo {
     display: none;
 }
+/* =========================================== */
+/*      ESTILOS ESPECÍFICOS PARA DESKTOP       */
+/*      (APLICAM-SE EM TELAS MAIORES QUE 768px)*/
+/* =========================================== */
+@media (min-width: 768px) {
+
+    /* Ajuste para o TÍTULO H1 e H2 */
+    h1, h2 {
+        font-size: 250%; /* Reduzir de 350% para algo mais adequado em desktop */
+        margin-bottom: 30px; /* Ajustar margem se necessário */
+    }
+
+    /* Ajuste para a IMAGEM PRINCIPAL DO APP (assumindo que é a que está com `div img`) */
+    div img { /* Esta regra está bem genérica, vamos tentar ser mais específicos se ela for a imagem do APP */
+        width: 350px; /* Um tamanho fixo menor para desktop, se 400px estiver grande */
+        /* max-width: 100%; já deve estar no seu CSS para garantir responsividade */
+        margin-top: 30px; /* Ajustar margens */
+        margin-bottom: 30px;
+    }
+    
+    /* Se a imagem do APP tiver um ID específico, seria melhor usar ele, por exemplo: */
+    /* #img-app-xpunto {
+        width: 350px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    } */
+
+    /* Ajuste para o contêiner do VÍDEO (se o 75% estiver muito largo) */
+    #video-wrapper {
+        width: 60%; /* Reduzir a largura total do wrapper do vídeo */
+        max-width: 700px; /* Definir um máximo para não ficar gigante em telas ultra-largas */
+        margin: 20px auto 40px auto; /* Ajustar margens */
+    }
+
+    /* Ajuste para o texto dentro da section#img01 (Aurora.jpg) */
+    section#img01 {
+        font-size: 2em; /* Reduzir de 2.8em, se estiver muito grande */
+        max-width: 70%; /* Ajustar a largura máxima do contêiner, se 80% estiver muito grande */
+        padding: 10px; /* Ajustar padding se necessário */
+    }
+
+    /* Ajuste para as imagens dos botões (ex: image-group) */
+    .image-container img {
+        width: 150px; /* Reduzir de 200px, se estiverem muito grandes */
+    }
+
+    /* Ajuste para o logo no FOOTER */
+    .logo-footer {
+        max-width: 300px; /* Ajustar o tamanho máximo para desktop */
+    }
+    
+    /* Ajuste para os ícones sociais no FOOTER (facebook-icon, instagram-icon) */
+    .facebook-icon img,
+    .instagram-icon img {
+        max-width: 80%; /* Garante que os ícones não fiquem gigantes */
+        height: auto;
+    }
+    
+    /* Ajuste para a imagem dentro da .fale div */
+    .fale {
+        width: 70%; /* Reduzir a largura do contêiner do "Fale" */
+        max-width: 600px; /* Definir um máximo para não ficar gigante */
+        height: 150px; /* Ajustar a altura do contêiner */
+    }
+
+    .fale img {
+        width: auto; /* Deixa a largura automática para a imagem */
+        max-width: 100%; /* Garante que ela não ultrapasse o pai */
+        max-height: 100%; /* Garante que ela não ultrapasse o pai */
+    }
+
+    /* Ajuste para a main-nav (menu de navegação) */
+    .main-nav {
+        width: 80%; /* Reduzir a largura do menu se estiver muito esticado */
+        max-width: 800px; /* Definir um máximo */
+    }
+
+    .nav-group {
+        gap: 25px; /* Reduzir o espaço entre os itens do menu, se 35px for muito */
+    }
+
+    .nav-link {
+        font-size: 25px; /* Reduzir o tamanho da fonte do menu */
+    }
+}
