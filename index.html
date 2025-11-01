@@ -25,18 +25,16 @@
 
     <section><img src="imagens/APP.png" alt="APP XPUNTO" width="290px" id="img-app-xpunto"></section>
 
-    <div class="video-container">
-        <a href="https://sergiodellerba.github.io/xpunto-video-lp/" target="_blank" rel="noopener noreferrer">
-            <img src="imagens/video.png" alt="video" class="imagem-clicavel" id="videoThumbnail">
-        </a>
+    <!-- NOVA SEÇÃO PARA O VÍDEO -->
+<div id="video-wrapper">
+    <!-- Este contêiner exibirá a thumbnail e o botão de play -->
+    <div id="video-placeholder-container">
+        <img src="imagens/video.png" alt="video do XPUNTO" id="videoThumbnail" loading="lazy">
+        <div class="play-button"></div> <!-- O botão de play que ficará sobre a imagem -->
     </div>
-
-    <!-- Substitua a tag <video> por um iframe -->
-    <div id="videoPlayer" style="display:none;">
-    <iframe width=100% frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+    <!-- O iframe do vídeo será inserido aqui pelo JavaScript quando o usuário clicar -->
 </div>
+<!-- FIM DA NOVA SEÇÃO PARA O VÍDEO -->
 
     <div class="fale">
         <a href="mailto:contato@xpunto.com" target="_blank" class="image-container">
@@ -77,19 +75,32 @@
 </main>
 
 <script>
-    // Aguarde o carregamento completo do documento
     document.addEventListener('DOMContentLoaded', function () {
-        // Obtenha o elemento de imagem pelo ID
-        var videoThumbnail = document.getElementById("videoThumbnail");
-        var videoPlayer = document.getElementById("videoPlayer");
-        var iframe = videoPlayer.querySelector('iframe');
+        const videoWrapper = document.getElementById('video-wrapper'); // O contêiner principal do vídeo
+        const videoPlaceholderContainer = document.getElementById('video-placeholder-container'); // Contêiner da thumbnail
+        const youtubeVideoId = 'IUAcWJQ_Ryg'; // <-- SEU ID DE VÍDEO DO YOUTUBE. Já está correto aqui.
 
-        // Adicione um evento de clique à imagem
-        videoThumbnail.addEventListener('click', function (event) {
-            event.preventDefault(); // Impede o comportamento padrão do link
-            iframe.src = "https://www.youtube.com/embed/IUAcWJQ_Ryg?autoplay=1&rel=0"; // Define o src do iframe com autoplay e sem vídeos relacionados
-            videoPlayer.style.display = 'block'; // Exibe o iframe do vídeo
-        });
+        if (videoPlaceholderContainer && videoWrapper) { // Verifica se os elementos existem
+            videoPlaceholderContainer.addEventListener('click', function () {
+                // Esconde a thumbnail e o botão de play
+                videoPlaceholderContainer.style.display = 'none';
+
+                // Cria o iframe do YouTube
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`);
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', '');
+                
+                // Cria um contêiner responsivo para o iframe com os estilos já definidos no CSS
+                const iframeResponsiveWrapper = document.createElement('div');
+                iframeResponsiveWrapper.classList.add('video-responsive-iframe-wrapper'); // Aplica a classe para responsividade
+                iframeResponsiveWrapper.appendChild(iframe); // Adiciona o iframe dentro
+
+                // Adiciona o novo contêiner do iframe ao #video-wrapper
+                videoWrapper.appendChild(iframeResponsiveWrapper);
+            });
+        }
     });
 </script>
 </body></html>
