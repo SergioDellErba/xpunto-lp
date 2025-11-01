@@ -190,9 +190,10 @@ body {
     object-position: center center; /* <-- VOLTE PARA ESTA OPÇÃO PADRÃO SE ESTIVER COM OUTRO VALOR */
     border: none !important;
     margin: 0 !important;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: none !important;
     display: block;
+    max-width: 100%; /* <-- ADICIONE ESTA LINHA AQUI! */
 }
 
 /* Estilo para o iframe quando ele for carregado */
