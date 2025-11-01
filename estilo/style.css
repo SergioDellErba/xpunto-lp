@@ -163,16 +163,18 @@ body {
 
 /* Contêiner da thumbnail e, posteriormente, do iframe (mantém a proporção 16:9) */
 #video-placeholder-container,
-.video-responsive-iframe-wrapper { /* Esta classe será adicionada ao wrapper do iframe pelo JS */
+.video-responsive-iframe-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* Proporção 16:9 (altura / largura = 9 / 16 = 0.5625) */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    background-color: #000; /* Fundo preto enquanto carrega ou para iframe */
-    border-radius: 20px; /* Bordas arredondadas */
-    box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655); /* Sombra */
-    cursor: pointer; /* Indica que é clicável */
-    border: 5px solid var(--solirario) !important; /* Borda vermelha, como na sua thumbnail original */
+    background-color: #000;
+    border-radius: 20px;
+    box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
+    cursor: pointer;
+    border: 5px solid var(--solirario) !important;
+    /* Adicione/modifique a linha abaixo */
+    box-sizing: border-box; /* <-- ADICIONE OU MANTENHA ESTA LINHA AQUI */
 }
 
 /* Estilo para a imagem de thumbnail dentro do seu contêiner */
@@ -182,12 +184,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border: none !important; /* Remove qualquer borda da imagem em si */
-    margin: 0 !important; /* SOBRESCREVE A REGRA GLOBAL 'img' para esta imagem */
-    border-radius: 15px; /* Mantém as bordas arredondadas */
-    box-shadow: none !important; /* Remove a sombra extra, já tem no container pai */
-    display: block; /* Garante que a imagem se comporte como bloco */
+    object-fit: cover;
+    /* Para uma imagem 16:9 dentro de um contêiner 16:9, 'center center' é o ideal,
+       ou você pode simplesmente remover a linha 'object-position' pois é o padrão */
+    object-position: center center; /* <-- VOLTE PARA ESTA OPÇÃO PADRÃO SE ESTIVER COM OUTRO VALOR */
+    border: none !important;
+    margin: 0 !important;
+    border-radius: 15px;
+    box-shadow: none !important;
+    display: block;
 }
 
 /* Estilo para o iframe quando ele for carregado */
@@ -283,7 +288,6 @@ section#img01 {
 .main-nav {
     width: 98%;
     border-radius: 15px;
-    border-radius: none;
     background-color: var(--locacao);
     padding-top: 10px;
     padding-left: 15px;
