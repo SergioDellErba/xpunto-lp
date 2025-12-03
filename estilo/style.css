@@ -1,7 +1,4 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
@@ -116,7 +113,7 @@ body {
     background: linear-gradient(to bottom, #65a99b, #65A99b);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     /*
     display: flex;
     align-items: center;
@@ -176,7 +173,6 @@ body {
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
     cursor: pointer;
     border: 5px solid var(--solirario) !important;
-    /* Adicione/modifique a linha abaixo */
     box-sizing: border-box; /* <-- ADICIONE OU MANTENHA ESTA LINHA AQUI */
 }
 
@@ -248,11 +244,6 @@ body {
     align-items: center;
 }
 
-div-branca {
-    border-radius: 0px;
-    background-color: #183f47;
-}
-
 .social-buttons a {
     margin: 0 40px;
     width: 30px;
@@ -268,7 +259,7 @@ section.imagens {
 }
 
 section.imagens img {
-    width: 200%;
+    max-width: 100%; /* Já corrigida */
     border-radius: 15px;
     margin: auto;
     display: block;
