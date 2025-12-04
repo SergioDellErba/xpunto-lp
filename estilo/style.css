@@ -252,9 +252,21 @@ body {
 }
 
 .social-buttons a {
-    margin: 0 40px;
-    width: 30px;
-    height: 59px;
+    margin: 0 40px; /* Mantém a margem entre os botões */
+    width: 70px;    /* Sugiro mudar para um tamanho fixo que você queira para o "botão" */
+    height: 70px;   /* Mantenha igual ao width para ser quadrado (ou redondo) */
+    display: flex;          /* NOVO: Para usar flexbox dentro do link */
+    justify-content: center; /* NOVO: Para centralizar a imagem horizontalmente */
+    align-items: center;    /* NOVO: Para centralizar a imagem verticalmente */
+    background-color: var(--comercial); /* NOVO: O placeholder colorido que você escolheu */
+    border-radius: 50%;     /* NOVO: Se quiser botões redondos, senão, remova esta linha */
+}
+
+.social-buttons img {
+    max-width: 100%; /* Garante que a imagem nunca exceda o tamanho do seu pai (o <a>) */
+    height: auto;    /* Mantém a proporção da imagem */
+    display: block;  /* Ajuda a remover espaços extras e garantir alinhamento */
+    margin: 0;       /* Remove qualquer margem padrão ou herdada da imagem */
 }
 
 section.imagens {
@@ -367,16 +379,7 @@ footer {
 
 /* Adicione essas regras ao seu arquivo style.css */
 
-.facebook-icon img,
-.instagram-icon img {
-    border-radius: 1px;
-    /* ou o valor desejado para o border-radius */
-    max-width: 150%;
-    /* Garante que a imagem seja responsiva */
-    height: auto;
-    /* Mantém a proporção original da imagem */
-    margin-top: 10px;
-}
+
 
 a:not(.facebook-icon):not(.instagram-icon) {
     /* Estilos para outros ícones que não são do Facebook ou Instagram */
