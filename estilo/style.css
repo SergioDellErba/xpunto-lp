@@ -32,6 +32,8 @@ img { /* Regra global, mantenha-a como está */
 /* Nova regra para a imagem APP.png usando seu ID */
 #img-app-xpunto {
     margin-bottom: 80px; /* Agora isso DEVE funcionar! */
+    background-color: var(--comercial); /* Usando a cor #65a99b */
+    display: block;
 }
 
 h1,
@@ -76,6 +78,7 @@ h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 1px auto 40px auto; /* Alterado de 0 para 40px */
 }
 
 .fale img {
@@ -138,6 +141,8 @@ body {
     text-align: center;
     text-decoration: none;
     color: inherit;
+    background-color: var(--comercial); /* Usando a cor #65a99b */
+    display: block;
 }
 
 .image-container img {
@@ -174,6 +179,8 @@ body {
     cursor: pointer;
     border: 5px solid var(--solirario) !important;
     box-sizing: border-box; /* <-- ADICIONE OU MANTENHA ESTA LINHA AQUI */
+    background-color: #183F47; 
+    display: block;
 }
 
 /* Estilo para a imagem de thumbnail dentro do seu contêiner */
@@ -356,7 +363,6 @@ footer {
     max-width: 500px;
     border-radius: 20px;
     margin: 1px;
-    /* Adiciona margem na parte inferior e centraliza o logo */
 }
 
 /* Adicione essas regras ao seu arquivo style.css */
