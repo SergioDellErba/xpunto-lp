@@ -31,7 +31,7 @@ img { /* Regra global, mantenha-a como está */
 
 /* Nova regra para a imagem APP.png usando seu ID */
 #img-app-xpunto {
-    margin-bottom: 15px; /* Agora isso DEVE funcionar! */
+    margin-bottom: 80px; /* Agora isso DEVE funcionar! */
 }
 
 h1,
