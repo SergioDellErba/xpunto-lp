@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
+/* ===================================================================================================================== */
+/* ATENÇÃO: Os @import url() das fontes foram REMOVIDOS daqui. */
+/* Eles agora são carregados de forma mais eficiente via tags <link> no HTML para evitar atrasos de renderização. */
+/* ===================================================================================================================== */
+
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
-    --fonte-xpunto2: 'Gothan', Verdana, Arial;
+    --fonte-xpunto2: 'Gothan', Verdana, Arial; /* Nota: 'Gothan' é um provável erro de digitação para 'Gotham', mas mantido como estava no código original. */
     --fonte-destaque: 'Bebas Neue', Arial;
     --solirario: #981310;
     --comercial: #65A99B;
@@ -12,15 +17,14 @@
     --profissional: #367687;
 }
 
-div img {
-    width: 400px;
-    background-color: white;
-    box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
-}
+/* ------------------------------------------- */
+/* REGRAS CSS GERAIS E PARA MOBILE (DEFAULT)  */
+/* ------------------------------------------- */
 
-img { /* Regra global, mantenha-a como está */
+/* Regra global para todas as imagens: garante que nunca ultrapassem o pai e mantenham a proporção */
+img {
     border-radius: 20px;
-    max-width: 85%;
+    max-width: 100%; /* ALTERADO de 85% para 100% para melhor responsividade */
     height: auto;
     margin: auto;
     display: block;
@@ -29,16 +33,27 @@ img { /* Regra global, mantenha-a como está */
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
 }
 
-/* Nova regra para a imagem APP.png usando seu ID */
-#img-app-xpunto {
-    margin-bottom: 80px; /* Agora isso DEVE funcionar! */
-    background-color: var(--comercial); /* Usando a cor #65a99b */
-    display: block;
+/* Afeta o logo principal e outras imagens genéricas que estão em div's */
+div img {
+    max-width: 100%; /* Garante que não ultrapasse o pai */
+    width: auto;     /* Remove a largura fixa de 400px para que se ajuste em mobile */
+    height: auto;    /* Mantém a proporção */
+    background-color: white;
+    box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
-h1,
-h2 {
-    font-size: 350%;
+/* Nova regra para a imagem APP.png usando seu ID */
+#img-app-xpunto {
+    max-width: 90%; /* Limita a largura para mobile para dar um respiro nas bordas */
+    height: auto;    /* Mantém proporção */
+    margin: 0 auto 80px auto; /* Centraliza horizontalmente e aplica margem inferior */
+    display: block;
+    /* background-color: var(--comercial); (Removido/comentado se não for intencional, pois o APP.png provavelmente não é transparente) */
+}
+
+/* Títulos h1 e h2: Tamanho menor para mobile */
+h1, h2 {
+    font-size: 2.5em; /* TAMANHO MENOR PARA MOBILE */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -48,46 +63,45 @@ h2 {
     letter-spacing: 1px;
 }
 
+/* Seção ".web": Removida altura fixa para ser responsiva */
 .web {
-    width: 90.5%;
-    /* Use 100% para ocupar a largura total do contêiner pai */
-    height: 140px;
-    /* Altura fixa para a div */
+    width: 100%; /* OCUPA A LARGURA TOTAL */
+    height: auto; /* REMOVE A ALTURA FIXA */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 21px;
+    padding: 15px; /* Ajusta o padding para mobile */
+    box-sizing: border-box; /* Garante que padding não adicione largura total */
 }
 
+/* Imagem dentro de ".web": Garante responsividade */
 .web img {
     max-width: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
     max-height: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
     border-radius: 10px;
 }
 
+/* Seção ".fale": Removida altura fixa para ser responsiva */
 .fale {
-    width: 93%;
-    /* Use 100% para ocupar a largura total do contêiner pai */
-    height: 200px;
-    /* Altura fixa para a div */
+    width: 100%; /* OCUPA A LARGURA TOTAL */
+    height: auto; /* REMOVE A ALTURA FIXA */
     display: flex;
-    margin: 1px auto 0 auto; 
+    margin: 1px auto 40px auto; /* Margem ajustada e corrigida */
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 1px auto 40px auto; /* Alterado de 0 para 40px */
+    padding: 15px; /* Adiciona padding para mobile */
+    box-sizing: border-box;
 }
 
+/* Imagem dentro de ".fale": Garante responsividade */
 .fale img {
     max-width: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da largura do contêiner pai */
     max-height: 100%;
-    /* Ajusta o tamanho máximo da imagem para 100% da altura do contêiner pai */
 }
 
+/* Contêiner principal ".main": Comportamento responsivo */
 .main {
     color: white;
     font-family: var(--fonte-xpunto1);
@@ -95,82 +109,68 @@ h2 {
     border: 5px solid #981310 !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-
-    /* Remova display: flex; flex-direction: column; align-items: center; daqui se o main é só o contêiner externo */
-    /* Esses são mais para alinhar o CONTEÚDO DENTRO do main, não o main em si */
-    /* Se o main contém outros elementos que você quer que fiquem alinhados ao centro, mantenha. */
-    /* Mas para CENTRALIZAR O BLOCO main em si, o mais eficaz é: */
-
-    width: 100%; /* Pode manter 100% ou definir uma max-width se quiser que ele não estique em telas muito grandes */
-    max-width: 900px; /* Opcional: Se quiser que o .main tenha a mesma largura máxima que o body */
-    margin: 0 auto; /* Isso vai centralizar o .main horizontalmente dentro do seu pai */
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0;
 }
 
+/* Corpo da página: Comportamento responsivo e overflow */
 body {
     margin: auto;
     max-width: 900px;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
     box-sizing: border-box;
     height: auto;
     background: linear-gradient(to bottom, #65a99b, #65A99b);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /*background-attachment: fixed;*/
-    /*
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    flex direction:column;
-    */
+    /* background-attachment: fixed; Mantido comentado como estava */
 }
 
+/* Grupo de botões de App Store: Layout responsivo */
 .image-group {
     display: flex;
-    justify-content: center; /* Centraliza os itens no contêiner */
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 40px; /* Adiciona um espaço de 40 pixels entre os botões */
-    margin-top: 20px; /* Adiciona um pouco de margem acima, se desejar */
-    margin-bottom: 20px; /* Adiciona um pouco de margem abaixo, se desejar */
+    flex-wrap: wrap; /* PERMITE QUE OS ITENS QUEBREM LINHA EM TELAS PEQUENAS */
+    gap: 20px; /* REDUZ O ESPAÇAMENTO PARA MOBILE */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+/* Contêiner individual de imagem em ".image-group" */
 .image-container {
     margin-top: 10px;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    background-color: var(--comercial); /* Usando a cor #65a99b */
+    background-color: var(--comercial);
     display: block;
 }
 
+/* Imagens dentro de ".image-container" (Botões de App Store): Responsividade */
 .image-container img {
     max-width: 100%;
-    /* Para garantir que a imagem seja responsiva */
-    border-radius: 10px;
-    width: 200px;
-    /* Defina o tamanho desejado */
     height: auto;
-    /* Mantenha a proporção original da imagem */
+    width: auto;     /* Remove a largura fixa de 200px para mobile */
+    border-radius: 10px;
 }
 
-/* --- NOVAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
-
-/* Contêiner principal do vídeo (onde aplicamos as margens) */
+/* --- REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
+/* Contêiner principal do vídeo */
 #video-wrapper {
     position: relative;
-    width: 75%; /* Mantém a largura que você já usava */
-    max-width: 800px; /* Opcional: Adicione um limite máximo de largura */
-    margin: 15px auto 40px auto; /* SUAS MARGENS: 15px acima, 40px abaixo e centralizado */
-    /* Remove a necessidade de qualquer margin-top/bottom da regra global 'img' para este elemento */
+    width: 75%;
+    max-width: 800px;
+    margin: 15px auto 40px auto;
 }
 
-/* Contêiner da thumbnail e, posteriormente, do iframe (mantém a proporção 16:9) */
+/* Contêiner da thumbnail e do iframe: Mantém proporção 16:9 */
 #video-placeholder-container,
 .video-responsive-iframe-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
     height: 0;
     overflow: hidden;
     background-color: #000;
@@ -178,12 +178,12 @@ body {
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
     cursor: pointer;
     border: 5px solid var(--solirario) !important;
-    box-sizing: border-box; /* <-- ADICIONE OU MANTENHA ESTA LINHA AQUI */
-    background-color: #183F47; 
+    box-sizing: border-box;
+    background-color: #183F47;
     display: block;
 }
 
-/* Estilo para a imagem de thumbnail dentro do seu contêiner */
+/* Imagem de thumbnail do vídeo: Responsividade e posicionamento */
 #video-placeholder-container img {
     position: absolute;
     top: 0;
@@ -191,46 +191,45 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Para uma imagem 16:9 dentro de um contêiner 16:9, 'center center' é o ideal,
-       ou você pode simplesmente remover a linha 'object-position' pois é o padrão */
-    object-position: center center; /* <-- VOLTE PARA ESTA OPÇÃO PADRÃO SE ESTIVER COM OUTRO VALOR */
+    object-position: center center;
     border: none !important;
     margin: 0 !important;
     border-radius: 20px;
     box-shadow: none !important;
     display: block;
-    max-width: 100%; /* <-- ADICIONE ESTA LINHA AQUI! */
+    max-width: 100%;
 }
 
-/* Estilo para o iframe quando ele for carregado */
+/* Iframe do vídeo: Responsividade e posicionamento */
 .video-responsive-iframe-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none; /* Remove a borda padrão do iframe */
+    border: none;
 }
 
-/* Estilo para o botão de Play */
+/* Botão de Play do vídeo: Tamanho menor para mobile */
 .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza perfeitamente */
-    width: 80px; /* Tamanho do botão */
-    height: 80px;
-    background-color: rgba(255, 0, 0, 0.8); /* Vermelho translúcido */
-    border-radius: 50%; /* Transforma em círculo */
+    transform: translate(-50%, -50%);
+    width: 60px; /* TAMANHO MENOR PARA MOBILE */
+    height: 60px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10; /* Garante que fique acima da thumbnail */
-    transition: background-color 0.3s ease; /* Efeito de hover suave */
+    z-index: 10;
+    transition: background-color 0.3s ease;
 }
 
+/* Efeito hover do botão de Play */
 .play-button:hover {
-    background-color: rgba(255, 0, 0, 1); /* Vermelho sólido no hover */
+    background-color: rgba(255, 0, 0, 1);
 }
 
 /* Triângulo do ícone de Play */
@@ -239,36 +238,44 @@ body {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 20px 0 20px 30px; /* Cria um triângulo */
-    border-color: transparent transparent transparent #ffffff; /* Triângulo branco */
-    margin-left: 5px; /* Ajusta a posição do triângulo */
+    border-width: 20px 0 20px 30px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 5px;
 }
-/* --- FIM DAS NOVAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
+/* --- FIM DAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
 
+/* Contêiner de botões sociais (AQUI ESTÁ A CHAVE DA DISPOSIÇÃO HORIZONTAL DO RODAPÉ) */
 .social-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center;    /* Centraliza os itens verticalmente */
+    flex-wrap: wrap;        /* Permite que os itens quebrem linha SE NÃO HOUVER ESPAÇO SUFICIENTE (ex: em telas MUITO pequenas) */
+    gap: 8px;               /* REDUZIDO: Espaçamento menor entre os itens para mobile */
+    padding: 10px 0;        /* Adiciona um pouco de padding vertical para não ficar colado */
+    margin-top: 10px;       /* Adiciona margem superior para afastar do conteúdo acima */
+    margin-bottom: 5px;    /* Adiciona margem inferior */
+}
+
+/* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
+.social-buttons a {
+    width: 35px;    /* REDUZIDO: Tamanho menor para os ícones no mobile */
+    height: 35px;   /* Mantém igual ao width para ser um círculo */
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;  border-radius: 50%;
+    flex-shrink: 0; /* Impede que os botões diminuam mais do que seu tamanho */
 }
 
-.social-buttons a {
-    margin: 0 40px; /* Mantém a margem entre os botões */
-    width: 70px;    /* Sugiro mudar para um tamanho fixo que você queira para o "botão" */
-    height: 70px;   /* Mantenha igual ao width para ser quadrado (ou redondo) */
-    display: flex;          /* NOVO: Para usar flexbox dentro do link */
-    justify-content: center; /* NOVO: Para centralizar a imagem horizontalmente */
-    align-items: center;    /* NOVO: Para centralizar a imagem verticalmente */
-    background-color: var(--comercial); /* NOVO: O placeholder colorido que você escolheu */
-    border-radius: 50%;     /* NOVO: Se quiser botões redondos, senão, remova esta linha */
+/* Imagens dentro dos botões sociais (Face e Instagram) */
+.social-buttons a img { /* Mais específico para não afetar o logo-footer */
+    max-width: 80%; /* Garante que a imagem do ícone caiba dentro do círculo */
+    height: auto;
+    display: block;
+    margin: 0;
 }
 
-.social-buttons img {
-    max-width: 100%; /* Garante que a imagem nunca exceda o tamanho do seu pai (o <a>) */
-    height: auto;    /* Mantém a proporção da imagem */
-    display: block;  /* Ajuda a remover espaços extras e garantir alinhamento */
-    margin: 0;       /* Remove qualquer margem padrão ou herdada da imagem */
-}
-
+/* Seção de imagens genérica (seção.imagens): Responsividade */
 section.imagens {
     position: relative;
     color: white;
@@ -277,8 +284,11 @@ section.imagens {
     text-align: center;
 }
 
+/* Imagens dentro de seção.imagens: Corrigida de 200% para 100% e responsiva */
 section.imagens img {
-    max-width: 100%; /* Já corrigida */
+    max-width: 100%; /* CORRIGIDA DE 200% PARA 100% */
+    height: auto;    /* ADICIONADO PARA MANTER PROPORÇÃO */
+    width: auto;     /* ADICIONADO PARA REMOVER O WIDTH FIXO */
     border-radius: 15px;
     margin: auto;
     display: block;
@@ -287,18 +297,20 @@ section.imagens img {
     box-shadow: 1px 1px 2px rgba(14, 13, 13, 0.447);
 }
 
+/* Seção com texto e imagem de fundo (section#img01): Responsividade de largura e fonte */
 section#img01 {
     background-image: url('../imagens/Aurora.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    max-width: 80%;
+    max-width: 90%; /* AJUSTA PARA PREENCHER MAIS EM MOBILE */
     margin: auto;
     text-align: left;
-    font-size: 2.8em;
+    font-size: 1.2em; /* REDUZ O TAMANHO DA FONTE PARA MOBILE */
     padding: 15px;
 }
 
+/* Navegação principal ".main-nav" */
 .main-nav {
     width: 98%;
     border-radius: 15px;
@@ -310,33 +322,33 @@ section#img01 {
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-items: center;
-    /* Centraliza os itens verticalmente */
+    /* justify-items: center; REMOVIDO - PROPRIEDADE MAIS COMUM PARA GRID LAYOUT */
 }
 
+/* Grupo de links de navegação ".nav-group": Layout responsivo para mobile */
 .nav-group {
     align-items: center;
     justify-content: center;
     text-align: center;
     display: flex;
     flex-direction: row;
-    gap: 35px;
-    /* Adicione ou ajuste o valor do gap para controlar o espaço entre os itens */
+    flex-wrap: wrap; /* PERMITE QUE OS LINKS QUEBREM LINHA NO MOBILE */
+    gap: 15px; /* REDUZ O ESPAÇAMENTO PARA MOBILE */
 }
 
-
+/* Links individuais de navegação ".nav-link": Tamanho de fonte menor para mobile */
 .nav-link {
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 1.1em; /* TAMANHO MENOR PARA MOBILE */
     transition-duration: .1s;
     position: relative;
-    align-items: center;
-    justify-content: center;
+    /* align-items e justify-content aqui não fazem sentido para um item flex, REMOVIDOS */
 }
 
+/* Divisor nos links de navegação */
 .nav-link:not(:first-child)::before {
     content: "-";
     position: absolute;
@@ -344,6 +356,7 @@ section#img01 {
     color: white;
 }
 
+/* Estilos de hover e ativo para links de navegação */
 .nav-link.active,
 .nav-link:hover {
     background-color: #981310;
@@ -351,41 +364,106 @@ section#img01 {
     color: #ffffff;
 }
 
-/* Adicione as regras ao seu arquivo style.css */
-
+/* Rodapé: Layout responsivo */
 footer {
-    width: 100%; 
+    width: 100%;
     border-radius: 15px;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 0px;
     background-color: white;
     padding-left: 0px;
-    box-shadow: 0px -3px 5px rgba(30, 30, 30, 0.2); 
+    box-shadow: 0px -3px 5px rgba(30, 30, 30, 0.2);
     display: flex;
-    flex-direction: column;
-    /* Empilha os elementos verticalmente */
+    flex-direction: column; /* PARA QUE LOGO E BOTOES SOCIAIS FIQUEM EM LINHAS SEPARADAS POR PADRÃO */
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
 }
 
+/* Logo do rodapé ".logo-footer": Responsividade */
 .logo-footer {
-    max-width: 500px;
-    border-radius: 20px;
-    margin: 1px;
+    max-width: 120px; /* REDUZIDO AINDA MAIS: Tamanho máximo do logo no mobile para dar mais espaço aos botões sociais */
+    height: auto;   /* MANTÉM PROPORÇÃO */
+    border-radius: 10px; /* Um pouco menor para mobile */
+    margin: 10px 0; /* Centralizado verticalmente com espaçamento */
+    flex-shrink: 0; /* Impede que o logo diminua mais do que seu max-width */
 }
 
-/* Adicione essas regras ao seu arquivo style.css */
-
-
-
-a:not(.facebook-icon):not(.instagram-icon) {
-    /* Estilos para outros ícones que não são do Facebook ou Instagram */
-    /* Se necessário, ajuste conforme desejado */
-}
-
+/* Esconde o vídeo quando não está ativo */
 #myVideo {
     display: none;
+}
+
+/* ===================================================================================================================== */
+/* MEDIA QUERIES PARA DESKTOP E TELAS MAIORES (a partir de 768px de largura) */
+/* ===================================================================================================================== */
+@media (min-width: 768px) {
+    /* Logo principal */
+    .logo img {
+        width: 400px; /* Volta ao tamanho desejado para desktop */
+    }
+
+    /* Títulos h1 e h2 */
+    h1, h2 {
+        font-size: 3.5em; /* Volta ao tamanho original para desktop */
+    }
+
+    /* Grupo de botões de App Store */
+    .image-group {
+        gap: 40px; /* Volta ao espaçamento original para desktop */
+    }
+
+    /* Imagens dentro de image-container (Botões de App Store) */
+    .image-container img {
+        width: 200px; /* Volta ao tamanho original para desktop */
+    }
+
+    /* Imagem APP.png */
+    #img-app-xpunto {
+        max-width: 290px; /* Volta ao tamanho original para desktop */
+    }
+
+    /* Botão de play do vídeo */
+    .play-button {
+        width: 80px; /* Volta ao tamanho original para desktop */
+        height: 80px;
+    }
+
+    /* Rodapé: Disposição para desktop */
+    footer {
+        flex-direction: row; /* Volta para row para desktop */
+        justify-content: space-evenly; /* Distribui os itens no espaço */
+        padding: 10px 0;
+    }
+
+    /* Ícones sociais do rodapé */
+    .social-buttons {
+        gap: 40px; /* Volta ao espaçamento original para desktop */
+        padding: 0;
+        margin: 0;
+    }
+    .social-buttons a {
+        width: 70px;    /* Volta ao tamanho original para desktop */
+        height: 70px;
+    }
+
+    /* Logo do rodapé */
+    .logo-footer {
+        max-width: 200px; /* Volta ao max-width original para desktop */
+        margin: 0; /* Remove margens extras */
+    }
+
+    /* Seção com texto e imagem de fundo */
+    section#img01 {
+        max-width: 80%; /* Volta ao original para desktop */
+        font-size: 2.8em; /* Volta ao tamanho original para desktop */
+    }
+
+    /* Menu de Navegação */
+    .nav-group {
+        gap: 35px; /* Volta ao espaçamento original para desktop */
+    }
+    .nav-link {
+        font-size: 35px; /* Volta ao tamanho original para desktop */
+    }
 }
