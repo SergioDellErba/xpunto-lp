@@ -324,11 +324,11 @@ section#img01 {
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    max-width: 90%; /* AJUSTA PARA PREENCHER MAIS EM MOBILE */
+    max-width: 80%;
     margin: auto;
     text-align: left;
-    font-size: 1.2em; /* REDUZ O TAMANHO DA FONTE PARA MOBILE */
-    padding: 15px;
+    font-size: 1.2em; /* AJUSTE: Aumentado de 1em para 1.2em para mobile */
+    padding: 12px;
 }
 
 /* Navegação principal ".main-nav" */
