@@ -69,12 +69,12 @@ div img {
 
 /* Títulos h1 e h2: Tamanho menor para mobile */
 h1, h2 {
-    font-size: 2.5em; /* TAMANHO MENOR PARA MOBILE */
+    font-size: 1.8em; /* AJUSTE: Diminuído de 2em para 1.8em para mobile */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-shadow: 2px 2px 0px rgb(91, 91, 91);
     letter-spacing: 1px;
 }
