@@ -109,25 +109,26 @@ h1, h2 {
     border: 5px solid #981310 !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0;
+    width: 100%; /* Ocupa 100% da largura disponível do body */
+    max-width: 900px; /* Limita a largura máxima do main para desktop */
+    margin: 0 auto; /* Esta linha agora é crucial para centralizar o .main dentro do body */
+    padding: 0 15px; /* NOVO: Adiciona um espaçamento de 15px nas laterais INTERNAS do .main */
+    box-sizing: border-box; /* Essencial para que o padding seja incluído na largura de 100% */
 }
 
 /* Corpo da página: Comportamento responsivo e overflow */
 body {
-    margin: auto;
-    max-width: 900px;
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    /* REMOVEMOS: margin: auto; */
+    /* REMOVEMOS: max-width: 900px; */
+    width: 100vw; /* Garante que o body ocupa 100% da largura da tela */
+    overflow-x: hidden;
     box-sizing: border-box;
     height: auto;
     background: linear-gradient(to bottom, #65a99b, #65A99b);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    font-size: 15px;
-    padding: 0 15px; /* NOVO: 0px de padding em cima/baixo, 15px nas laterais */
-    /* background-attachment: fixed; Mantido comentado como estava */
+    font-size: 15px; /* Ou o valor que você tiver */
+    padding: 0; /* Garante que o body não tem padding para não interferir */
 }
 
 /* Grupo de botões de App Store: Layout responsivo */
