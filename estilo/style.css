@@ -324,11 +324,11 @@ section#img01 {
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    max-width: 80%;
+    max-width: 80%; /* Mantenha seu valor atual */
     margin: auto;
     text-align: left;
-    font-size: 1.2em; /* AJUSTE: Aumentado de 1em para 1.2em para mobile */
-    padding: 12px;
+    font-size: 1.8em; /* AJUSTE FORTE: Este será o tamanho para MOBILE */
+    padding: 15px; /* Mantenha seu valor atual */
 }
 
 /* Navegação principal ".main-nav" */
@@ -422,6 +422,9 @@ footer {
     /* Logo principal */
     .logo img {
         width: 400px; /* Volta ao tamanho desejado para desktop */
+    section#img01 {
+        font-size: 2.8em; /* AJUSTE: Este será o tamanho para DESKTOP (volta ao tamanho grande original) */
+    }    
     }
 
     /* Títulos h1 e h2 */
