@@ -317,14 +317,14 @@ section#img01 {
     width: 98%;
     border-radius: 15px;
     background-color: var(--locacao);
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-bottom: 10px;
+    /* Removido padding-top, padding-left, padding-bottom e substituído por uma única linha: */
+    padding: 8px 10px; /* AJUSTE: Aplica 8px de padding vertical e 10px de padding horizontal */
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
     display: flex;
     align-items: center;
     justify-content: center;
-    /* justify-items: center; REMOVIDO - PROPRIEDADE MAIS COMUM PARA GRID LAYOUT */
+    box-sizing: border-box; /* IMPORTANTE: Garante que o padding seja incluído na largura total de 98% */
+    margin: 0 auto; /* NOVO: Centraliza o bloco main-nav DENTRO do seu contêiner pai (o .main) */
 }
 
 /* Grupo de links de navegação ".nav-group": Layout responsivo para mobile */
