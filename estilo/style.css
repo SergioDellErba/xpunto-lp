@@ -51,7 +51,7 @@ div img {
 
 /* Logo principal XPUNTO no topo (ESPECÍFICO PARA MOBILE) */
 .logo img {
-    max-width: 70%; /* NOVO AJUSTE: Diminui a largura máxima do logo para 70% em mobile. Experimente 60%, 80% se 70% não for ideal. */
+    max-width: 60%; /* NOVO AJUSTE: Diminui a largura máxima do logo para 70% em mobile. Experimente 60%, 80% se 70% não for ideal. */
     height: auto;    /* Mantém a proporção da imagem */
     width: auto;     /* Garante que a largura se ajuste à max-width definida */
     margin-top: 30px; /* Ajusta a margem superior (se 20px for muito pouco ou 40px muito) */
