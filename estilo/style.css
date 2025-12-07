@@ -125,6 +125,8 @@ body {
     background: linear-gradient(to bottom, #65a99b, #65A99b);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    font-size: 15px;
+    padding: 0 15px; /* NOVO: 0px de padding em cima/baixo, 15px nas laterais */
     /* background-attachment: fixed; Mantido comentado como estava */
 }
 
