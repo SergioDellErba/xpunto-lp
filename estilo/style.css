@@ -1,3 +1,10 @@
+/* RESET UNIVERSAL para garantir consistência de layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Isso é CRUCIAL: borda e padding são incluídos na largura/altura */
+}
+
 @charset "UTF-8";
 
 /* ===================================================================================================================== */
@@ -102,33 +109,35 @@ h1, h2 {
 }
 
 /* Contêiner principal ".main": Comportamento responsivo */
+/* Contêiner principal ".main" */
 .main {
     color: white;
     font-family: var(--fonte-xpunto1);
-    min-width: 300px;
-    border: 5px solid #981310 !important;
+    /* REMOVIDO: min-width: 300px; */ /* Teste: removemos para ver se era o causador do fundo branco */
+    border: 5px solid var(--solirario) !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-    width: 100%; /* Ocupa 100% da largura disponível do body */
-    max-width: 900px; /* Limita a largura máxima do main para desktop */
-    margin: 0 auto; /* Esta linha agora é crucial para centralizar o .main dentro do body */
-    padding: 0 15px; /* NOVO: Adiciona um espaçamento de 15px nas laterais INTERNAS do .main */
-    box-sizing: border-box; /* Essencial para que o padding seja incluído na largura de 100% */
+    width: 90%; /* NOVO: Ocupa 90% da largura do body */
+    max-width: 900px; /* Limita a largura máxima para telas maiores */
+    margin: 0 auto; /* ISSO VAI CENTRALIZAR O BLOCO DE 90% */
+    padding: 0; /* Removemos padding do .main, a largura de 90% já cria o espaçamento externo */
 }
 
-/* Corpo da página: Comportamento responsivo e overflow */
+/* Base HTML e Body */
+html, body {
+    width: 100%;
+    height: 100%; /* Garante que o body preencha a altura total, útil para backgrounds */
+    overflow-x: hidden; /* IMPEDE ROLAGEM HORIZONTAL */
+}
+
 body {
-    /* REMOVEMOS: margin: auto; */
-    /* REMOVEMOS: max-width: 900px; */
-    width: 100vw; /* Garante que o body ocupa 100% da largura da tela */
-    overflow-x: hidden;
-    box-sizing: border-box;
-    height: auto;
-    background: linear-gradient(to bottom, #65a99b, #65A99b);
-    background-size: 100% 100%;
+    /* Removemos max-width e margin: auto daqui, o .main vai cuidar disso */
+    background: linear-gradient(to bottom, #65a99b, #65A99b); /* Fundo da página inteira */
+    background-size: cover; /* Garante que o fundo preencha toda a área */
     background-repeat: no-repeat;
-    font-size: 15px; /* Ou o valor que você tiver */
-    padding: 0; /* Garante que o body não tem padding para não interferir */
+    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
+    font-size: 15px; /* Base font size para mobile */
+    min-width: 320px; /* NOVO: Garante que o body tenha uma largura mínima para evitar elementos muito espremidos */
 }
 
 /* Grupo de botões de App Store: Layout responsivo */
