@@ -25,7 +25,7 @@
 }
 
 /* ------------------------------------------- */
-/* REGRAS CSS GERAIS E PARA MOBILE (DEFAULT)  */
+/* REGRAS CSS GERAIS (MOBILE FIRST)            */
 /* Estas regras se aplicam a todas as telas, a menos que sejam sobrescritas por um media query */
 /* ------------------------------------------- */
 
@@ -43,7 +43,6 @@ img {
 
 /* Afeta o logo principal e outras imagens genéricas que estão em div's */
 div img {
-    /* ANTES: width: 400px; */
     max-width: 100%; /* Garante que a imagem nao ultrapasse a largura do seu pai (div) */
     height: auto;    /* Mantém a proporção da imagem */
     background-color: white;
@@ -52,46 +51,40 @@ div img {
 
 /* Logo principal XPUNTO no topo (DEFAULT - Mobile First) */
 .logo img {
-    max-width: 60%; /* NOVO AJUSTE: Diminui a largura máxima do logo para 70% em mobile. Experimente 60%, 80% se 70% não for ideal. */
-    height: auto;    /* Mantém a proporção da imagem */
-    width: auto;     /* Garante que a largura se ajuste à max-width definida */
-    margin-top: 30px; /* Ajusta a margem superior (se 20px for muito pouco ou 40px muito) */
-    margin-bottom: 30px; /* Ajusta a margem inferior */
+    max-width: 60%; /* Diminui a largura máxima do logo para 60% em mobile como padrão */
+    height: auto;
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-/*
- * NOVAS REGRAS:
- * Para garantir que a imagem Atributo1.jpg se ajuste ao padding do .main
- * e tenha um espaçamento adequado, especialmente no mobile.
- */
+/* Imagem Atributo1.png */
 picture {
-    display: block; /* Garante que o <picture> se comporte como um bloco para centralização */
-    margin: 20px auto; /* Centraliza o <picture> horizontalmente e adiciona margem vertical */
-    max-width: 100%; /* Garante que o <picture> não ultrapasse a largura do .main (já com padding) */
-    box-sizing: border-box; /* Garante que qualquer padding/border futuro no <picture> seja incluído na largura */
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-/* Regras específicas para a imagem Atributo1.jpg dentro do <picture> */
 picture img[alt="Atributos do aplicativo XPUNTO"] {
-    display: block; /* Garante que a imagem se comporte como bloco */
-    width: 100%;    /* Faz a imagem preencher 100% da largura do seu PARENT (<picture>) */
-    height: auto;   /* Mantém a proporção original da imagem */
-    max-width: 100%; /* Redundante mas boa prática: garante que a imagem não exceda o pai */
-    margin: 0 auto; /* Centraliza a imagem dentro do <picture> se por algum motivo não preencher 100% */
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
-/* Nova regra para a imagem APP.png usando seu ID */
+/* Imagem APP.png */
 #img-app-xpunto {
     max-width: 90%; /* Limita a largura para mobile para dar um respiro nas bordas */
-    height: auto;    /* Mantém proporção */
-    margin: 0 auto 80px auto; /* Centraliza horizontalmente e aplica margem inferior */
+    height: auto;
+    margin: 0 auto 80px auto;
     display: block;
-    /* background-color: var(--comercial); (Removido/comentado se não for intencional, pois o APP.png provavelmente não é transparente) */
 }
 
-/* Títulos h1 e h2: Tamanho menor para mobile */
+/* Títulos h1 e h2 (DEFAULT - Mobile First) */
 h1, h2 {
-    font-size: 1.8em; /* AJUSTE: Diminuído de 2em para 1.8em para mobile */
+    font-size: 1.8em; /* Tamanho menor para mobile */
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -101,45 +94,43 @@ h1, h2 {
     letter-spacing: 1px;
 }
 
-/* Seção ".web": Removida altura fixa para ser responsiva */
+/* Seção ".web" */
 .web {
-    width: 100%; /* OCUPA A LARGURA TOTAL */
-    height: auto; /* REMOVE A ALTURA FIXA */
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 15px; /* Ajusta o padding para mobile */
-    box-sizing: border-box; /* Garante que padding não adicione largura total */
+    padding: 15px;
+    box-sizing: border-box;
 }
 
-/* Imagem dentro de ".web": Garante responsividade */
 .web img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
 }
 
-/* Seção ".fale": Removida altura fixa para ser responsiva */
+/* Seção ".fale" */
 .fale {
-    width: 100%; /* OCUPA A LARGURA TOTAL */
-    height: auto; /* REMOVE A ALTURA FIXA */
+    width: 100%;
+    height: auto;
     display: flex;
-    margin: 1px auto 40px auto; /* Margem ajustada e corrigida */
+    margin: 1px auto 40px auto;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 15px; /* Adiciona padding para mobile */
+    padding: 15px;
     box-sizing: border-box;
 }
 
-/* Imagem dentro de ".fale": Garante responsividade */
 .fale img {
     max-width: 100%;
     max-height: 100%;
 }
 
-/* Contêiner principal ".main": Comportamento responsivo */
+/* Contêiner principal ".main" */
 .main {
     color: white;
     font-family: var(--fonte-xpunto1);
@@ -147,64 +138,57 @@ h1, h2 {
     border: 5px solid var(--solirario) !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-
-    /* AJUSTE PARA O ESPAÇAMENTO EXTERNO NO MOBILE */
-    width: 95%; /* Agora o .main ocupará 95% da largura do body no mobile (mantém 2.5% de margem em cada lado) */
+    width: 95%; /* Ocupa 95% da largura do body no mobile (deixando 2.5% de margem em cada lado) */
     max-width: 900px;
-    margin: 0 auto; /* Isso irá centralizar o .main, deixando margem verde em cada lateral */
-
-    padding: 0 10px; /* Mantém o padding interno para o conteúdo */
-    box-sizing: border-box; /* Essencial para o padding e border serem incluídos na largura */
+    margin: 0 auto;
+    padding: 0 10px;
+    box-sizing: border-box;
 }
 
 /* Base HTML e Body */
 html, body {
     width: 100%;
-    height: 100%; /* Garante que o body preencha a altura total, útil para backgrounds */
-    overflow-x: hidden; /* IMPEDE ROLAGEM HORIZONTAL */
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    /* Removemos max-width e margin: auto daqui, o .main vai cuidar disso */
-    background: linear-gradient(to bottom, #65a99b, #65A99b); /* Fundo da página inteira */
-    background-size: cover; /* Garante que o fundo preencha toda a área */
+    background: linear-gradient(to bottom, #65a99b, #65A99b);
+    background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Mantém o fundo fixo ao rolar */
-    font-size: 15px; /* Base font size para mobile */
-    min-width: 320px; /* NOVO: Garante que o body tenha uma largura mínima para evitar elementos muito espremidos */
+    background-attachment: fixed;
+    font-size: 15px;
+    min-width: 320px;
 }
 
-/* Grupo de botões de App Store: Layout responsivo */
+/* Grupo de botões de App Store */
 .image-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* PERMITE QUE OS ITENS QUEBREM LINHA EM TELAS PEQUENAS */
-    gap: 20px; /* REDUZ O ESPAÇAMENTO PARA MOBILE */
+    flex-wrap: wrap; /* Permite quebrar linha em telas MUITO pequenas como segurança */
+    gap: 20px; /* Espaçamento padrão */
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-/* Contêiner individual de imagem em ".image-group" */
 .image-container {
     margin-top: 10px;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    /* background-color: var(--comercial); -> COMENTADO: Isso adicionaria um fundo verde aos botões da loja. É o desejado? */
+    background-color: var(--comercial); /* Fundo verde para os botões da loja */
     display: block;
 }
 
-/* Imagens dentro de ".image-container" (Botões de App Store): Responsividade */
 .image-container img {
     max-width: 100%;
     height: auto;
-    width: auto;     /* Remove a largura fixa de 200px para mobile */
+    width: auto; /* Remove largura fixa para mobile-first */
     border-radius: 10px;
 }
 
 /* --- REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
-/* Contêiner principal do vídeo */
 #video-wrapper {
     position: relative;
     width: 75%;
@@ -212,7 +196,6 @@ body {
     margin: 15px auto 40px auto;
 }
 
-/* Contêiner da thumbnail e do iframe: Mantém proporção 16:9 */
 #video-placeholder-container,
 .video-responsive-iframe-wrapper {
     position: relative;
@@ -229,7 +212,6 @@ body {
     display: block;
 }
 
-/* Imagem de thumbnail do vídeo: Responsividade e posicionamento */
 #video-placeholder-container img {
     position: absolute;
     top: 0;
@@ -246,7 +228,6 @@ body {
     max-width: 100%;
 }
 
-/* Iframe do vídeo: Responsividade e posicionamento */
 .video-responsive-iframe-wrapper iframe {
     position: absolute;
     top: 0;
@@ -256,13 +237,12 @@ body {
     border: none;
 }
 
-/* Botão de Play do vídeo: Tamanho menor para mobile */
 .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px; /* TAMANHO MENOR PARA MOBILE */
+    width: 60px; /* Tamanho menor para mobile */
     height: 60px;
     background-color: rgba(255, 0, 0, 0.8);
     border-radius: 50%;
@@ -273,12 +253,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Efeito hover do botão de Play */
 .play-button:hover {
     background-color: rgba(255, 0, 0, 1);
 }
 
-/* Triângulo do ícone de Play */
 .play-button::before {
     content: '';
     width: 0;
@@ -290,31 +268,39 @@ body {
 }
 /* --- FIM DAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
 
-/* Contêiner de botões sociais (AQUI ESTÁ A CHAVE DA DISPOSIÇÃO HORIZONTAL DO RODAPÉ) */
+/* Contêiner de botões sociais (no rodapé) */
 .social-buttons {
     display: flex;
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center;    /* Centraliza os itens verticalmente */
-    flex-wrap: wrap;        /* Permite que os itens quebrem linha SE NÃO HOUVER ESPAÇO SUFICIENTE (ex: em telas MUITO pequenas) */
-    gap: 8px;               /* REDUZIDO: Espaçamento menor entre os itens para mobile */
-    padding: 10px 0;        /* Adiciona um pouco de padding vertical para não ficar colado */
-    margin-top: 10px;       /* Adiciona margem superior para afastar do conteúdo acima */
-    margin-bottom: 5px;    /* Adiciona margem inferior */
+    flex-direction: row; /* Para mobile, força linha */
+    flex-wrap: nowrap;   /* Para mobile, evita quebrar linha */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre os itens sociais no mobile */
+    padding: 5px 0; /* Padding vertical para o social-buttons */
+    margin: 0; /* Remove margens extras */
 }
 
- .social-buttons a {
-        width: 40px;    /* Aumentado o tamanho do círculo (do <a>) para 40px */
-        height: 40px;   /* Mantém igual ao width para ser um círculo */
-        /* Outras propriedades como display, justify-content, etc., já estão definidas globalmente e funcionam. */
-    }
+/* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
+.social-buttons a {
+    width: 35px; /* Tamanho dos círculos sociais para mobile */
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
 
-    .social-buttons a img {
-        max-width: 90%; /* Aumenta o tamanho da imagem do ícone para preencher 90% do círculo */
-        /* Removido max-width: 80%, pois 90% deve mostrar o ícone mais completo. */
-        height: auto;
-    }
+/* Imagens dentro dos botões sociais (Face e Instagram) */
+.social-buttons a img {
+    max-width: 80%; /* Ícone preenche 80% do círculo */
+    height: auto;
+    display: block;
+    margin: 0;
+}
 
-/* Seção de imagens genérica (seção.imagens): Responsividade */
+/* Seção de imagens genérica (section.imagens) */
 section.imagens {
     position: relative;
     color: white;
@@ -323,11 +309,10 @@ section.imagens {
     text-align: center;
 }
 
-/* Imagens dentro de seção.imagens: Corrigida de 200% para 100% e responsiva */
 section.imagens img {
-    max-width: 100%; /* CORRIGIDA DE 200% PARA 100% */
-    height: auto;    /* ADICIONADO PARA MANTER PROPORÇÃO */
-    width: auto;     /* ADICIONADO PARA REMOVER O WIDTH FIXO */
+    max-width: 100%;
+    height: auto;
+    width: auto;
     border-radius: 15px;
     margin: auto;
     display: block;
@@ -336,17 +321,17 @@ section.imagens img {
     box-shadow: 1px 1px 2px rgba(14, 13, 13, 0.447);
 }
 
-/* Seção com texto e imagem de fundo (section#img01): Responsividade de largura e fonte */
+/* Seção com texto e imagem de fundo (section#img01) */
 section#img01 {
     background-image: url('../imagens/Aurora.jpg');
     background-position: center;
     background-size: cover;
     border-radius: 20px;
-    max-width: 94%; /* Mantenha seu valor atual */
+    max-width: 94%;
     margin: auto;
     text-align: left;
-    font-size: 1.6em; /* AJUSTE FORTE: Este será o tamanho para MOBILE */
-    padding: 15px; /* Mantenha seu valor atual */
+    font-size: 1.6em; /* Tamanho para mobile */
+    padding: 15px;
 }
 
 /* Navegação principal ".main-nav" */
@@ -354,37 +339,35 @@ section#img01 {
     width: 98%;
     border-radius: 15px;
     background-color: var(--locacao);
-    /* Removido padding-top, padding-left, padding-bottom e substituído por uma única linha: */
-    padding: 8px 10px; /* AJUSTE: Aplica 8px de padding vertical e 10px de padding horizontal */
+    padding: 8px 10px;
     box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box; /* IMPORTANTE: Garante que o padding seja incluído na largura total de 98% */
-    margin: 0 auto; /* NOVO: Centraliza o bloco main-nav DENTRO do seu contêiner pai (o .main) */
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
-/* Grupo de links de navegação ".nav-group": Layout responsivo para mobile */
+/* Grupo de links de navegação ".nav-group" */
 .nav-group {
     align-items: center;
     justify-content: center;
     text-align: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* PERMITE QUE OS LINKS QUEBREM LINHA NO MOBILE */
-    gap: 15px; /* REDUZ O ESPAÇAMENTO PARA MOBILE */
+    flex-wrap: wrap; /* Permite quebrar linha no mobile */
+    gap: 15px; /* Espaçamento menor para mobile */
 }
 
-/* Links individuais de navegação ".nav-link": Tamanho de fonte menor para mobile */
+/* Links individuais de navegação ".nav-link" */
 .nav-link {
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.1em; /* TAMANHO MENOR PARA MOBILE */
+    font-size: 1.1em; /* Tamanho menor para mobile */
     transition-duration: .1s;
     position: relative;
-    /* align-items e justify-content aqui não fazem sentido para um item flex, REMOVIDOS */
 }
 
 /* Divisor nos links de navegação */
@@ -403,7 +386,7 @@ section#img01 {
     color: #ffffff;
 }
 
-/* Rodapé: Layout responsivo */
+/* Rodapé */
 footer {
     width: 100%;
     border-radius: 15px;
@@ -411,21 +394,21 @@ footer {
     margin-top: 10px;
     margin-bottom: 0px;
     background-color: white;
-    padding-left: 0px;
+    padding: 5px 0; /* <--- Ajusta o padding vertical do footer para ser mais fino no mobile */
     box-shadow: 0px -3px 5px rgba(30, 30, 30, 0.2);
     display: flex;
-    flex-direction: column; /* PARA QUE LOGO E BOTOES SOCIAIS FIQUEM EM LINHAS SEPARADAS POR PADRÃO */
+    flex-direction: column; /* Footer como coluna para mobile (contém apenas o social-buttons que é uma linha) */
     justify-content: center;
     align-items: center;
 }
 
-/* Logo do rodapé ".logo-footer": Responsividade */
+/* Logo do rodapé ".logo-footer" */
 .logo-footer {
-    max-width: 120px; /* REDUZIDO AINDA MAIS: Tamanho máximo do logo no mobile para dar mais espaço aos botões sociais */
-    height: auto;   /* MANTÉM PROPORÇÃO */
-    border-radius: 10px; /* Um pouco menor para mobile */
-    margin: 10px 0; /* Centralizado verticalmente com espaçamento */
-    flex-shrink: 0; /* Impede que o logo diminua mais do que seu max-width */
+    max-width: 100px; /* Reduz o tamanho máximo do logo para mobile */
+    height: auto;
+    border-radius: 10px;
+    margin: 0; /* Garante que não tenha margem vertical */
+    flex-shrink: 0;
 }
 
 /* Esconde o vídeo quando não está ativo */
@@ -444,7 +427,8 @@ footer {
     }
 
     section#img01 {
-        font-size: 2.8em; /* AJUSTE: Este será o tamanho para DESKTOP (volta ao tamanho grande original) */
+        font-size: 2.8em; /* Volta ao tamanho grande original para desktop */
+        max-width: 80%; /* Volta ao original para desktop */
     }
 
     /* Títulos h1 e h2 */
@@ -458,6 +442,11 @@ footer {
     }
 
     /* Imagens dentro de image-container (Botões de App Store) */
+    .image-container {
+        width: auto; /* Volta ao auto para desktop */
+        max-width: none; /* Remove o max-width específico de mobile */
+    }
+
     .image-container img {
         width: 200px; /* Volta ao tamanho original para desktop */
     }
@@ -477,18 +466,21 @@ footer {
     footer {
         flex-direction: row; /* Volta para row para desktop */
         justify-content: space-evenly; /* Distribui os itens no espaço */
-        padding: 10px 0;
+        padding: 10px 0; /* Padding vertical para desktop */
     }
 
     /* Ícones sociais do rodapé */
     .social-buttons {
         gap: 40px; /* Volta ao espaçamento original para desktop */
-        padding: 0;
-        margin: 0;
+        padding: 0; /* Remove padding extra do social-buttons em desktop */
+        margin: 0; /* Remove margens extras */
     }
     .social-buttons a {
-        width: 70px;    /* Volta ao tamanho original para desktop */
+        width: 70px; /* Volta ao tamanho original para desktop */
         height: 70px;
+    }
+    .social-buttons a img {
+        max-width: 80%; /* Mantém preenchimento */
     }
 
     /* Logo do rodapé */
@@ -497,17 +489,9 @@ footer {
         margin: 0; /* Remove margens extras */
     }
 
-    /* Seção com texto e imagem de fundo */
-    /* Você tinha duas regras para section#img01, uma aqui e outra no mobile-first.
-       A do mobile-first é a padrão. Aqui sobrescreve para desktop. */
-    section#img01 {
-        max-width: 80%; /* Volta ao original para desktop */
-        font-size: 2.8em; /* Volta ao tamanho original para desktop */
-    }
-
     /* Menu de Navegação */
     .main-nav {
-        width: 98%; /* Ajusta para desktop */
+        width: 98%;
     }
     .nav-group {
         gap: 35px; /* Volta ao espaçamento original para desktop */
@@ -515,38 +499,4 @@ footer {
     .nav-link {
         font-size: 35px; /* Volta ao tamanho original para desktop */
     }
-} /* <--- AGORA ESTE '}' FECHA O MEDIA QUERY (min-width: 768px) CORRETAMENTE */
-
-
-/* ===================================================================================================================== */
-/* MEDIA QUERIES PARA MOBILE (max-width: 767px) */
-/* ===================================================================================================================== */
-@media (max-width: 767px) {
-    /* --- AJUSTES PARA OS BOTÕES GOOGLE PLAY E APPLE (CELULAR) --- */
-    .image-group {
-        flex-direction: row; /* Alterado para que os botões se alinhem em linha (lado a lado) */
-        flex-wrap: wrap;     /* Mantenha para quebra de linha em telas MUITO pequenas como segurança */
-        gap: 15px;           /* Espaçamento entre os botões */
-        justify-content: center; /* Centraliza os botões se houver espaço extra */
-    }
-
-    .image-container {
-        /* Calcula a largura para dois botões caberem lado a lado com um gap de 15px
-           Dentro de um contêiner com padding de 10px em cada lado (do .main) */
-        width: calc(50% - 7.5px); /* 50% da largura do contêiner pai, menos metade do gap */
-        max-width: 135px; /* Limite máximo para o botão, se o calc(50%) for muito grande em telas maiores que 320px */
-        /* Removidas propriedades flex-grow e flex-basis, pois width e max-width são mais diretos aqui */
-        margin: 0; /* Garante que o margin do image-container não interfira no gap */
-    }
-
-    .image-container img {
-        width: 100%; /* Faz a imagem preencher 100% da largura do seu container (.image-container) */
-        height: auto;
-        /* Removemos o 'width: 150px' fixo daqui, pois agora a largura é controlada pelo .image-container pai */
-    }
-
-    /*
-     * Coloque aqui as futuras regras para navegação, rodapé, etc.
-     * Que havíamos conversado anteriormente.
-     */
-} /* <--- ESTE '}' FECHA O MEDIA QUERY (max-width: 767px) CORRETAMENTE */
+}
