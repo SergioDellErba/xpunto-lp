@@ -42,9 +42,9 @@ img {
 
 /* Afeta o logo principal e outras imagens genéricas que estão em div's */
 div img {
-    max-width: 100%; /* Garante que não ultrapasse o pai */
-    width: auto;     /* Remove a largura fixa de 400px para que se ajuste em mobile */
-    height: auto;    /* Mantém a proporção */
+    /* ANTES: width: 400px; */
+    max-width: 100%; /* Garante que a imagem nao ultrapasse a largura do seu pai (div) */
+    height: auto;    /* Mantém a proporção da imagem */
     background-color: white;
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
