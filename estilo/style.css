@@ -26,13 +26,13 @@
 
 /* ------------------------------------------- */
 /* REGRAS CSS GERAIS (MOBILE FIRST)            */
-/* Estas regras se aplicam a todas as telas, a menos que sejam sobrescritas por um media query */
+/* Estas regras definem o layout para telas pequenas (celulares) por padrão. */
 /* ------------------------------------------- */
 
 /* Regra global para todas as imagens: garante que nunca ultrapassem o pai e mantenham a proporção */
 img {
     border-radius: 20px;
-    max-width: 100%; /* ALTERADO de 85% para 100% para melhor responsividade */
+    max-width: 100%;
     height: auto;
     margin: auto;
     display: block;
@@ -43,15 +43,15 @@ img {
 
 /* Afeta o logo principal e outras imagens genéricas que estão em div's */
 div img {
-    max-width: 100%; /* Garante que a imagem nao ultrapasse a largura do seu pai (div) */
-    height: auto;    /* Mantém a proporção da imagem */
+    max-width: 100%;
+    height: auto;
     background-color: white;
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
-/* Logo principal XPUNTO no topo (DEFAULT - Mobile First) */
+/* Logo principal XPUNTO no topo */
 .logo img {
-    max-width: 60%; /* Diminui a largura máxima do logo para 60% em mobile como padrão */
+    max-width: 60%; /* Tamanho adequado para mobile */
     height: auto;
     width: auto;
     margin-top: 30px;
@@ -82,7 +82,7 @@ picture img[alt="Atributos do aplicativo XPUNTO"] {
     display: block;
 }
 
-/* Títulos h1 e h2 (DEFAULT - Mobile First) */
+/* Títulos h1 e h2 */
 h1, h2 {
     font-size: 1.8em; /* Tamanho menor para mobile */
     font-family: var(--fonte-destaque);
@@ -112,7 +112,7 @@ h1, h2 {
     border-radius: 10px;
 }
 
-/* Seção ".fale" */
+/* Seção ".fale" (botão "Fale Conosco") */
 .fale {
     width: 100%;
     height: auto;
@@ -124,11 +124,11 @@ h1, h2 {
     padding: 15px;
     box-sizing: border-box;
 }
-
 .fale img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 220px; /* Tamanho específico para o botão "Fale" no mobile */
+    height: auto;
 }
+
 
 /* Contêiner principal ".main" */
 .main {
@@ -138,7 +138,7 @@ h1, h2 {
     border: 5px solid var(--solirario) !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-    width: 95%; /* Ocupa 95% da largura do body no mobile (deixando 2.5% de margem em cada lado) */
+    width: 95%; /* Ocupa 95% da largura do body no mobile */
     max-width: 900px;
     margin: 0 auto;
     padding: 0 10px;
@@ -161,30 +161,29 @@ body {
     min-width: 320px;
 }
 
-/* Grupo de botões de App Store */
+/* Grupo de botões de App Store (Android / Apple) */
 .image-group {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Permite quebrar linha em telas MUITO pequenas como segurança */
-    gap: 20px; /* Espaçamento padrão */
+    flex-wrap: wrap; /* Permite quebrar linha se não houver espaço suficiente (segurança) */
+    gap: 15px; /* Espaçamento entre os botões no mobile */
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 .image-container {
-    margin-top: 10px;
+    width: calc(50% - 7.5px); /* Para que os botões fiquem lado a lado */
+    max-width: 135px; /* Limite de tamanho para mobile */
+    margin: 0;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    background-color: var(--comercial); /* Fundo verde para os botões da loja */
+    /* background-color: var(--comercial); */ /* Comentado se não for desejado o fundo verde nos botões */
     display: block;
 }
-
 .image-container img {
-    max-width: 100%;
+    width: 100%; /* Preenche o contêiner pai */
     height: auto;
-    width: auto; /* Remove largura fixa para mobile-first */
     border-radius: 10px;
 }
 
@@ -268,22 +267,22 @@ body {
 }
 /* --- FIM DAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
 
-/* Contêiner de botões sociais (no rodapé) */
+/* Contêiner de botões sociais no rodapé */
 .social-buttons {
     display: flex;
-    flex-direction: row; /* Para mobile, força linha */
-    flex-wrap: nowrap;   /* Para mobile, evita quebrar linha */
-    justify-content: center;
-    align-items: center;
-    gap: 8px; /* Espaçamento entre os itens sociais no mobile */
-    padding: 5px 0; /* Padding vertical para o social-buttons */
-    margin: 0; /* Remove margens extras */
+    flex-direction: row; /* Itens em linha */
+    flex-wrap: nowrap;   /* Não quebra linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    gap: 10px;           /* Espaçamento entre os itens sociais */
+    padding: 0;          /* Reset padding, controlado pelo footer */
+    margin: 0;           /* Reset margin */
 }
 
 /* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
 .social-buttons a {
-    width: 35px; /* Tamanho dos círculos sociais para mobile */
-    height: 35px;
+    width: 45px; /* Tamanho do círculo para mobile (maior para Meta) */
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -294,7 +293,7 @@ body {
 
 /* Imagens dentro dos botões sociais (Face e Instagram) */
 .social-buttons a img {
-    max-width: 80%; /* Ícone preenche 80% do círculo */
+    max-width: 90%; /* Ícone preenche 90% do círculo */
     height: auto;
     display: block;
     margin: 0;
@@ -394,17 +393,17 @@ footer {
     margin-top: 10px;
     margin-bottom: 0px;
     background-color: white;
-    padding: 5px 0; /* <--- Ajusta o padding vertical do footer para ser mais fino no mobile */
+    padding: 5px 0; /* Rodapé mais fino para mobile */
     box-shadow: 0px -3px 5px rgba(30, 30, 30, 0.2);
     display: flex;
-    flex-direction: column; /* Footer como coluna para mobile (contém apenas o social-buttons que é uma linha) */
+    flex-direction: column; /* Coluna para o footer (contém apenas social-buttons) */
     justify-content: center;
     align-items: center;
 }
 
 /* Logo do rodapé ".logo-footer" */
 .logo-footer {
-    max-width: 100px; /* Reduz o tamanho máximo do logo para mobile */
+    max-width: 110px; /* Reduz o tamanho máximo do logo para mobile */
     height: auto;
     border-radius: 10px;
     margin: 0; /* Garante que não tenha margem vertical */
@@ -419,6 +418,7 @@ footer {
 
 /* ===================================================================================================================== */
 /* MEDIA QUERIES PARA DESKTOP E TELAS MAIORES (a partir de 768px de largura) */
+/* Estas regras SOBRESCRIVEM os estilos padrão (mobile-first) para telas maiores. */
 /* ===================================================================================================================== */
 @media (min-width: 768px) {
     /* Logo principal */
@@ -440,13 +440,10 @@ footer {
     .image-group {
         gap: 40px; /* Volta ao espaçamento original para desktop */
     }
-
-    /* Imagens dentro de image-container (Botões de App Store) */
     .image-container {
-        width: auto; /* Volta ao auto para desktop */
-        max-width: none; /* Remove o max-width específico de mobile */
+        width: auto; /* Remove largura calculada */
+        max-width: none; /* Remove limite de mobile */
     }
-
     .image-container img {
         width: 200px; /* Volta ao tamanho original para desktop */
     }
@@ -454,6 +451,11 @@ footer {
     /* Imagem APP.png */
     #img-app-xpunto {
         max-width: 290px; /* Volta ao tamanho original para desktop */
+    }
+
+    /* Botão "Fale" */
+    .fale img {
+        max-width: 300px; /* Tamanho maior para desktop */
     }
 
     /* Botão de play do vídeo */
@@ -464,29 +466,25 @@ footer {
 
     /* Rodapé: Disposição para desktop */
     footer {
-        flex-direction: row; /* Volta para row para desktop */
-        justify-content: space-evenly; /* Distribui os itens no espaço */
-        padding: 10px 0; /* Padding vertical para desktop */
+        padding: 10px 0; /* Padding maior para desktop */
     }
 
-    /* Ícones sociais do rodapé */
+    /* Contêiner de botões sociais (no rodapé) */
     .social-buttons {
         gap: 40px; /* Volta ao espaçamento original para desktop */
-        padding: 0; /* Remove padding extra do social-buttons em desktop */
-        margin: 0; /* Remove margens extras */
     }
+    /* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
     .social-buttons a {
         width: 70px; /* Volta ao tamanho original para desktop */
         height: 70px;
     }
+    /* Imagens dentro dos botões sociais (Face e Instagram) */
     .social-buttons a img {
-        max-width: 80%; /* Mantém preenchimento */
+        max-width: 80%; /* Ícone preenche 80% do círculo */
     }
-
-    /* Logo do rodapé */
+    /* Logo do rodapé ".logo-footer" */
     .logo-footer {
         max-width: 200px; /* Volta ao max-width original para desktop */
-        margin: 0; /* Remove margens extras */
     }
 
     /* Menu de Navegação */
