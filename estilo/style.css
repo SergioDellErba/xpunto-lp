@@ -26,6 +26,7 @@
 
 /* ------------------------------------------- */
 /* REGRAS CSS GERAIS E PARA MOBILE (DEFAULT)  */
+/* Estas regras se aplicam a todas as telas, a menos que sejam sobrescritas por um media query */
 /* ------------------------------------------- */
 
 /* Regra global para todas as imagens: garante que nunca ultrapassem o pai e mantenham a proporção */
@@ -49,7 +50,7 @@ div img {
     box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
-/* Logo principal XPUNTO no topo (ESPECÍFICO PARA MOBILE) */
+/* Logo principal XPUNTO no topo (DEFAULT - Mobile First) */
 .logo img {
     max-width: 60%; /* NOVO AJUSTE: Diminui a largura máxima do logo para 70% em mobile. Experimente 60%, 80% se 70% não for ideal. */
     height: auto;    /* Mantém a proporção da imagem */
@@ -139,7 +140,6 @@ h1, h2 {
 }
 
 /* Contêiner principal ".main": Comportamento responsivo */
-/* Contêiner principal ".main" */
 .main {
     color: white;
     font-family: var(--fonte-xpunto1);
@@ -149,9 +149,9 @@ h1, h2 {
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
 
     /* AJUSTE PARA O ESPAÇAMENTO EXTERNO NO MOBILE */
-    width: 95%; /* Agora o .main ocupará 90% da largura do body */
+    width: 95%; /* Agora o .main ocupará 95% da largura do body no mobile (mantém 2.5% de margem em cada lado) */
     max-width: 900px;
-    margin: 0 auto; /* Isso irá centralizar o .main, deixando 5% de margem verde em cada lateral */
+    margin: 0 auto; /* Isso irá centralizar o .main, deixando margem verde em cada lateral */
 
     padding: 0 10px; /* Mantém o padding interno para o conteúdo */
     box-sizing: border-box; /* Essencial para o padding e border serem incluídos na largura */
@@ -191,7 +191,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: inherit;
-    background-color: var(--comercial);
+    /* background-color: var(--comercial); -> COMENTADO: Isso adicionaria um fundo verde aos botões da loja. É o desejado? */
     display: block;
 }
 
@@ -309,7 +309,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;  border-radius: 50%;
+    background-color: white;
+    border-radius: 50%;
     flex-shrink: 0; /* Impede que os botões diminuam mais do que seu tamanho */
 }
 
@@ -440,6 +441,7 @@ footer {
     display: none;
 }
 
+
 /* ===================================================================================================================== */
 /* MEDIA QUERIES PARA DESKTOP E TELAS MAIORES (a partir de 768px de largura) */
 /* ===================================================================================================================== */
@@ -447,9 +449,10 @@ footer {
     /* Logo principal */
     .logo img {
         width: 400px; /* Volta ao tamanho desejado para desktop */
+    }
+
     section#img01 {
         font-size: 2.8em; /* AJUSTE: Este será o tamanho para DESKTOP (volta ao tamanho grande original) */
-    }    
     }
 
     /* Títulos h1 e h2 */
@@ -503,16 +506,50 @@ footer {
     }
 
     /* Seção com texto e imagem de fundo */
+    /* Você tinha duas regras para section#img01, uma aqui e outra no mobile-first.
+       A do mobile-first é a padrão. Aqui sobrescreve para desktop. */
     section#img01 {
         max-width: 80%; /* Volta ao original para desktop */
         font-size: 2.8em; /* Volta ao tamanho original para desktop */
     }
 
     /* Menu de Navegação */
+    .main-nav {
+        width: 98%; /* Ajusta para desktop */
+    }
     .nav-group {
         gap: 35px; /* Volta ao espaçamento original para desktop */
     }
     .nav-link {
         font-size: 35px; /* Volta ao tamanho original para desktop */
     }
-}
+} /* <--- AGORA ESTE '}' FECHA O MEDIA QUERY (min-width: 768px) CORRETAMENTE */
+
+
+/* ===================================================================================================================== */
+/* MEDIA QUERIES PARA MOBILE (max-width: 767px) */
+/* ===================================================================================================================== */
+@media (max-width: 767px) {
+    /* --- AJUSTES PARA OS BOTÕES GOOGLE PLAY E APPLE (CELULAR) --- */
+    .image-group {
+        flex-direction: column; /* Faz os botões ficarem um abaixo do outro no mobile */
+        gap: 15px; /* Reduz o espaçamento entre eles quando empilhados */
+    }
+
+    .image-container img {
+        width: 150px; /* Reduz a largura dos botões para 150px no mobile */
+        height: auto;
+    }
+
+    /* --- AJUSTES GLOBAIS DE IMAGEM NO MOBILE (SE NECESSÁRIO) --- */
+    /* Para o logo principal no cabeçalho (que está dentro de .logo img) */
+    .logo img {
+        max-width: 250px; /* Exemplo: Reduz o logo principal para caber melhor no mobile */
+        height: auto;
+    }
+
+    /*
+     * Coloque aqui as futuras regras para navegação, rodapé, etc.
+     * Que havíamos conversado anteriormente.
+     */
+} /* <--- ESTE '}' FECHA O MEDIA QUERY (max-width: 767px) CORRETAMENTE */
