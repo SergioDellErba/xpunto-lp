@@ -149,11 +149,11 @@ h1, h2 {
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
 
     /* AJUSTE PARA O ESPAÇAMENTO EXTERNO NO MOBILE */
-    width: 90%; /* Agora o .main ocupará 90% da largura do body */
+    width: 95%; /* Agora o .main ocupará 90% da largura do body */
     max-width: 900px;
     margin: 0 auto; /* Isso irá centralizar o .main, deixando 5% de margem verde em cada lateral */
 
-    padding: 0 15px; /* Mantém o padding interno para o conteúdo */
+    padding: 0 10px; /* Mantém o padding interno para o conteúdo */
     box-sizing: border-box; /* Essencial para o padding e border serem incluídos na largura */
 }
 
