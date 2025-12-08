@@ -236,13 +236,14 @@ body {
     border: none;
 }
 
+/* Estilo para o botão de Play */
 .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px; /* Tamanho menor para mobile */
-    height: 60px;
+    width: 60px; /* <-- REDUZIDO: Tamanho para mobile */
+    height: 60px; /* <-- REDUZIDO: Tamanho para mobile */
     background-color: rgba(255, 0, 0, 0.8);
     border-radius: 50%;
     display: flex;
@@ -252,18 +253,30 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.play-button:hover {
-    background-color: rgba(255, 0, 0, 1);
-}
-
+/* Triângulo do ícone de Play */
 .play-button::before {
     content: '';
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 20px 0 20px 30px;
+    border-width: 15px 0 15px 22px; /* <-- AJUSTADO: Triângulo menor para mobile */
     border-color: transparent transparent transparent #ffffff;
-    margin-left: 5px;
+    margin-left: 3px; /* <-- AJUSTADO: Posição do triângulo */
+}
+
+.play-button:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+/* Triângulo do ícone de Play */
+.play-button::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 22px; /* <-- AJUSTADO: Triângulo menor para mobile */
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 3px; /* <-- AJUSTADO: Posição do triângulo */
 }
 /* --- FIM DAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
 
@@ -467,8 +480,8 @@ footer {
 
     /* Botão de play do vídeo */
     .play-button {
-        width: 80px; /* Volta ao tamanho original para desktop */
-        height: 80px;
+        width: 70px; /* Volta ao tamanho original para desktop */
+        height: 70px;
     }
 
     /* Rodapé: Disposição para desktop */
