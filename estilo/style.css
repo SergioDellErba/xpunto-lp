@@ -302,25 +302,17 @@ body {
     margin-bottom: 5px;    /* Adiciona margem inferior */
 }
 
-/* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
-.social-buttons a {
-    width: 35px;    /* REDUZIDO: Tamanho menor para os ícones no mobile */
-    height: 35px;   /* Mantém igual ao width para ser um círculo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 50%;
-    flex-shrink: 0; /* Impede que os botões diminuam mais do que seu tamanho */
-}
+ .social-buttons a {
+        width: 40px;    /* Aumentado o tamanho do círculo (do <a>) para 40px */
+        height: 40px;   /* Mantém igual ao width para ser um círculo */
+        /* Outras propriedades como display, justify-content, etc., já estão definidas globalmente e funcionam. */
+    }
 
-/* Imagens dentro dos botões sociais (Face e Instagram) */
-.social-buttons a img { /* Mais específico para não afetar o logo-footer */
-    max-width: 80%; /* Garante que a imagem do ícone caiba dentro do círculo */
-    height: auto;
-    display: block;
-    margin: 0;
-}
+    .social-buttons a img {
+        max-width: 90%; /* Aumenta o tamanho da imagem do ícone para preencher 90% do círculo */
+        /* Removido max-width: 80%, pois 90% deve mostrar o ícone mais completo. */
+        height: auto;
+    }
 
 /* Seção de imagens genérica (seção.imagens): Responsividade */
 section.imagens {
@@ -532,20 +524,25 @@ footer {
 @media (max-width: 767px) {
     /* --- AJUSTES PARA OS BOTÕES GOOGLE PLAY E APPLE (CELULAR) --- */
     .image-group {
-        flex-direction: column; /* Faz os botões ficarem um abaixo do outro no mobile */
-        gap: 15px; /* Reduz o espaçamento entre eles quando empilhados */
+        flex-direction: row; /* Alterado para que os botões se alinhem em linha (lado a lado) */
+        flex-wrap: wrap;     /* Mantenha para quebra de linha em telas MUITO pequenas como segurança */
+        gap: 15px;           /* Espaçamento entre os botões */
+        justify-content: center; /* Centraliza os botões se houver espaço extra */
+    }
+
+    .image-container {
+        /* Calcula a largura para dois botões caberem lado a lado com um gap de 15px
+           Dentro de um contêiner com padding de 10px em cada lado (do .main) */
+        width: calc(50% - 7.5px); /* 50% da largura do contêiner pai, menos metade do gap */
+        max-width: 135px; /* Limite máximo para o botão, se o calc(50%) for muito grande em telas maiores que 320px */
+        /* Removidas propriedades flex-grow e flex-basis, pois width e max-width são mais diretos aqui */
+        margin: 0; /* Garante que o margin do image-container não interfira no gap */
     }
 
     .image-container img {
-        width: 150px; /* Reduz a largura dos botões para 150px no mobile */
+        width: 100%; /* Faz a imagem preencher 100% da largura do seu container (.image-container) */
         height: auto;
-    }
-
-    /* --- AJUSTES GLOBAIS DE IMAGEM NO MOBILE (SE NECESSÁRIO) --- */
-    /* Para o logo principal no cabeçalho (que está dentro de .logo img) */
-    .logo img {
-        max-width: 250px; /* Exemplo: Reduz o logo principal para caber melhor no mobile */
-        height: auto;
+        /* Removemos o 'width: 150px' fixo daqui, pois agora a largura é controlada pelo .image-container pai */
     }
 
     /*
