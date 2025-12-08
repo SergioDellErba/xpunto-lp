@@ -76,7 +76,7 @@ picture img[alt="Atributos do aplicativo XPUNTO"] {
 
 /* Imagem APP.png */
 #img-app-xpunto {
-    max-width: 90%; /* Limita a largura para mobile para dar um respiro nas bordas */
+    max-width: 220px; /* Limita a largura para mobile para dar um respiro nas bordas */
     height: auto;
     margin: 0 auto 80px auto;
     display: block;
@@ -451,7 +451,7 @@ footer {
 
     /* Imagem APP.png */
     #img-app-xpunto {
-        max-width: 290px; /* Volta ao tamanho original para desktop */
+        max-width: 250px; /* Volta ao tamanho original para desktop */
     }
 
     /* Botão "Fale" */
