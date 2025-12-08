@@ -58,6 +58,27 @@ div img {
     margin-bottom: 30px; /* Ajusta a margem inferior */
 }
 
+/*
+ * NOVAS REGRAS:
+ * Para garantir que a imagem Atributo1.jpg se ajuste ao padding do .main
+ * e tenha um espaçamento adequado, especialmente no mobile.
+ */
+picture {
+    display: block; /* Garante que o <picture> se comporte como um bloco para centralização */
+    margin: 20px auto; /* Centraliza o <picture> horizontalmente e adiciona margem vertical */
+    max-width: 100%; /* Garante que o <picture> não ultrapasse a largura do .main (já com padding) */
+    box-sizing: border-box; /* Garante que qualquer padding/border futuro no <picture> seja incluído na largura */
+}
+
+/* Regras específicas para a imagem Atributo1.jpg dentro do <picture> */
+picture img[alt="Atributos do aplicativo XPUNTO"] {
+    display: block; /* Garante que a imagem se comporte como bloco */
+    width: 100%;    /* Faz a imagem preencher 100% da largura do seu PARENT (<picture>) */
+    height: auto;   /* Mantém a proporção original da imagem */
+    max-width: 100%; /* Redundante mas boa prática: garante que a imagem não exceda o pai */
+    margin: 0 auto; /* Centraliza a imagem dentro do <picture> se por algum motivo não preencher 100% */
+}
+
 /* Nova regra para a imagem APP.png usando seu ID */
 #img-app-xpunto {
     max-width: 90%; /* Limita a largura para mobile para dar um respiro nas bordas */
@@ -122,14 +143,15 @@ h1, h2 {
 .main {
     color: white;
     font-family: var(--fonte-xpunto1);
-    /* REMOVIDO: min-width: 300px; */ /* Teste: removemos para ver se era o causador do fundo branco */
+    min-width: 300px;
     border: 5px solid var(--solirario) !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-    width: 90%; /* NOVO: Ocupa 90% da largura do body */
-    max-width: 900px; /* Limita a largura máxima para telas maiores */
-    margin: 0 auto; /* ISSO VAI CENTRALIZAR O BLOCO DE 90% */
-    padding: 0; /* Removemos padding do .main, a largura de 90% já cria o espaçamento externo */
+    width: 100%; /* Pode manter 100% ou definir uma max-width se quiser que ele não estique em telas muito grandes */
+    max-width: 900px; /* Opcional: Se quiser que o .main tenha a mesma largura máxima que o body */
+    margin: 0 auto; /* Isso vai centralizar o .main horizontalmente dentro do seu pai */
+    padding: 0 15px; /* <--- ADICIONE OU CONFIRME ESTE PADDING LATERAL DE 15PX */
+    box-sizing: border-box; /* <--- ESSENCIAL! ADICIONE ESTA PROPRIEDADE AQUI */
 }
 
 /* Base HTML e Body */
