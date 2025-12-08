@@ -287,7 +287,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-radius: 50%;
+    border-radius: 15%;
     flex-shrink: 0;
 }
 
@@ -477,6 +477,7 @@ footer {
     .social-buttons a {
         width: 70px; /* Volta ao tamanho original para desktop */
         height: 70px;
+        border-radius: 50%;
     }
     /* Imagens dentro dos botões sociais (Face e Instagram) */
     .social-buttons a img {
