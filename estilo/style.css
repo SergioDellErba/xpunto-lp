@@ -190,8 +190,8 @@ body {
 /* --- REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
 #video-wrapper {
     position: relative;
-    width: 75%;
-    max-width: 800px;
+    width: 95%;
+    max-width: 900px;
     margin: 15px auto 40px auto;
 }
 
@@ -452,6 +452,12 @@ footer {
     /* Imagem APP.png */
     #img-app-xpunto {
         max-width: 250px; /* Volta ao tamanho original para desktop */
+    }
+
+    /* Contêiner principal do vídeo (onde aplicamos as margens) */
+    #video-wrapper {
+        width: 100%; /* Faz com que ocupe 100% da largura do contêiner pai (.main) no desktop */
+        /* max-width já foi definido na regra geral e será respeitado */
     }
 
     /* Botão "Fale" */
