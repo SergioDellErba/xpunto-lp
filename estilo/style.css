@@ -280,6 +280,7 @@ body {
 }
 
 /* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
+/* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
 .social-buttons a {
     width: 45px; /* Tamanho do círculo para mobile (maior para Meta) */
     height: 45px;
@@ -287,7 +288,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-radius: 15%;
+    border-radius: 15%; /* <-- ESTA É A REGRA PARA O CELULAR (SQUIRCLE) */
     flex-shrink: 0;
 }
 
@@ -474,10 +475,10 @@ footer {
         gap: 40px; /* Volta ao espaçamento original para desktop */
     }
     /* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
-    .social-buttons a {
+     .social-buttons a {
         width: 70px; /* Volta ao tamanho original para desktop */
         height: 70px;
-        border-radius: 50%;
+        border-radius: 50%; /* <-- ESTA É A REGRA PARA O COMPUTADOR (REDONDO) */
     }
     /* Imagens dentro dos botões sociais (Face e Instagram) */
     .social-buttons a img {
