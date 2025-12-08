@@ -147,11 +147,14 @@ h1, h2 {
     border: 5px solid var(--solirario) !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-    width: 100%; /* Pode manter 100% ou definir uma max-width se quiser que ele não estique em telas muito grandes */
-    max-width: 900px; /* Opcional: Se quiser que o .main tenha a mesma largura máxima que o body */
-    margin: 0 auto; /* Isso vai centralizar o .main horizontalmente dentro do seu pai */
-    padding: 0 15px; /* <--- ADICIONE OU CONFIRME ESTE PADDING LATERAL DE 15PX */
-    box-sizing: border-box; /* <--- ESSENCIAL! ADICIONE ESTA PROPRIEDADE AQUI */
+
+    /* AJUSTE PARA O ESPAÇAMENTO EXTERNO NO MOBILE */
+    width: 90%; /* Agora o .main ocupará 90% da largura do body */
+    max-width: 900px;
+    margin: 0 auto; /* Isso irá centralizar o .main, deixando 5% de margem verde em cada lateral */
+
+    padding: 0 15px; /* Mantém o padding interno para o conteúdo */
+    box-sizing: border-box; /* Essencial para o padding e border serem incluídos na largura */
 }
 
 /* Base HTML e Body */
