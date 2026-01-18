@@ -424,6 +424,7 @@ footer {
 
 /* Estilo para o grupo do botão XPUNTO WEB (centralizado acima dos outros) */
 .single-app-button-group {
+    width: 100%; /* <<== ESSA É A NOVA LINHA DE CÓDIGO A SER ADICIONADA */
     display: flex;
     justify-content: center; /* Centraliza o botão horizontalmente */
     margin-top: 40px; /* Espaço acima deste grupo (separando-o da imagem Atributo1) */
