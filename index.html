@@ -1,4 +1,4 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
  <meta charset="UTF-8">
@@ -10,7 +10,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
- <!-- FIM DO CARREGAMENTO DAS FONTES -->
+ <!-- FIM DO CARREGAMENTO DAS FONTEs -->
 
  <link rel="stylesheet" href="estilo/style.css">
 </head>
@@ -22,7 +22,7 @@
  <h2>CONEXÕES QUE IMPORTAM!</h2>
  </div>
  <section class="imagens" id="img01">
-                <p> <!-- CORRIGIDO: Removido o <p> aninhado -->
+                <p>
                     <strong><br><br>O que realmente te move?<br><br>Um propósito, uma paixão, conquistar seus sonhos.<br><br>A chave para tudo isso? <em>Conectar-se com quem importa</em>.<br><br>Mas o networking <em>tradicional é caro, demorado, difícil e</em>, muitas vezes, impreciso.<br><br>Rouba seu tempo e frustra.<br><br>Imagine se essa busca fosse simples, eficiente e <em>realmente transformadora</em>...<br><br>O XPUNTO <em>democratiza a conexão útil</em> humana.<br><br>Tornando-a <em>barata</em> (sim, menos que uma passagem de ônibus!), <em>fácil, rápida, segura, privada e assertiva.</em><br><br>Chega de conversas vazias e <em>oportunidades perdidas</em>.<br><br><em>Ser humano precisa de humano</em>.<br><br>No XPUNTO, cada interação é uma <em>ponte poderosa</em> para a sua próxima grande <em>conquista</em>.<br><br><em>É inegável: as pessoas de sucesso dominam o networking</em>.<br><br>Baixe o XPUNTO agora e transforme seus desejos em realidade!<br>
                         <br><br>
                         <br><br></strong>
@@ -30,14 +30,17 @@
             </section>
             
             <picture>
-    <!-- O atributo 'width' foi removido da tag <source>, pois ele não é válido aqui. -->
-    <!-- A tag <source> é usada para carregar imagens condicionais ou formatos diferentes. -->
     <source media="(max-width: 600px)" srcset="imagens/Atributo1.jpg">
-    
-    <!-- Os atributos 'width' e 'height' foram adicionados à tag <img> para reservar o espaço -->
-    <!-- e evitar o Cumulative Layout Shift (CLS). -->
     <img src="imagens/Atributo1.jpg" loading="lazy" alt="Atributos do aplicativo XPUNTO" width="1350" height="3500">
 </picture>
+
+            <!-- INÍCIO DO NOVO CÓDIGO - Botão XPUNTO WEB -->
+            <div class="single-app-button-group">
+                <a href="https://xpunto-web-9a7695ea0e6f.herokuapp.com/"  class="image-container">
+                    <img src="imagens/WEB.png" alt="Acessar XPUNTO WEB" loading="lazy" width="500" height="500">
+                </a>
+            </div>
+            <!-- FIM DO NOVO CÓDIGO -->
 
             <div class="image-group">
                 <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" 
@@ -57,7 +60,7 @@
         <div id="video-wrapper">
             <!-- Este contêiner exibirá a thumbnail e o botão de play -->
             <div id="video-placeholder-container">
-                <img src="imagens/video.jpg" alt="Miniatura do vídeo promocional do XPUNTO" id="videoThumbnail" loading="lazy" width="1920" height="1080"> <!-- CORRIGIDO: heigth para height -->
+                <img src="imagens/video.jpg" alt="Miniatura do vídeo promocional do XPUNTO" id="videoThumbnail" loading="lazy" width="1920" height="1080">
                 <div class="play-button"></div> <!-- O botão de play que ficará sobre a imagem -->
             </div>
             <!-- O iframe do vídeo será inserido aqui pelo JavaScript quando o usuário clicar -->
@@ -65,8 +68,8 @@
         <!-- FIM DA SEÇÃO PARA O VÍDEO -->
 
             <div class="fale">
-                <a href="mailto:contato@xpunto.com" class="image-container"> <!-- CORRIGIDO:  REMOVIDO para mailto -->
-                    <img src="imagens/fale.jpg" alt="Clique para enviar um e-mail para o XPUNTO" loading="lazy" width="100" height="70"> <!-- CORRIGIDO: Atributos dentro da tag -->
+                <a href="mailto:contato@xpunto.com" class="image-container">
+                    <img src="imagens/fale.jpg" alt="Clique para enviar um e-mail para o XPUNTO" loading="lazy" width="100" height="70">
                 </a>
             </div>
 
@@ -91,7 +94,6 @@
             <img src="imagens/Facebook_Logo_Primary.png" alt="Ícone do Facebook" loading="lazy">
         </a>
 
-        <!-- CORRIGIDO: Logo XPUNTO no rodapé com atributos de tamanho e alt aprimorado -->
         <img src="imagens/logo.png" alt="Logo XPUNTO - Conexões que importam" class="logo-footer" loading="lazy" width="791" height="153">
 
         <a href="https://www.instagram.com/xpuntoapp/"  rel="noopener noreferrer" class="instagram-icon">
