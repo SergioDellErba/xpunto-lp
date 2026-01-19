@@ -117,7 +117,6 @@ h1, h2 {
     width: 93%;
     height: 200px; /* Altura fixa original que garantiu a área clicável */
     display: flex;
-    /* Removido flex-direction: column; pois o texto do e-mail não está mais aqui */
     margin: 1px auto 0 auto; /* Margem original */
     justify-content: center;
     align-items: center;
@@ -128,14 +127,15 @@ h1, h2 {
     max-height: 100%; /* Permite à imagem preencher a altura do contêiner */
 }
 
-/* NOVO: Estilo para o texto alternativo do e-mail */
+/* NOVO: Estilo para o texto alternativo do e-mail (OCULTO POR PADRÃO NO MOBILE) */
 .email-alternative-text {
     text-align: center;
     color: white;
     margin-top: 10px;
-    margin-bottom: 40px; /* Espaço para o próximo elemento */
+    margin-bottom: 40px; /* Espaço para o próximo elemento (menu de navegação) */
     font-size: 0.9em; /* Tamanho de fonte um pouco menor */
     font-family: var(--fonte-xpunto1); /* Mantém a mesma fonte principal */
+    display: none; /* OCULTA O TEXTO NO MOBILE POR PADRÃO */
 }
 
 .email-alternative-text a {
@@ -448,6 +448,11 @@ footer {
 /* Estas regras SOBRESCRIVEM os estilos padrão (mobile-first) para telas maiores. */
 /* ===================================================================================================================== */
 @media (min-width: 768px) {
+    /* Exibir o texto alternativo do e-mail apenas no desktop */
+    .email-alternative-text {
+        display: block; /* Torna o texto visível no desktop */
+    }
+
     /* Logo principal */
     .logo img {
         width: 400px; /* Volta ao tamanho desejado para desktop */
