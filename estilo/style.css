@@ -144,6 +144,15 @@ h1, h2 {
     font-weight: bold; /* Deixa o e-mail em negrito */
 }
 
+/* NOVO: Espaçamento para os parágrafos dentro da seção #img01 */
+section#img01 p {
+    margin-bottom: 20px; /* Adiciona um espaçamento de 20px abaixo de cada parágrafo */
+    margin-top: 0; /* Garante que não haja margem superior extra, respeitando o padding da seção */
+}
+section#img01 p:last-child {
+    margin-bottom: 0; /* Remove a margem do último parágrafo para não adicionar espaço extra no final da seção */
+}
+
 
 /* Contêiner principal ".main" */
 .main {
@@ -347,7 +356,7 @@ section#img01 {
     max-width: 94%;
     margin: auto;
     text-align: left;
-    font-size: 1.6em; /* Tamanho para mobile */
+    font-size: 1.4em; /* <--- ALTERADO: Tamanho da fonte para mobile */
     padding: 15px;
 }
 
@@ -459,7 +468,7 @@ footer {
     }
 
     section#img01 {
-        font-size: 2.8em; /* Volta ao tamanho grande original para desktop */
+        font-size: 2.5em; /* <--- ALTERADO: Tamanho da fonte para desktop */
         max-width: 80%; /* Volta ao original para desktop */
     }
 
