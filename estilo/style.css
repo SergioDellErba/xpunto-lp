@@ -112,7 +112,7 @@ h1, h2 {
     border-radius: 10px;
 }
 
-/* CORRIGIDO: Seção ".fale" (botão "Fale Conosco") - RESTAURADO PARA O CÓDIGO ORIGINAL QUE FUNCIONAVA */
+/* CORRIGIDO: Seção ".fale" (botão "Fale Conosco") */
 .fale {
     width: 93%;
     height: 200px; /* Altura fixa original que garantiu a área clicável */
@@ -158,7 +158,7 @@ body {
     min-width: 320px;
 }
 
-/* Grupo de botões de App Store (Android / Apple / WEB) */
+/* Grupo de botões de Download (Android / Apple / WEB) */
 .image-group {
     display: flex;
     justify-content: center;
@@ -169,7 +169,8 @@ body {
     margin-bottom: 20px;
 }
 .image-container {
-    width: calc(50% - 7.5px); /* Para que os botões (Android e WEB) fiquem lado a lado */
+    /* No mobile, quando o Apple está oculto, teremos 2 botões. Esta regra os ajusta para ficarem lado a lado. */
+    width: calc(50% - 7.5px); 
     max-width: 135px; /* Limite de tamanho para mobile */
     margin: 0;
     text-align: center;
@@ -418,12 +419,10 @@ footer {
 /* AJUSTES PARA OS BOTÕES DE DOWNLOAD          */
 /* ------------------------------------------- */
 
-/* OCULTAR TEMPORARIAMENTE O BOTÃO APPLE */
+/* OCULTAR TEMPORARIAMENTE O BOTÃO APPLE (aplicado a TODAS as telas) */
 #apple-button {
     display: none;
 }
-
-/* Removidas as regras específicas para .single-app-button-group pois ele não será mais usado no HTML */
 
 
 /* ===================================================================================================================== */
@@ -446,7 +445,7 @@ footer {
         font-size: 3.5em; /* Volta ao tamanho original para desktop */
     }
 
-    /* Grupo de botões de App Store (Android / Apple / WEB) */
+    /* Grupo de botões de Download (Android / Apple / WEB) */
     .image-group {
         gap: 40px; /* Volta ao espaçamento original para desktop */
     }
@@ -469,7 +468,7 @@ footer {
         /* max-width já foi definido na regra geral e será respeitado */
     }
 
-    /* CORRIGIDO: Botão "Fale" - RESTAURADO PARA O CÓDIGO ORIGINAL QUE FUNCIONAVA */
+    /* CORRIGIDO: Botão "Fale" */
     .fale {
         width: 93%; /* Largura original */
         height: 200px; /* Altura original */
