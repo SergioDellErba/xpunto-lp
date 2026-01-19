@@ -121,14 +121,11 @@ h1, h2 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Removido o padding e box-sizing que não estavam no original */
 }
 .fale img {
     max-width: 100%; /* Permite à imagem preencher a largura do contêiner */
     max-height: 100%; /* Permite à imagem preencher a altura do contêiner */
-    /* Removido o max-width fixo de 220px que pode ter causado problemas */
 }
-
 
 /* Contêiner principal ".main" */
 .main {
@@ -161,7 +158,7 @@ body {
     min-width: 320px;
 }
 
-/* Grupo de botões de App Store (Android / Apple) */
+/* Grupo de botões de App Store (Android / Apple / WEB) */
 .image-group {
     display: flex;
     justify-content: center;
@@ -172,13 +169,12 @@ body {
     margin-bottom: 20px;
 }
 .image-container {
-    width: calc(50% - 7.5px); /* Para que os botões fiquem lado a lado */
+    width: calc(50% - 7.5px); /* Para que os botões (Android e WEB) fiquem lado a lado */
     max-width: 135px; /* Limite de tamanho para mobile */
     margin: 0;
     text-align: center;
     text-decoration: none;
     color: inherit;
-    /* background-color: var(--comercial); */ /* Comentado se não for desejado o fundo verde nos botões */
     display: block;
 }
 .image-container img {
@@ -419,27 +415,15 @@ footer {
 }
 
 /* ------------------------------------------- */
-/* NOVAS REGRAS PARA O BOTÃO XPUNTO WEB        */
+/* AJUSTES PARA OS BOTÕES DE DOWNLOAD          */
 /* ------------------------------------------- */
 
-/* Estilo para o grupo do botão XPUNTO WEB (centralizado acima dos outros) */
-.single-app-button-group {
-    width: 100%; /* <<== ESSA É A NOVA LINHA DE CÓDIGO A SER ADICIONADA */
-    display: flex;
-    justify-content: center; /* Centraliza o botão horizontalmente */
-    margin-top: 40px; /* Espaço acima deste grupo (separando-o da imagem Atributo1) */
-    margin-bottom: 20px; /* Espaço abaixo deste grupo (separando-o do grupo de Android/Apple) */
+/* OCULTAR TEMPORARIAMENTE O BOTÃO APPLE */
+#apple-button {
+    display: none;
 }
 
-/* Garante que o botão WEB tenha um tamanho razoável e centralizado, sem ser influenciado pela regra de 50% */
-/* No mobile, ele terá o mesmo tamanho máximo dos botões Android/Apple */
-.single-app-button-group .image-container {
-    width: 135px; /* Força a largura para ser igual a um dos botões de app no mobile */
-    max-width: 135px; /* E o max-width também */
-}
-
-
-/* Removido: A regra `.fale .image-container` que eu havia adicionado foi removida pois não será mais necessária com a restauração do .fale */
+/* Removidas as regras específicas para .single-app-button-group pois ele não será mais usado no HTML */
 
 
 /* ===================================================================================================================== */
@@ -462,7 +446,7 @@ footer {
         font-size: 3.5em; /* Volta ao tamanho original para desktop */
     }
 
-    /* Grupo de botões de App Store */
+    /* Grupo de botões de App Store (Android / Apple / WEB) */
     .image-group {
         gap: 40px; /* Volta ao espaçamento original para desktop */
     }
@@ -493,7 +477,6 @@ footer {
     }
     .fale img {
         /* max-width: 100%; max-height: 100%; já está na regra geral .fale img */
-        /* Removido o max-width fixo de 300px para desktop */
     }
 
     /* Botão de play do vídeo */
@@ -536,14 +519,4 @@ footer {
     .nav-link {
         font-size: 35px; /* Volta ao tamanho original para desktop */
     }
-
-    /* ------------------------------------------- */
-    /* AJUSTES PARA OS BOTÕES NO DESKTOP   */
-    /* ------------------------------------------- */
-    .single-app-button-group .image-container {
-        width: 200px; /* Adapta a largura para desktop, igual aos outros */
-        max-width: 200px;
-    }
-
-    /* Removido: A regra `.fale .image-container` que eu havia adicionado foi removida. */
 }

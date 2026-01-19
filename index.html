@@ -10,7 +10,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
- <!-- FIM DO CARREGAMENTO DAS FONTEs -->
+ <!-- FIM DO CARREGAMENTO DAS FONTES -->
 
  <link rel="stylesheet" href="estilo/style.css">
 </head>
@@ -34,24 +34,22 @@
     <img src="imagens/Atributo1.jpg" loading="lazy" alt="Atributos do aplicativo XPUNTO" width="1350" height="3500">
 </picture>
 
-            <!-- INÍCIO DO NOVO CÓDIGO - Botão XPUNTO WEB -->
-            <div class="single-app-button-group">
-                <a href="https://xpunto-web-9a7695ea0e6f.herokuapp.com/"  class="image-container">
-                    <img src="imagens/WEB.png" alt="Acessar XPUNTO WEB" loading="lazy" width="500" height="500">
-                </a>
-            </div>
-            <!-- FIM DO NOVO CÓDIGO -->
-
+            <!-- BLOCO DE BOTÕES DE DOWNLOADS: Android, XPUNTO WEB e Apple (oculto via CSS) -->
             <div class="image-group">
                 <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" 
                     class="image-container">
                     <img src="imagens/Android.jpg" alt="Baixar XPUNTO na Google Play Store" loading="lazy" width="500" height="500">
                 </a>
 
-                <a href="https://apps.apple.com/br/app/xpunto/id6478978511"  class="image-container">
+                <a href="https://xpunto-web-9a7695ea0e6f.herokuapp.com/"  class="image-container" id="web-button">
+                    <img src="imagens/WEB.png" alt="Acessar XPUNTO WEB" loading="lazy" width="500" height="500">
+                </a>
+
+                <a href="https://apps.apple.com/br/app/xpunto/id6478978511"  class="image-container" id="apple-button">
                     <img src="imagens/Apple.jpg" alt="Baixar XPUNTO na Apple App Store" loading="lazy" width="500" height="500">
                 </a>
             </div>
+            <!-- FIM DO BLOCO DE BOTÕES DE DOWNLOADS -->
 
             <section>
     <img src="imagens/APP.png" alt="Tela do aplicativo XPUNTO" id="img-app-xpunto" loading="lazy" width="1080" height="1920">
@@ -68,7 +66,7 @@
         <!-- FIM DA SEÇÃO PARA O VÍDEO -->
 
             <div class="fale">
-                <a href="mailto:contato@xpunto.com" class="image-container">
+                <a href="mailto:contato@xpunto.com"  class="image-container">
                     <img src="imagens/fale.jpg" alt="Clique para enviar um e-mail para o XPUNTO" loading="lazy" width="100" height="70">
                 </a>
             </div>
