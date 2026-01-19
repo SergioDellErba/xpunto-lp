@@ -117,7 +117,7 @@ h1, h2 {
     width: 93%;
     height: 200px; /* Altura fixa original que garantiu a área clicável */
     display: flex;
-    flex-direction: column; /* Adicionado para que o texto fique abaixo do botão */
+    /* Removido flex-direction: column; pois o texto do e-mail não está mais aqui */
     margin: 1px auto 0 auto; /* Margem original */
     justify-content: center;
     align-items: center;
@@ -127,6 +127,23 @@ h1, h2 {
     max-width: 100%; /* Permite à imagem preencher a largura do contêiner */
     max-height: 100%; /* Permite à imagem preencher a altura do contêiner */
 }
+
+/* NOVO: Estilo para o texto alternativo do e-mail */
+.email-alternative-text {
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 40px; /* Espaço para o próximo elemento */
+    font-size: 0.9em; /* Tamanho de fonte um pouco menor */
+    font-family: var(--fonte-xpunto1); /* Mantém a mesma fonte principal */
+}
+
+.email-alternative-text a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold; /* Deixa o e-mail em negrito */
+}
+
 
 /* Contêiner principal ".main" */
 .main {
