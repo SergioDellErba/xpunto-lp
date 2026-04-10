@@ -1,210 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>XPUNTO</title>
- <link rel="icon" href="favicon.png" type="image/x-icon">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="estilo/style.css">
-
- <style>
-  .texto-principal {
-    background: #367697;
-    border: 4px solid #981310;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    margin-bottom: 80px !important;
-    max-width: 800px;
-    text-align: justify;
-    font-style: italic;
-    color: #ffffff;
-    font-size: 1.1em;
-    line-height: 1.6;
-  }
-
-  .texto-principal p {
-    margin-bottom: 15px;
-  }
-
-  .app-section {
-    margin-top: 0 !important;
-    margin-bottom: 40px !important;
-  }
-
-  .download-buttons-section {
-    margin-bottom: 40px;
-  }
-
-  .app-buttons-wrapper,
-  .web-button-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 0;
-  }
-
-  .web-button-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .download-button {
-    display: block;
-  }
-
-  .download-button img {
-    width: auto !important;
-    max-width: 200px !important;
-    height: auto !important;
-    display: block;
-  }
-
-  @media (max-width: 768px) {
-    .app-buttons-wrapper {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-      gap: 12px;
-    }
-
-    .web-button-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .download-button {
-      display: flex;
-      justify-content: center;
-    }
-
-    .app-buttons-wrapper .download-button img {
-      width: 125px !important;
-      max-width: 125px !important;
-      height: auto !important;
-    }
-
-    .web-button-wrapper .download-button img {
-      width: 145px !important;
-      max-width: 145px !important;
-      height: auto !important;
-    }
-  }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XPUNTO</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo/style.css">
 </head>
-
 <body>
- <main class="main">
-  <div class="logo">
-   <img src="imagens/logo.png" alt="Logo XPUNTO" width="791" height="153">
-   <h1>NETWORKING DIGITAL</h1>
-   <h2>CONEXÕES QUE IMPORTAM!</h2>
-  </div>
-
-  <section class="texto-principal" id="img01">
-   <p>O <strong>networking</strong> é a força que <strong>impulsiona</strong> a evolução humana.</p>
-   <p>No XPUNTO, conexões úteis viram realidade: <strong>fácil, rápido, assertivo e seguro</strong>.</p>
-   <p>Saber com quem falar sobre o que você quer — e que está disposto a conversar — <strong>resolve tudo</strong>.</p>
-   <p>Cada conversa é um passo rumo à sua <strong>realização</strong>.</p>
-   <p><strong>Baixe agora</strong>. Conecte-se ao seu futuro.</p>
-  </section>
-
-  <section class="app-section">
-   <img src="imagens/APP.png" alt="Tela do aplicativo XPUNTO" loading="lazy" id="img-app-xpunto" width="1080" height="1920">
-  </section>
-
-  <div class="download-buttons-section">
-   <div class="app-buttons-wrapper">
-    <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank" rel="noopener noreferrer" class="download-button">
-     <img src="imagens/Android.jpg" alt="Baixar XPUNTO Google Play" loading="lazy">
-    </a>
-
-    <a href="https://apps.apple.com/br/app/xpunto/id6478978511" target="_blank" rel="noopener noreferrer" class="download-button" id="apple-button">
-     <img src="imagens/Apple.jpg" alt="Baixar XPUNTO App Store" loading="lazy">
-    </a>
-   </div>
-
-   <div class="web-button-wrapper">
-    <a href="https://app.xpunto.com" target="_blank" rel="noopener noreferrer" class="download-button">
-     <img src="imagens/WEB.png" alt="Acessar XPUNTO WEB" loading="lazy">
-    </a>
-   </div>
-  </div>
-
-  <div id="video-wrapper">
-   <div id="video-placeholder-container">
-    <img src="imagens/video.jpg" alt="Miniatura do vídeo promocional do XPUNTO" loading="lazy" width="1920" height="1080">
-    <div class="play-button"></div>
-   </div>
-  </div>
-
-  <div class="fale">
-   <a href="mailto:contato@xpunto.com" class="image-container">
-    <img src="imagens/fale.jpg" alt="Enviar e-mail XPUNTO" loading="lazy" width="100" height="70">
-   </a>
-  </div>
-
-  <p class="email-alternative-text">
-    Ou envie um e-mail para:
-    <a href="mailto:contato@xpunto.com" style="color: white; text-decoration: underline;">contato@xpunto.com</a>
-  </p>
-
-  <nav class="main-nav">
-   <div class="nav-group">
-    <a href="https://sergiodellerba.github.io/xpunto-txt-sobre/" target="_blank" rel="noopener noreferrer" class="nav-link">Sobre</a>
-    <a href="https://sergiodellerba.github.io/xpunto-txt-faq/" target="_blank" rel="noopener noreferrer" class="nav-link">FAQ</a>
-    <a href="https://sergiodellerba.github.io/xpunto-dicas-seguranca/" target="_blank" rel="noopener noreferrer" class="nav-link">Segurança</a>
-    <a href="https://sergiodellerba.github.io/xpunto-txt-termos-uso/" target="_blank" rel="noopener noreferrer" class="nav-link">Termos Uso</a>
-    <a href="https://sergiodellerba.github.io/xpunto-txt-politica-privacidade/" target="_blank" rel="noopener noreferrer" class="nav-link">LGPD</a>
-   </div>
-  </nav>
-
-  <footer>
-   <div class="social-buttons">
-    <a href="https://www.facebook.com/xpuntoapp" target="_blank" rel="noopener noreferrer" class="facebook-icon">
-      <img src="imagens/Facebook_Logo_Primary.png" alt="Facebook XPUNTO" loading="lazy">
-    </a>
-
-    <img src="imagens/logo.png" alt="Logo XPUNTO" class="logo-footer" loading="lazy" width="791" height="153">
-
-    <a href="https://www.instagram.com/xpuntoapp/" target="_blank" rel="noopener noreferrer" class="instagram-icon">
-      <img src="imagens/Instagram_Glyph_Gradient.png" alt="Instagram XPUNTO" loading="lazy">
-    </a>
-   </div>
-  </footer>
- </main>
-
- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const videoWrapper = document.getElementById('video-wrapper');
-    const videoPlaceholderContainer = document.getElementById('video-placeholder-container');
-    const youtubeVideoId = 'NvN97Wh3oBo';
-
-    if (videoPlaceholderContainer && videoWrapper) {
-      videoPlaceholderContainer.addEventListener('click', function () {
-        videoPlaceholderContainer.style.display = 'none';
-
-        const iframe = document.createElement('iframe');
-        iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`);
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        iframe.setAttribute('allowfullscreen', '');
-
-        const iframeResponsiveWrapper = document.createElement('div');
-        iframeResponsiveWrapper.classList.add('video-responsive-iframe-wrapper');
-        iframeResponsiveWrapper.appendChild(iframe);
-
-        videoWrapper.appendChild(iframeResponsiveWrapper);
-      });
-    }
-  });
- </script>
+    <main class="main">
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Logo XPUNTO" width="791" height="153">
+            <h1>NETWORKING DIGITAL</h1>
+            <h2>CONEXÕES QUE IMPORTAM!</h2>
+        </div>
+        <section class="texto-principal" id="img01">
+            <p>O <strong>networking</strong> é a força que <strong>impulsiona</strong> a evolução humana.</p>
+            <p>No XPUNTO, conexões úteis viram realidade: <strong>fácil, rápido, assertivo e seguro</strong>.</p>
+            <p>Saber com quem falar sobre o que você quer — e que está disposto a conversar — <strong>resolve tudo</strong>.</p>
+            <p>Cada conversa é um passo rumo à sua <strong>realização</strong>.</p>
+            <p><strong>Baixe agora</strong>. Conecte-se ao seu futuro.</p>
+        </section>
+        <section class="app-section">
+            <img id="img-app-xpunto" src="imagens/APP.png" alt="Aplicativo XPUNTO">
+        </section>
+        <div class="download-buttons-section">
+            <div class="app-buttons-wrapper">
+                <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank" rel="noopener noreferrer"><img src="imagens/Android.jpg" alt="Baixar no Google Play"></a>
+                <a href="https://apps.apple.com/br/app/xpunto/id6478978511" target="_blank" rel="noopener noreferrer"><img src="imagens/Apple.jpg" alt="Baixar na App Store"></a>
+            </div>
+            <div class="web-button-wrapper">
+                <a href="https://app.xpunto.com" target="_blank" rel="noopener noreferrer"><img src="imagens/WEB.png" alt="Acessar XPUNTO WEB"></a>
+            </div>
+        </div>
+        <div id="video-wrapper">
+            <div id="video-placeholder-container">
+                <img src="imagens/video.jpg" alt="Thumbnail do vídeo">
+                <div class="play-button"></div>
+            </div>
+        </div>
+        <div class="fale">
+            <a href="mailto:contato@xpunto.com"><img src="imagens/fale.jpg" alt="Fale conosco"></a>
+        </div>
+        <p class="email-alternative-text">Envie um e-mail para: contato@xpunto.com</p>
+        <nav class="main-nav">
+            <div class="nav-group">
+                <a href="https://sergiodellerba.github.io/xpunto-txt-sobre/" target="_blank" rel="noopener noreferrer">Sobre</a>
+                <a href="https://sergiodellerba.github.io/xpunto-txt-faq/" target="_blank" rel="noopener noreferrer">FAQ</a>
+                <a href="https://sergiodellerba.github.io/xpunto-dicas-seguranca/" target="_blank" rel="noopener noreferrer">Segurança</a>
+                <a href="https://sergiodellerba.github.io/xpunto-txt-termos-uso/" target="_blank" rel="noopener noreferrer">Termos Uso</a>
+                <a href="https://sergiodellerba.github.io/xpunto-txt-politica-privacidade/" target="_blank" rel="noopener noreferrer">LGPD</a>
+            </div>
+        </nav>
+        <footer>
+            <div class="social-buttons">
+                <a href="https://www.facebook.com/xpuntoapp" target="_blank" rel="noopener noreferrer"><img src="imagens/Facebook_Logo_Primary.png" alt="Facebook XPUNTO"></a>
+                <img class="logo-footer" src="imagens/logo.png" alt="Logo XPUNTO Footer">
+                <a href="https://www.instagram.com/xpuntoapp/" target="_blank" rel="noopener noreferrer"><img src="imagens/Instagram_Glyph_Gradient.png" alt="Instagram XPUNTO"></a>
+            </div>
+        </footer>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoWrapper = document.getElementById('video-wrapper');
+            const videoPlaceholderContainer = document.getElementById('video-placeholder-container');
+            const youtubeVideoId = 'NvN97Wh3oBo';
+            videoPlaceholderContainer.addEventListener('click', function() {
+                videoPlaceholderContainer.style.display = 'none';
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`;
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', true);
+                const wrapper = document.createElement('div');
+                wrapper.className = 'video-responsive-iframe-wrapper';
+                wrapper.appendChild(iframe);
+                videoWrapper.appendChild(wrapper);
+            });
+        });
+    </script>
 </body>
 </html>
