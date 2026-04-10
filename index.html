@@ -9,6 +9,7 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
  <link rel="stylesheet" href="estilo/style.css">
+
  <style>
   .texto-principal {
     background: #367697;
@@ -64,40 +65,41 @@
   }
 
   @media (max-width: 768px) {
-  .app-buttons-wrapper {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 12px;
-  }
+    .app-buttons-wrapper {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
 
-  .web-button-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .web-button-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .download-button {
-    display: flex;
-    justify-content: center;
-  }
+    .download-button {
+      display: flex;
+      justify-content: center;
+    }
 
-  .app-buttons-wrapper .download-button img {
-    width: 125px !important;
-    max-width: 125px !important;
-    height: auto !important;
-  }
+    .app-buttons-wrapper .download-button img {
+      width: 125px !important;
+      max-width: 125px !important;
+      height: auto !important;
+    }
 
-  .web-button-wrapper .download-button img {
-    width: 145px !important;
-    max-width: 145px !important;
-    height: auto !important;
+    .web-button-wrapper .download-button img {
+      width: 145px !important;
+      max-width: 145px !important;
+      height: auto !important;
+    }
   }
-}
-</style>
+ </style>
 </head>
+
 <body>
  <main class="main">
   <div class="logo">
@@ -106,7 +108,6 @@
    <h2>CONEXÕES QUE IMPORTAM!</h2>
   </div>
 
-  <!-- TEXTO na caixa cinza + frizo vermelho grosso -->
   <section class="texto-principal" id="img01">
    <p>O <strong>networking</strong> é a força que <strong>impulsiona</strong> a evolução humana.</p>
    <p>No XPUNTO, conexões úteis viram realidade: <strong>fácil, rápido, assertivo e seguro</strong>.</p>
@@ -115,29 +116,28 @@
    <p><strong>Baixe agora</strong>. Conecte-se ao seu futuro.</p>
   </section>
 
-  <!-- IMAGEM APP (espaçada corretamente) -->
   <section class="app-section">
    <img src="imagens/APP.png" alt="Tela do aplicativo XPUNTO" loading="lazy" id="img-app-xpunto" width="1080" height="1920">
   </section>
 
-  <!-- BOTÕES uniformes e proporcionais -->
   <div class="download-buttons-section">
    <div class="app-buttons-wrapper">
-    <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank" class="download-button">
+    <a href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank" rel="noopener noreferrer" class="download-button">
      <img src="imagens/Android.jpg" alt="Baixar XPUNTO Google Play" loading="lazy">
     </a>
-    <a href="https://apps.apple.com/br/app/xpunto/id6478978511" target="_blank" class="download-button" id="apple-button">
+
+    <a href="https://apps.apple.com/br/app/xpunto/id6478978511" target="_blank" rel="noopener noreferrer" class="download-button" id="apple-button">
      <img src="imagens/Apple.jpg" alt="Baixar XPUNTO App Store" loading="lazy">
     </a>
    </div>
+
    <div class="web-button-wrapper">
-    <a href="https://app.xpunto.com" target="_blank" class="download-button">
+    <a href="https://app.xpunto.com" target="_blank" rel="noopener noreferrer" class="download-button">
      <img src="imagens/WEB.png" alt="Acessar XPUNTO WEB" loading="lazy">
     </a>
    </div>
   </div>
 
-  <!-- VÍDEO -->
   <div id="video-wrapper">
    <div id="video-placeholder-container">
     <img src="imagens/video.jpg" alt="Miniatura do vídeo promocional do XPUNTO" loading="lazy" width="1920" height="1080">
@@ -146,11 +146,15 @@
   </div>
 
   <div class="fale">
-   <a href="mailto:contato@xpunto.com" target="_blank" class="image-container">
+   <a href="mailto:contato@xpunto.com" class="image-container">
     <img src="imagens/fale.jpg" alt="Enviar e-mail XPUNTO" loading="lazy" width="100" height="70">
    </a>
   </div>
-  <p class="email-alternative-text">Ou envie um e-mail para: <a href="mailto:contato@xpunto.com" target="_blank" style="color: white; text-decoration: underline;">contato@xpunto.com</a></p>
+
+  <p class="email-alternative-text">
+    Ou envie um e-mail para:
+    <a href="mailto:contato@xpunto.com" style="color: white; text-decoration: underline;">contato@xpunto.com</a>
+  </p>
 
   <nav class="main-nav">
    <div class="nav-group">
@@ -163,7 +167,7 @@
   </nav>
 
   <footer>
-  <div class="social-buttons">
+   <div class="social-buttons">
     <a href="https://www.facebook.com/xpuntoapp" target="_blank" rel="noopener noreferrer" class="facebook-icon">
       <img src="imagens/Facebook_Logo_Primary.png" alt="Facebook XPUNTO" loading="lazy">
     </a>
@@ -173,11 +177,11 @@
     <a href="https://www.instagram.com/xpuntoapp/" target="_blank" rel="noopener noreferrer" class="instagram-icon">
       <img src="imagens/Instagram_Glyph_Gradient.png" alt="Instagram XPUNTO" loading="lazy">
     </a>
-  </div>
-</footer>
-</main>
+   </div>
+  </footer>
+ </main>
 
-<script>
+ <script>
   document.addEventListener('DOMContentLoaded', function () {
     const videoWrapper = document.getElementById('video-wrapper');
     const videoPlaceholderContainer = document.getElementById('video-placeholder-container');
@@ -201,6 +205,6 @@
       });
     }
   });
-</script>
+ </script>
 </body>
 </html>

@@ -1,11 +1,11 @@
+@charset "UTF-8";
+
 /* RESET UNIVERSAL para garantir consistência de layout */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Isso é CRUCIAL: borda e padding são incluídos na largura/altura */
+    box-sizing: border-box;
 }
-
-@charset "UTF-8";
 
 /* ===================================================================================================================== */
 /* ATENÇÃO: Os @import url() das fontes foram REMOVIDOS daqui. */
@@ -14,7 +14,7 @@
 
 :root {
     --fonte-xpunto1: 'Montserrat', Arial, sans-serif;
-    --fonte-xpunto2: 'Gothan', Verdana, Arial; /* Nota: 'Gothan' é um provável erro de digitação para 'Gotham', mas mantido como estava no código original. */
+    --fonte-xpunto2: 'Gothan', Verdana, Arial;
     --fonte-destaque: 'Bebas Neue', Arial;
     --solirario: #981310;
     --comercial: #65A99B;
@@ -26,10 +26,8 @@
 
 /* ------------------------------------------- */
 /* REGRAS CSS GERAIS (MOBILE FIRST)            */
-/* Estas regras definem o layout para telas pequenas (celulares) por padrão. */
 /* ------------------------------------------- */
 
-/* Regra global para todas as imagens: garante que nunca ultrapassem o pai e mantenham a proporção */
 img {
     border-radius: 20px;
     max-width: 100%;
@@ -41,7 +39,6 @@ img {
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
 }
 
-/* Afeta o logo principal e outras imagens genéricas que estão em div's */
 div img {
     max-width: 100%;
     height: auto;
@@ -51,7 +48,7 @@ div img {
 
 /* Logo principal XPUNTO no topo */
 .logo img {
-    max-width: 60%; /* Tamanho adequado para mobile */
+    max-width: 60%;
     height: auto;
     width: auto;
     margin-top: 30px;
@@ -76,7 +73,7 @@ picture img[alt="Atributos do aplicativo XPUNTO"] {
 
 /* Imagem APP.png */
 #img-app-xpunto {
-    max-width: 220px; /* Limita a largura para mobile para dar um respiro nas bordas */
+    max-width: 220px;
     height: auto;
     margin: 0 auto 80px auto;
     display: block;
@@ -84,7 +81,7 @@ picture img[alt="Atributos do aplicativo XPUNTO"] {
 
 /* Títulos h1 e h2 */
 h1, h2 {
-    font-size: 1.8em; /* Tamanho menor para mobile */
+    font-size: 1.8em;
     font-family: var(--fonte-destaque);
     font-weight: normal;
     color: white;
@@ -112,53 +109,54 @@ h1, h2 {
     border-radius: 10px;
 }
 
-/* CORRIGIDO: Seção ".fale" (botão "Fale Conosco") */
+/* Seção ".fale" */
 .fale {
     width: 93%;
-    height: 200px; /* Altura fixa original que garantiu a área clicável */
+    height: 200px;
     display: flex;
-    margin: 1px auto 0 auto; /* Margem original */
+    margin: 1px auto 0 auto;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
+
 .fale img {
-    max-width: 100%; /* Permite à imagem preencher a largura do contêiner */
-    max-height: 100%; /* Permite à imagem preencher a altura do contêiner */
+    max-width: 100%;
+    max-height: 100%;
 }
 
-/* NOVO: Estilo para o texto alternativo do e-mail (OCULTO POR PADRÃO NO MOBILE) */
+/* Texto alternativo do e-mail */
 .email-alternative-text {
     text-align: center;
     color: white;
     margin-top: 10px;
-    margin-bottom: 40px; /* Espaço para o próximo elemento (menu de navegação) */
-    font-size: 0.9em; /* Tamanho de fonte um pouco menor */
-    font-family: var(--fonte-xpunto1); /* Mantém a mesma fonte principal */
-    display: none; /* OCULTA O TEXTO NO MOBILE POR PADRÃO */
+    margin-bottom: 40px;
+    font-size: 0.9em;
+    font-family: var(--fonte-xpunto1);
+    display: none;
 }
 
 .email-alternative-text a {
     color: white;
     text-decoration: underline;
-    font-weight: bold; /* Deixa o e-mail em negrito */
+    font-weight: bold;
 }
 
-/* NOVO: Espaçamento para os parágrafos dentro da seção #img01 */
+/* Espaçamento para os parágrafos dentro da seção #img01 */
 section#img01 p {
-    margin-bottom: 20px; /* Adiciona um espaçamento de 20px abaixo de cada parágrafo */
-    margin-top: 0; /* Garante que não haja margem superior extra, respeitando o padding da seção */
+    margin-bottom: 20px;
+    margin-top: 0;
 }
+
 section#img01 p:last-child {
-    margin-bottom: 0; /* Remove a margem do último parágrafo para não adicionar espaço extra no final da seção */
+    margin-bottom: 0;
 }
 
-/* NOVO: Regra para deixar o texto em negrito dentro da section#img01 */
+/* Regra para texto com <em> dentro da seção #img01 */
 section#img01 p em {
-    font-style: normal; /* Remove o estilo itálico */
-    font-weight: bold;  /* Aplica o estilo negrito */
+    font-style: normal;
+    font-weight: bold;
 }
-
 
 /* Contêiner principal ".main" */
 .main {
@@ -168,7 +166,7 @@ section#img01 p em {
     border: 5px solid var(--solirario) !important;
     border-radius: 20px;
     box-shadow: 3px 3px 15px rgb(69, 69, 69);
-    width: 95%; /* Ocupa 95% da largura do body no mobile */
+    width: 95%;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 10px;
@@ -192,15 +190,15 @@ body {
 }
 
 /* ---------------------------------------------------- */
-/* NOVAS REGRAS PARA OS BOTÕES DE DOWNLOAD (WEB / APPS) */
+/* BOTÕES DE DOWNLOAD (WEB / APPS)                      */
 /* ---------------------------------------------------- */
 .download-buttons-section {
     display: flex;
-    flex-direction: column; /* WEB button above APP buttons */
-    align-items: center; /* Center the groups */
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
     margin-bottom: 20px;
-    gap: 20px; /* Space between WEB group and APP group */
+    gap: 20px;
 }
 
 .web-button-wrapper {
@@ -213,32 +211,31 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between Android and Apple buttons */
-    flex-wrap: wrap; /* Allows buttons to wrap on very small screens */
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .download-button {
     text-align: center;
     text-decoration: none;
     color: inherit;
-    display: block; /* Make the anchor tag behave like a block for sizing */
+    display: block;
 }
 
 .download-button img {
-    max-width: 180px; /* Max width for WEB button on mobile */
-    width: 100%; /* Makes image responsive within its container */
+    max-width: 180px;
+    width: 100%;
     height: auto;
-    border-radius: 10px; /* Applies the desired border-radius */
-    margin: 0; /* Reset margins from global img rule */
-    box-shadow: 2px 4px 8px 2px rgba(53, 53, 53, 0.655); /* <--- ALTERADO: Sombra mais saliente */
+    border-radius: 10px;
+    margin: 0;
+    box-shadow: 2px 4px 8px 2px rgba(53, 53, 53, 0.655);
 }
 
-/* Specific sizing for APP buttons on mobile */
 .app-buttons-wrapper .download-button img {
-    max-width: 135px; /* Adjust max width for Android/Apple buttons on mobile */
+    max-width: 135px;
 }
 
-/* --- REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
+/* VÍDEO */
 #video-wrapper {
     position: relative;
     width: 95%;
@@ -249,16 +246,15 @@ body {
 #video-placeholder-container,
 .video-responsive-iframe-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* Proporção 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    background-color: #000;
+    background-color: #183F47;
     border-radius: 20px;
     box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
     cursor: pointer;
     border: 5px solid var(--solirario) !important;
     box-sizing: border-box;
-    background-color: #183F47;
     display: block;
 }
 
@@ -287,14 +283,14 @@ body {
     border: none;
 }
 
-/* Estilo para o botão de Play */
+/* Botão de Play */
 .play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px; /* <-- REDUZIDO: Tamanho para mobile */
-    height: 60px; /* <-- REDUZIDO: Tamanho para mobile */
+    width: 60px;
+    height: 60px;
     background-color: rgba(255, 0, 0, 0.8);
     border-radius: 50%;
     display: flex;
@@ -304,56 +300,51 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Triângulo do ícone de Play */
 .play-button::before {
     content: '';
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 15px 0 15px 22px; /* <-- AJUSTADO: Triângulo menor para mobile */
+    border-width: 15px 0 15px 22px;
     border-color: transparent transparent transparent #ffffff;
-    margin-left: 3px; /* <-- AJUSTADO: Posição do triângulo */
+    margin-left: 3px;
 }
 
 .play-button:hover {
     background-color: rgba(255, 0, 0, 1);
 }
 
-/* --- FIM DAS REGRAS CSS PARA A SEÇÃO DO VÍDEO --- */
-
-/* Contêiner de botões sociais no rodapé */
+/* Rodapé social */
 .social-buttons {
     display: flex;
-    flex-direction: row; /* Itens em linha */
-    flex-wrap: nowrap;   /* Não quebra linha */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
-    gap: 10px;           /* Espaçamento entre os itens sociais */
-    padding: 0;          /* Reset padding, controlado pelo footer */
-    margin: 0;           /* Reset margin */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
 }
 
-/* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
 .social-buttons a {
-    width: 45px; /* Tamanho do círculo para mobile (maior para Meta) */
+    width: 45px;
     height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-radius: 15%; /* <-- ESTA É A REGRA PARA O CELULAR (SQUIRCLE) */
+    border-radius: 15%;
     flex-shrink: 0;
 }
 
-/* Imagens dentro dos botões sociais (Face e Instagram) */
 .social-buttons a img {
-    max-width: 90%; /* Ícone preenche 90% do círculo */
+    max-width: 90%;
     height: auto;
     display: block;
     margin: 0;
 }
 
-/* Seção de imagens genérica (section.imagens) */
+/* Seção de imagens genérica */
 section.imagens {
     position: relative;
     color: white;
@@ -374,7 +365,7 @@ section.imagens img {
     box-shadow: 1px 1px 2px rgba(14, 13, 13, 0.447);
 }
 
-/* Seção com texto e imagem de fundo (section#img01) */
+/* Seção com texto e imagem de fundo */
 section#img01 {
     background-image: url('../imagens/Aurora.jpg');
     background-position: center;
@@ -383,11 +374,11 @@ section#img01 {
     max-width: 94%;
     margin: auto;
     text-align: left;
-    font-size: 1.4em; /* Tamanho da fonte para mobile */
+    font-size: 1.4em;
     padding: 15px;
 }
 
-/* Navegação principal ".main-nav" */
+/* Navegação principal */
 .main-nav {
     width: 98%;
     border-radius: 15px;
@@ -401,29 +392,26 @@ section#img01 {
     margin: 0 auto;
 }
 
-/* Grupo de links de navegação ".nav-group" */
 .nav-group {
     align-items: center;
     justify-content: center;
     text-align: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap; /* Permite quebrar linha no mobile */
-    gap: 15px; /* Espaçamento menor para mobile */
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-/* Links individuais de navegação ".nav-link" */
 .nav-link {
     color: white;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 1.1em; /* Tamanho menor para mobile */
+    font-size: 1.1em;
     transition-duration: .1s;
     position: relative;
 }
 
-/* Divisor nos links de navegação */
 .nav-link:not(:first-child)::before {
     content: "-";
     position: absolute;
@@ -431,7 +419,6 @@ section#img01 {
     color: white;
 }
 
-/* Estilos de hover e ativo para links de navegação */
 .nav-link.active,
 .nav-link:hover {
     background-color: #981310;
@@ -447,128 +434,109 @@ footer {
     margin-top: 10px;
     margin-bottom: 0px;
     background-color: white;
-    padding: 5px 0; /* Rodapé mais fino para mobile */
+    padding: 5px 0;
     box-shadow: 0px -3px 5px rgba(30, 30, 30, 0.2);
     display: flex;
-    flex-direction: column; /* Coluna para o footer (contém apenas social-buttons) */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Logo do rodapé ".logo-footer" */
 .logo-footer {
-    max-width: 110px; /* Reduz o tamanho máximo do logo para mobile */
+    max-width: 110px;
     height: auto;
     border-radius: 10px;
-    margin: 0; /* Garante que não tenha margem vertical */
+    margin: 0;
     flex-shrink: 0;
 }
 
-/* Esconde o vídeo quando não está ativo */
 #myVideo {
     display: none;
 }
 
-
 /* ===================================================================================================================== */
-/* MEDIA QUERIES PARA DESKTOP E TELAS MAIORES (a partir de 768px de largura) */
-/* Estas regras SOBRESCRIVEM os estilos padrão (mobile-first) para telas maiores. */
+/* MEDIA QUERIES PARA DESKTOP E TELAS MAIORES                                                                           */
 /* ===================================================================================================================== */
 @media (min-width: 768px) {
-    /* Exibir o texto alternativo do e-mail apenas no desktop */
     .email-alternative-text {
-        display: block; /* Torna o texto visível no desktop */
+        display: block;
     }
 
-    /* Logo principal */
     .logo img {
-        width: 400px; /* Volta ao tamanho desejado para desktop */
+        width: 400px;
     }
 
     section#img01 {
-        font-size: 2.5em; /* Tamanho da fonte para desktop */
-        max-width: 80%; /* Volta ao original para desktop */
+        font-size: 2.5em;
+        max-width: 80%;
     }
 
-    /* Títulos h1 e h2 */
     h1, h2 {
-        font-size: 3.5em; /* Volta ao tamanho original para desktop */
+        font-size: 3.5em;
     }
 
-    /* ---------------------------------------------------- */
-    /* DESKTOP: REGRAS PARA OS BOTÕES DE DOWNLOAD           */
-    /* ---------------------------------------------------- */
     .web-button-wrapper .download-button img {
-        max-width: 250px; /* Max width for WEB button on desktop */
+        max-width: 250px;
     }
 
     .app-buttons-wrapper {
-        gap: 40px; /* Larger gap between Android and Apple buttons on desktop */
+        gap: 40px;
     }
 
     .app-buttons-wrapper .download-button img {
-        max-width: 200px; /* Adjust max width for Android/Apple buttons on desktop */
+        max-width: 200px;
     }
 
-    /* Imagem APP.png */
     #img-app-xpunto {
-        max-width: 250px; /* Volta ao tamanho original para desktop */
+        max-width: 250px;
     }
 
-    /* Contêiner principal do vídeo (onde aplicamos as margens) */
     #video-wrapper {
-        width: 100%; /* Faz com que ocupe 100% da largura do contêiner pai (.main) no desktop */
-        /* max-width já foi definido na regra geral e será respeitado */
+        width: 100%;
     }
 
-    /* CORRIGIDO: Botão ".fale" */
     .fale {
-        width: 93%; /* Largura original */
-        height: 200px; /* Altura original */
-        margin: 1px auto 0 auto; /* Margem original */
-    }
-    .fale img {
-        /* max-width: 100%; max-height: 100%; já está na regra geral .fale img */
+        width: 93%;
+        height: 200px;
+        margin: 1px auto 0 auto;
     }
 
-    /* Botão de play do vídeo */
     .play-button {
-        width: 70px; /* Volta ao tamanho original para desktop */
+        width: 70px;
         height: 70px;
     }
 
-    /* Rodapé: Disposição para desktop */
     footer {
-        padding: 10px 0; /* Padding maior para desktop */
+        padding: 10px 0;
     }
 
-    /* Contêiner de botões sociais (no rodapé) */
     .social-buttons {
-        gap: 40px; /* Volta ao espaçamento original para desktop */
-    }
-    /* Links dos botões sociais do rodapé (.facebook-icon e .instagram-icon) */
-     .social-buttons a {
-        width: 70px; /* Volta ao tamanho original para desktop */
-        height: 70px;
-        border-radius: 50%; /* <-- ESTA É A REGRA PARA O COMPUTADOR (REDONDO) */
-    }
-    /* Imagens dentro dos botões sociais (Face e Instagram) */
-    .social-buttons a img {
-        max-width: 80%; /* Ícone preenche 80% do círculo */
-    }
-    /* Logo do rodapé ".logo-footer" */
-    .logo-footer {
-        max-width: 200px; /* Volta ao max-width original para desktop */
+        gap: 40px;
     }
 
-    /* Menu de Navegação */
+    .social-buttons a {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
+
+    .social-buttons a img {
+        max-width: 80%;
+    }
+
+    .logo-footer {
+        max-width: 200px;
+    }
+
     .main-nav {
         width: 98%;
     }
+
     .nav-group {
-        gap: 35px; /* Volta ao espaçamento original para desktop */
+        gap: 35px;
     }
+
     .nav-link {
-        font-size: 35px; /* Volta ao tamanho original para desktop */
+        font-size: 35px;
     }
 }
