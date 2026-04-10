@@ -269,8 +269,8 @@ section#img01 p {
 
 .fale img {
   width: auto;
-  max-width: 260px;
-  max-height: 83px;
+  max-width: 230px;
+  max-height: 75px;
   height: auto;
   margin: 0 auto;
   border-radius: 20px;
@@ -478,5 +478,10 @@ footer {
 
   .nav-group a {
     font-size: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .texto-principal {
+    font-size: 1.2em;
   }
 }
