@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  background: linear-gradient(to bottom, #65a99b, #65A99b);
+  background: linear-gradient(to bottom, #183F47, #65A99b);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -38,7 +38,7 @@ body {
 .main {
   color: white;
   min-width: 300px;
-  border: 5px solid var(--solirario);
+  border: 5px solid #65A99B;
   border-radius: 20px;
   box-shadow: 3px 3px 15px rgb(69, 69, 69);
   width: 95%;
@@ -48,20 +48,18 @@ body {
   box-sizing: border-box;
 }
 
-/* Imagens gerais */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* Logo */
 .logo {
   text-align: center;
 }
 
 .logo img {
-  max-width: 60%;
+  max-width: 36%;
   height: auto;
   width: auto;
   margin: 30px auto;
@@ -70,8 +68,17 @@ img {
   box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
 
-/* Títulos */
-h1,
+h1 {
+  font-size: 2.7em;
+  font-family: var(--fonte-destaque);
+  font-weight: normal;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 0px rgb(91, 91, 91);
+  letter-spacing: 1px;
+}
+
 h2 {
   font-size: 1.8em;
   font-family: var(--fonte-destaque);
@@ -83,21 +90,19 @@ h2 {
   letter-spacing: 1px;
 }
 
-/* Texto principal */
 .texto-principal {
-  background: #367697;
-  border: 4px solid #981310;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  margin-bottom: 80px;
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 20px auto 30px auto;
   max-width: 800px;
   text-align: justify;
-  font-style: italic;
   color: #ffffff;
   font-size: 1.1em;
   line-height: 1.6;
+  font-style: normal;
 }
 
 .texto-principal p {
@@ -106,9 +111,9 @@ h2 {
 
 .texto-principal p:last-child {
   margin-bottom: 0;
+  text-align: center;
 }
 
-/* Mantido para preservar compatibilidade com a estrutura atual */
 section#img01 {
   max-width: 94%;
 }
@@ -117,76 +122,49 @@ section#img01 p {
   margin-top: 0;
 }
 
-/* Imagem do app */
 .app-section {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 0;
 }
 
 #img-app-xpunto {
-  max-width: 220px;
+  max-width: 495px;
   height: auto;
-  margin: 0 auto 80px auto;
+  margin: 0 auto 0 auto;
   display: block;
 }
 
-/* Botões de download */
 .download-buttons-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  gap: 20px;
+  gap: 10px;
+  width: fit-content;
+  margin: 41px auto 40px auto;
+  position: relative;
+  left: 18.5mm;
 }
 
-.app-buttons-wrapper,
-.web-button-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.app-buttons-wrapper {
-  gap: 15px;
-  flex-wrap: nowrap;
-}
-
-.web-button-wrapper {
-  flex-direction: column;
-}
-
-.download-buttons-section a {
+.store-button-link {
   display: block;
   text-decoration: none;
+  line-height: 0;
 }
 
-.app-buttons-wrapper a img,
-.web-button-wrapper a img {
+.store-button-image {
+  width: 690px;
+  max-width: 80%;
+  height: auto;
   border-radius: 10px;
   box-shadow: 2px 4px 8px 2px rgba(53, 53, 53, 0.655);
   margin: 0;
 }
 
-.app-buttons-wrapper a img {
-  width: 125px;
-  max-width: 125px;
-  height: auto;
-}
-
-.web-button-wrapper a img {
-  width: 145px;
-  max-width: 145px;
-  height: auto;
-}
-
-/* Vídeo */
 #video-wrapper {
   position: relative;
   width: 95%;
   max-width: 900px;
-  margin: 15px auto 40px auto;
+  margin: 15px auto 20px auto;
 }
 
 #video-placeholder-container,
@@ -199,7 +177,7 @@ section#img01 p {
   border-radius: 20px;
   box-shadow: 1px 2px 2px rgba(53, 53, 53, 0.655);
   cursor: pointer;
-  border: 5px solid var(--solirario);
+  border: 5px solid #65A99B;
   box-sizing: border-box;
   display: block;
 }
@@ -256,7 +234,6 @@ section#img01 p {
   background-color: rgba(255, 0, 0, 1);
 }
 
-/* Fale */
 .fale {
   width: 100%;
   height: auto;
@@ -278,7 +255,6 @@ section#img01 p {
   background-color: white;
 }
 
-/* Texto alternativo do e-mail */
 .email-alternative-text {
   text-align: center;
   color: white;
@@ -295,11 +271,10 @@ section#img01 p {
   font-weight: bold;
 }
 
-/* Navegação */
 .main-nav {
   width: 98%;
   border-radius: 15px;
-  background-color: var(--locacao);
+  background-color: #183F47;
   padding: 8px 10px;
   box-shadow: 0px 7px 9px rgba(30, 30, 30, 0.785);
   display: flex;
@@ -343,14 +318,13 @@ section#img01 p {
   color: #ffffff;
 }
 
-/* Rodapé */
 footer {
   width: 100%;
   border-radius: 15px;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 0;
-  background-color: white;
+  background-color: #65A99B;
   padding: 5px 0;
   box-shadow: 0px -3px 5px rgba(30, 30, 30, 0.2);
   display: flex;
@@ -396,15 +370,25 @@ footer {
   flex-shrink: 0;
 }
 
-/* Desktop */
+.frase-destaque {
+  font-family: var(--fonte-destaque);
+  font-size: 1.8em;
+  font-weight: normal;
+  color: white;
+  text-shadow: 2px 2px 0px rgb(91, 91, 91);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
 @media (min-width: 768px) {
   .email-alternative-text {
     display: block;
   }
 
   .logo img {
-    width: 400px;
-    max-width: 400px;
+    width: 240px;
+    max-width: 240px;
   }
 
   section#img01 {
@@ -412,27 +396,25 @@ footer {
     font-size: 2.5em;
   }
 
-  h1,
+  h1 {
+    font-size: 5.25em;
+  }
+
   h2 {
     font-size: 3.5em;
   }
 
-  .web-button-wrapper a img {
-    width: 250px;
-    max-width: 250px;
-  }
-
-  .app-buttons-wrapper {
-    gap: 40px;
-  }
-
-  .app-buttons-wrapper a img {
-    width: 200px;
-    max-width: 200px;
+  .frase-destaque {
+    font-size: 1.0em;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 2px 2px 0px rgb(91, 91, 91);
   }
 
   #img-app-xpunto {
-    max-width: 250px;
+    max-width: 562px;
   }
 
   #video-wrapper {
@@ -480,16 +462,19 @@ footer {
     font-size: 35px;
   }
 }
+
 @media (max-width: 768px) {
   .texto-principal {
     font-size: 1.27em;
   }
 }
+
 @media (max-width: 768px) {
   .fale {
     margin-bottom: 25px;
   }
 }
+
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
