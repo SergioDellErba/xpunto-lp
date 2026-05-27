@@ -38,7 +38,7 @@ body {
 .main {
   color: white;
   min-width: 300px;
-  border: 5px solid #65A99B;
+  border:none;
   border-radius: 20px;
   box-shadow: 3px 3px 15px rgb(69, 69, 69);
   width: 95%;
@@ -63,7 +63,7 @@ img {
   height: auto;
   width: auto;
   margin: 30px auto;
-  background-color: white;
+  background-color:white;
   border-radius: 20px;
   box-shadow: 1px 2px 3px rgba(76, 76, 76, 0.593);
 }
@@ -350,7 +350,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: transparent;
   border-radius: 15%;
   flex-shrink: 0;
 }
