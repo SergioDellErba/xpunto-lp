@@ -209,8 +209,8 @@ section#img01 p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   background-color: rgba(255, 0, 0, 0.8);
   border-radius: 50%;
   display: flex;
@@ -225,13 +225,13 @@ section#img01 p {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 10px 0 10px 16px;
+  border-width: 8px 0 8px 13px;
   border-color: transparent transparent transparent #ffffff;
   margin-left: 3px;
 }
 
 .play-button:hover {
-  background-color: rgba(255, 0, 0, 1);
+  background-color: rgb(176, 7, 7);
 }
 
 .fale {
@@ -429,8 +429,8 @@ footer {
   }
 
   .play-button {
-    width: 70px;
-    height: 70px;
+    width: 35px;
+    height: 35px;
   }
 
   footer {
