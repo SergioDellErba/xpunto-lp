@@ -560,12 +560,12 @@ footer {
   }
 
   .play-button {
-    width: 52px;
-    height: 52px;
+    width: 34px;
+    height: 34px;
   }
 
   .play-button::before {
-    border-width: 12px 0 12px 18px;
+    border-width: 8.5px 0 8.5px 13.5px;
   }
 
   .fale {
