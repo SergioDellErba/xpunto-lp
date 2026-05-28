@@ -360,6 +360,7 @@ footer {
   height: auto;
   display: block;
   margin: 0;
+  filter: brightness(0) invert(1);
 }
 
 .logo-footer {
