@@ -623,4 +623,16 @@ footer {
   .logo-footer {
     max-width: 90px;
   }
+  /* ===== PROVA SOCIAL (imagem) ===== */
+  .social-proof-image {
+    max-width: 900px;
+    margin: 50px auto 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+  .social-proof-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
