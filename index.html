@@ -17,13 +17,16 @@
             <h1>NETWORKING DIGITAL</h1>
             <h2>CONEXÕES QUE IMPORTAM!</h2>
         </div>
+
         <section class="texto-principal" id="img01">
             <p><strong>Saber com quem falar sobre o que se quer — e que está disposto a conversar — resolve tudo</strong>.</p>
             <p><span class="frase-destaque">CONECTE-SE - CONVERSE - REALIZE</span></p>
         </section>
+
         <section class="app-section">
             <img id="img-app-xpunto" src="imagens/APP.png" alt="Aplicativo XPUNTO">
         </section>
+
         <div class="download-buttons-section">
             <a class="store-button-link" href="https://play.google.com/store/apps/details?id=br.com.xpuntorn&hl=pt_BR" target="_blank" rel="noopener noreferrer">
                 <img class="store-button-image" src="imagens/Android.jpg" alt="Baixar no Google Play">
@@ -35,14 +38,17 @@
                 <img class="store-button-image" src="imagens/WEB.png" alt="Acessar XPUNTO WEB">
             </a>
         </div>
+
+        <!-- ===== VÍDEO ===== -->
         <div id="video-wrapper">
             <div id="video-placeholder-container">
                 <img src="imagens/video.jpg" alt="Thumbnail do vídeo">
                 <div class="play-button"></div>
             </div>
         </div>
+        <!-- ===== FIM VÍDEO ===== -->
 
-        <!-- ===== PROVA SOCIAL (estilo inline - à prova de falhas) ===== -->
+        <!-- ===== PROVA SOCIAL ===== -->
         <section style="max-width:900px; margin:50px auto 20px; padding:0 20px; text-align:center;">
             <h2 style="font-family:'Bebas Neue',sans-serif; font-size:2.2em; letter-spacing:2px; color:#fff; margin-bottom:10px; text-transform:uppercase;">Quem já usa, recomenda</h2>
             <p style="font-family:'Roboto',sans-serif; font-weight:300; font-size:1.05em; color:#ccc; margin-bottom:35px;">Depoimentos reais de quem já experimentou o XPUNTO</p>
@@ -54,6 +60,7 @@
             <a href="mailto:contato@xpunto.com"><img src="imagens/fale.jpg" alt="Fale conosco"></a>
         </div>
         <p class="email-alternative-text">Envie um e-mail para: contato@xpunto.com</p>
+
         <nav class="main-nav">
             <div class="nav-group">
                 <a href="https://sergiodellerba.github.io/xpunto-txt-sobre/" target="_blank" rel="noopener noreferrer">Sobre</a>
@@ -63,6 +70,7 @@
                 <a href="https://sergiodellerba.github.io/xpunto-txt-politica-privacidade/" target="_blank" rel="noopener noreferrer">LGPD</a>
             </div>
         </nav>
+
         <footer>
             <div class="social-buttons">
                 <a href="https://www.facebook.com/xpuntoapp" target="_blank" rel="noopener noreferrer"><img src="imagens/Facebook_Logo_Primary.png" alt="Facebook XPUNTO"></a>
@@ -71,25 +79,80 @@
             </div>
         </footer>
     </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoWrapper = document.getElementById('video-wrapper');
-            const videoPlaceholderContainer = document.getElementById('video-placeholder-container');
-            const youtubeVideoId = 'lkDFtsbBVu0';
-            videoPlaceholderContainer.addEventListener('click', function() {
-                videoPlaceholderContainer.style.display = 'none';
-                const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1&cc_load_policy=0`;
-                iframe.setAttribute('frameborder', '0');
-                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-                iframe.setAttribute('allowfullscreen', true);
-                const wrapper = document.createElement('div');
-                wrapper.className = 'video-responsive-iframe-wrapper';
-                wrapper.appendChild(iframe);
-                videoWrapper.appendChild(wrapper);
-            });
-        });
-    </script>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const videoWrapper = document.getElementById('video-wrapper');
+        const videoPlaceholderContainer = document.getElementById('video-placeholder-container');
+        const youtubeVideoId = 'lkDFtsbBVu0';
+
+        // Carrega a API oficial do player do YouTube
+        const apiScript = document.createElement('script');
+        apiScript.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(apiScript);
+
+        let playerCriado = false;
+
+        videoPlaceholderContainer.addEventListener('click', function () {
+            if (playerCriado) return;
+            playerCriado = true;
+
+            videoPlaceholderContainer.style.display = 'none';
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'video-responsive-iframe-wrapper';
+
+            const target = document.createElement('div');
+            target.id = 'yt-player';
+            wrapper.appendChild(target);
+            videoWrapper.appendChild(wrapper);
+
+            iniciarPlayer();
+        });
+
+        function iniciarPlayer() {
+            if (typeof YT === 'undefined' || !YT.Player) {
+                setTimeout(iniciarPlayer, 150);
+                return;
+            }
+
+            new YT.Player('yt-player', {
+                videoId: youtubeVideoId,
+                playerVars: {
+                    autoplay: 1,
+                    rel: 0,
+                    modestbranding: 1,
+                    playsinline: 1,
+                    cc_load_policy: 0,
+                    iv_load_policy: 3
+                },
+                events: {
+                    onReady: function (event) {
+                        desligarLegendas(event.target);
+                        event.target.playVideo();
+                    },
+                    onStateChange: function (event) {
+                        if (event.data === YT.PlayerState.PLAYING) {
+                            desligarLegendas(event.target);
+                        }
+                    },
+                    onApiChange: function (event) {
+                        desligarLegendas(event.target);
+                    }
+                }
+            });
+        }
+
+        function desligarLegendas(player) {
+            try {
+                player.unloadModule('captions');
+                player.unloadModule('cc');
+            } catch (e) {
+                // silencioso: alguns navegadores recusam antes do play
+            }
+        }
+    });
+    </script>
 </body>
 </html>
+
